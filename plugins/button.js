@@ -12,7 +12,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       '--btn-accent': theme('colors.white.DEFAULT'),
       color: 'var(--btn-color)',
       fontSize: theme('fontSize.16'),
-      fontWeight: 600,
+      fontWeight: 500,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -97,7 +97,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       },
 
       '&-contur': {
-        border: '2px solid var(--btn-color)',
+        border: '1px solid var(--btn-color)',
       },
     },
   })
@@ -127,7 +127,6 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
     {
       btn: (size) => {
         return {
-          borderRadius: '6px',
           height: size,
           paddingInline: `calc(${size} / 2)`,
         }

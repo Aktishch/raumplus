@@ -3,8 +3,6 @@
 module.exports = {
   content: ['./src/**/*.html', './src/ts/**/*.ts', './src/lib/**/*.js'],
 
-  darkMode: 'class',
-
   corePlugins: {
     container: false,
   },
@@ -19,19 +17,18 @@ module.exports = {
       sm: 575.98 + 'px',
       md: 767.98 + 'px',
       lg: 991.98 + 'px',
-      xl: 1199.98 + 'px',
+      xl: 1349.98 + 'px',
       xxl: 1999.98 + 'px',
     },
 
     colors: {
       primary: {
-        DEFAULT: '#af1a4c',
-        dark: '#831339',
+        DEFAULT: '#B19777',
+        dark: '#8D7557',
       },
 
-      second: {
-        DEFAULT: '#d7a751',
-        dark: '#c7902e',
+      dark: {
+        DEFAULT: '#181818',
       },
 
       black: {
@@ -39,20 +36,19 @@ module.exports = {
       },
 
       white: {
-        DEFAULT: '#ffffff',
+        DEFAULT: '#FFFFFF',
       },
 
       gray: {
-        DEFAULT: '#b2b2b2',
-        dark: '#999',
+        DEFAULT: '#30373E',
       },
 
       grey: {
-        DEFAULT: '#f6f7f9',
+        DEFAULT: '#F3F3F3',
       },
 
-      dark: {
-        DEFAULT: '#303030',
+      smoke: {
+        DEFAULT: '#ECECE7',
       },
 
       red: {
@@ -60,12 +56,11 @@ module.exports = {
       },
 
       green: {
-        DEFAULT: '#27ae60',
+        DEFAULT: '#3F8D2A',
       },
     },
 
     fontFamily: {
-      alt: 'var(--font-alt)',
       base: 'var(--font-base)',
     },
 
@@ -191,12 +186,12 @@ module.exports = {
     },
 
     size: {
-      xs: '28px',
-      sm: '36px',
-      md: '40px',
-      lg: '45px',
-      xl: '56px',
-      xxl: '64px',
+      xs: '26px',
+      sm: '30px',
+      md: '44px',
+      lg: '54px',
+      xl: '64px',
+      xxl: '70px',
     },
   },
 
@@ -210,6 +205,6 @@ module.exports = {
     require('./plugins/input'),
     require('./plugins/button'),
     require('./plugins/switch'),
-    // require('./plugins/animation')
+    require('./plugins/animation'),
   ],
 }
