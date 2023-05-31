@@ -8,7 +8,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
         pointerEvents: 'none',
       },
 
-      '--btn-color': theme('colors.black.DEFAULT'),
+      '--btn-color': theme('colors.dark.DEFAULT'),
       '--btn-accent': theme('colors.white.DEFAULT'),
       color: 'var(--btn-color)',
       fontSize: theme('fontSize.16'),
@@ -22,7 +22,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       cursor: 'pointer',
 
       '&:focus': {
-        boxShadow: '0 0 0 4px var(--btn-focus)',
+        boxShadow: '0 0 0 3px var(--btn-focus)',
         backgroundColor: 'var(--btn-fade)',
       },
 
@@ -67,13 +67,13 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
 
         '&:focus': {
           color: 'var(--btn-accent)',
-          backgroundColor: 'var(--btn-color)',
+          backgroundColor: 'var(--btn-fade-min)',
         },
 
         '@media (hover)': {
           '&:hover': {
             color: 'var(--btn-accent)',
-            backgroundColor: 'var(--btn-color)',
+            backgroundColor: 'var(--btn-fade-min)',
           },
         },
       },
@@ -96,6 +96,17 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
         },
       },
 
+      '&-active': {
+        '&:active': {
+          backgroundColor: theme('colors.primary.active'),
+          borderColor: theme('colors.primary.active'),
+        },
+
+        '&:focus': {
+          '--btn-focus': theme('colors.primary.focus'),
+        },
+      },
+
       '&-contur': {
         border: '1px solid var(--btn-color)',
       },
@@ -111,7 +122,8 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
 
         return {
           '--btn-color': color.DEFAULT,
-          '--btn-fade': formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.3 }),
+          '--btn-fade': formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.2 }),
+          '--btn-fade-min': formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.6 }),
           '--btn-focus': formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.4 }),
           '--btn-dark': color.dark ? color.dark : formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.9 }),
         }

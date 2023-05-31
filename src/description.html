@@ -1,0 +1,34 @@
+<% var data = {
+
+  title: 'Описание системы',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Главный блок -->
+
+<% var main = {
+
+  height: 'min-h-[350px] lg:min-h-[500px]',
+  img: 'img/pictures/description-bg.jpg',
+  title: 'Нижнеопорные <br class="hidden md:block"> раздвижные системы'
+
+} %>
+
+<%= _.template(require('./includes/main.html').default)({data, main}) %>
+
+<!-- Креатив -->
+
+<% var creative = {
+
+  text: true,
+  btn: false
+
+} %>
+
+<%= _.template(require('./includes/creative.html').default)({creative}) %>
+
+
+<%= require('./includes/footer.html').default %>

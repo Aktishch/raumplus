@@ -1,6 +1,6 @@
 const plugin = require('tailwindcss/plugin')
 
-module.exports = plugin(({ addComponents, theme }) => {
+module.exports = plugin(({ addComponents, matchComponents, theme }) => {
   addComponents({
     '.form': {
       display: 'flex',
@@ -24,8 +24,8 @@ module.exports = plugin(({ addComponents, theme }) => {
         position: 'absolute',
         top: 0,
         bottom: 0,
-        width: theme('size.lg'),
-        height: theme('size.lg'),
+        width: 'var(--form-icon)',
+        height: 'var(--form-icon)',
         pointerEvents: 'none',
 
         '&--pointer': {
@@ -61,4 +61,18 @@ module.exports = plugin(({ addComponents, theme }) => {
       },
     },
   })
+
+  matchComponents(
+    {
+      'form-icon': (size) => {
+        return {
+          '--form-icon': size,
+        }
+      },
+    },
+
+    {
+      values: theme('size'),
+    }
+  )
 })

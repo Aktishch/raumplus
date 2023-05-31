@@ -2,25 +2,47 @@
 .btn-swipe {
   z-index: 1;
 
+  &:focus {
+    border-color: theme("colors.primary.DEFAULT");
+    color       : theme("colors.white.DEFAULT");
+
+    &::before {
+      left : 0;
+      width: 100%;
+    }
+  }
+
+  &:active {
+    border-color: theme("colors.primary.active");
+
+    &::before {
+      background-color: theme("colors.primary.active");
+    }
+  }
+
   &::before {
     content         : "";
     position        : absolute;
     inset           : 0;
     left            : auto;
     width           : 0;
-    background-color: var(--btn-color);
-    transition      : width 0.3s ease-in-out;
+    background-color: theme("colors.primary.DEFAULT");
+    transition      : width 0.3s ease-in-out, background-color 0.2s ease;
     z-index         : -1;
   }
 
   @media(hover) {
     &:hover {
-      background-color: transparent;
-      color           : var(--btn-accent);
+      color: theme("colors.white.DEFAULT");
 
       &::before {
         left : 0;
         width: 100%;
+      }
+
+      &:not(:active) {
+        background-color: transparent;
+        border-color    : theme("colors.primary.DEFAULT");
       }
     }
   }

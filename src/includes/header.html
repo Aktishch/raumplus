@@ -14,153 +14,173 @@
 
   <!-- Прелоадер -->
 
-  <div class="flex flex-col items-center justify-center fixed z-10 inset-0 bg-primary duration-5" data-preloader>
-    <picture>
-      <source srcset="img/pictures/logo-text.webp" type="image/webp">
-      <img class="w-[230px]" src="img/pictures/logo-text.png" alt="">
-    </picture>
+  <div class="flex flex-col items-center justify-center fixed z-10 inset-0 bg-grey duration-5" data-preloader>
+    <div class="pack pack-box w-full max-w-[100px]">
+      <div class="loader">
+        <span class="loader-progress">
+          <svg class="loader-icon icon">
+            <use xlink:href="img/icons.svg#loader">
+          </svg>
+        </span>
+      </div>
+    </div>
+    <p class="font-medium text-center text-20 sm:text-24">Идет загрузка...</p>
   </div>
 
   <!-- Шапка документа -->
 
-  <%
+  <% var nav = ['Каталог', 'Презентации', 'Загрузки', 'О компании', 'Статьи', 'Контакты'] %>
 
-    var header = ['geo', 'email', 'basket', 'user']
-    var nav = ['Каталог', 'Презентации', 'Загрузки', 'О компании', 'Статьи', 'Контакты']
-
-  %>
-
-  <header class="header container flex items-center justify-between gap-10 sticky top-0 left-0 right-0 bg-gray pt-5 pb-3" data-header>
-    <a class="btn btn-white w-[230px]" data-waved="light" href="/">
+  <header class="header container flex items-center justify-between gap-5 sm:gap-10 sticky z-3 top-0 left-0 right-0 bg-gray pt-4 pb-4 xl:pt-5 xl:pb-3 ease-linear duration-2" data-header>
+    <button class="btn btn-white xl:hidden text-34 sm:text-38" data-burger data-waved="light">
+      <svg class="icon">
+        <use xlink:href="img/icons.svg#burger">
+      </svg>
+    </button>
+    <a class="btn btn-white w-[120px] xl:w-[230px] mr-auto" data-waved="light" href="/">
       <picture>
         <source srcset="img/pictures/logo-text.webp" type="image/webp">
         <img class="w-full" src="img/pictures/logo-text.png" alt="">
       </picture>
     </a>
-    <div class="flex flex-col w-full max-w-[915px]">
-      <div class="flex items-center justify-end gap-6 border-b border-solid border-smoke border-opacity-10 pb-5 mb-3">
-        <a class="btn btn-smoke" href="tel: +7 495 191-08-95" data-waved="light">
+    <div class="flex flex-col xl:w-full xl:max-w-[915px]">
+      <div class="flex items-center justify-end gap-6 xl:border-b xl:border-solid xl:border-smoke xl:border-opacity-10 xl:pb-5 xl:mb-3">
+        <a class="btn btn-smoke hidden md:flex" href="tel: +7 495 191-08-95" data-waved="light">
           <svg class="icon text-24 mr-1">
             <use xlink:href="img/icons.svg#phone">
           </svg>
           <span class="font-normal text-white">+7 495 191-08-95</span>
         </a>
-        <% for (var i = 0; i < header.length; i++) { %>
-        <a class="btn btn-smoke rounded-max p-1" data-waved="light" href="/">
+        <a class="btn btn-smoke hidden xs:flex rounded-max p-1" data-waved="light" href="/">
           <svg class="icon text-24">
-            <use xlink:href="img/icons.svg#<%= header[i] %>">
+            <use xlink:href="img/icons.svg#geo">
           </svg>
         </a>
-        <% } %>
+        <a class="btn btn-smoke hidden xs:flex rounded-max p-1" data-waved="light" href="mailto:">
+          <svg class="icon text-24">
+            <use xlink:href="img/icons.svg#email">
+          </svg>
+        </a>
+        <a class="btn btn-smoke rounded-max p-1" data-waved="light" href="/">
+          <svg class="icon text-28 xs:text-24">
+            <use xlink:href="img/icons.svg#basket">
+          </svg>
+        </a>
+        <a class="btn btn-smoke rounded-max p-1" data-waved="light" href="/">
+          <svg class="icon text-28 xs:text-24">
+            <use xlink:href="img/icons.svg#user">
+          </svg>
+        </a>
       </div>
-      <div class="header__inverted relative w-full">
-        <div class="header__before flex items-center justify-between gap-10 ease-in-out duration-3">
+      <div class="header__inverted hidden xl:block relative w-full" data-inverted="before">
+        <div class="header__before flex items-center justify-between gap-10 ease-in-out duration-3" data-inverted-before>
           <nav class="flex items-center justify-between gap-5 w-full">
             <% for (var i = 0; i < nav.length; i++) { %>
             <a class="btn btn-smoke font-normal py-2 px-3" data-waved="light" href=""><%= nav[i] %></a>
             <% } %>
           </nav>
-          <button class="btn btn-smoke rounded-max p-1" data-waved="light">
+          <button class="btn btn-smoke rounded-max p-1" data-waved="light" data-inverted-search>
             <svg class="icon text-24">
               <use xlink:href="img/icons.svg#search">
             </svg>
           </button>
         </div>
-        <div class="header__after absolute inset-0 w-full h-full ease-in-out duration-3">
-          fsdfsdfdsfsdfds
+        <div class="header__after absolute inset-0 w-full h-full ease-in-out duration-3" data-inverted-after>
+          <div class="flex items-center justify-between gap-5">
+            <form class="form w-full">
+              <label class="form-label">
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input input-light input-sm pr-10" type="text" placeholder="Поиск">
+                  </div>
+                  <button class="form-icon form-icon-sm form-icon--pointer form-icon--right text-white text-24 cursor-pointer" type="submit">
+                    <svg class="icon">
+                      <use xlink:href="img/icons.svg#search">
+                    </svg>
+                  </button>
+                </div>
+              </label>
+            </form>
+            <button class="btn btn-smoke rounded-max p-1" data-waved="light" data-inverted-close>
+              <svg class="icon text-24">
+                <use xlink:href="img/icons.svg#close">
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- <header class="container flex items-center justify-between fixed z-3 top-0 left-0 right-0 bg-black py-4" data-header>
-    <a class="btn w-[150px] mr-10" data-waved="light" href="/">
-      <picture>
-        <source srcset="img/pictures/logo.webp" type="image/webp">
-        <img class="w-full" src="img/pictures/logo.png" alt="">
-      </picture>
-    </a>
-    <nav class="nav hidden lg:flex items-center justify-between gap-4 w-full max-w-[800px] ml-auto">
-      <a class="btn btn-second hover:underline underline-offset-4 text-14 font-normal uppercase p-1" data-waved="light" href="index.html">Front-page</a>
-      <a class="btn btn-second hover:underline underline-offset-4 text-14 font-normal uppercase p-1" data-waved="light" href="primary.html">Primary-page</a>
-      <a class="btn btn-second hover:underline underline-offset-4 text-14 font-normal uppercase p-1" data-waved="light" href="second.html">Second-page</a>
-      <div class="nav__accordion relative" data-accordion="hidden" data-accordion-close="scroll">
-        <div class="btn btn-second hover:underline underline-offset-4 text-14 font-normal uppercase p-1" data-accordion-toggle data-waved="light">
-          Navigation
-          <span class="nav__arrow flex items-center justify-center text-12 ml-2 ease-linear duration-3">
-            <svg class="icon">
-              <use xlink:href="img/icons.svg#arrow-right">
-            </svg>
-          </span>
-        </div>
-        <div class="nav__items absolute top-10 right-0 bg-white rounded-2 shadow-md w-full" data-accordion-content>
-          <div class="flex flex-col gap-4 p-4">
-            <a class="btn btn-gray hover:underline underline-offset-4 text-14" data-waved="dark" data-scroll="top" href="#header">Header</a>
-            <a class="btn btn-gray hover:underline underline-offset-4 text-14" data-waved="dark" data-scroll="top" href="#player">Player</a>
-            <a class="btn btn-gray hover:underline underline-offset-4 text-14" data-waved="dark" data-scroll="top" href="#footer">Footer</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <button class="btn btn-second lg:hidden text-48" data-burger data-waved="light">
-      <svg class="icon">
-        <use xlink:href="img/icons.svg#burger">
-      </svg>
-    </button>
-  </header> -->
-
   <!-- Мобильное меню -->
 
-  <% var social = ['ok', 'yt', 'inst', 'tw', 'fb', 'vk'] %>
-
-  <!-- <div class="mobile-menu fixed inset-0 z-6 duration-1" data-mobile="hidden">
-    <div class="mobile-menu__content flex flex-col bg-black bg-opacity-90 overflow-auto backdrop-blur-sm w-full max-w-[375px] h-full duration-3">
-      <div class="mobile-menu__head flex items-center justify-between gap-2 relative bg-black p-4 duration-5 delay-3">
-        <a class="btn w-[150px] mr-10" data-waved="light" href="/">
-          <picture>
-            <source srcset="img/pictures/logo.webp" type="image/webp">
-            <img class="w-full" src="img/pictures/logo.png" alt="">
-          </picture>
-        </a>
-        <input class="switch switch--toggle" data-theme="toggle" type="checkbox">
-        <button class="btn btn-second text-white text-24 p-1" data-mobile-close data-waved="light">
+  <div class="mobile-menu fixed inset-0 z-6 duration-1" data-mobile="hidden">
+    <div class="mobile-menu__content flex flex-col bg-white overflow-auto w-full max-w-[375px] h-full duration-3">
+      <div class="mobile-menu__head flex items-center gap-4 bg-gray p-4 mb-4 duration-5 delay-3">
+        <button class="btn btn-white text-38" data-mobile-close data-waved="light">
           <svg class="icon">
             <use xlink:href="img/icons.svg#close">
           </svg>
         </button>
+        <a class="btn btn-white w-[120px] mr-auto" data-waved="light" href="/">
+          <picture>
+            <source srcset="img/pictures/logo-text.webp" type="image/webp">
+            <img class="w-full" src="img/pictures/logo-text.png" alt="">
+          </picture>
+        </a>
       </div>
-      <div class="mobile-menu__nav flex flex-col gap-4 relative text-white mb-10 p-4 duration-9 delay-5">
-        <a class="hover:underline underline-offset-4 text-20 w-max" href="index.html">Front-page</a>
-        <a class="hover:underline underline-offset-4 text-20 w-max" href="primary.html">Primary</a>
-        <a class="hover:underline underline-offset-4 text-20 w-max" href="second.html">Second</a>
-        <div class="mobile-menu__accordion" data-accordion="hidden" data-accordion-close="click">
-          <div class="flex items-center link text-20 w-max" data-accordion-toggle>
-            Navigation
-            <span class="mobile-menu__arrow flex items-center justify-center text-14 opacity-60 ml-2 ease-linear duration-3">
-              <svg class="icon">
-                <use xlink:href="img/icons.svg#arrow-right">
-              </svg>
-            </span>
-          </div>
-          <div data-accordion-content>
-            <div class="flex flex-col gap-2 mt-2 pl-5">
-              <a class="hover:underline underline-offset-4 text-18 w-max" data-scroll="top" href="#header">Header</a>
-              <a class="hover:underline underline-offset-4 text-18 w-max" data-scroll="top" href="#player">Player</a>
-              <a class="hover:underline underline-offset-4 text-18 w-max" data-scroll="top" href="#header">Header</a>
+      <div class="mobile-menu__nav flex flex-col mb-5 px-4 duration-9 delay-5">
+        <form class="form w-full mb-5">
+          <label class="form-label">
+            <div class="form-wrapper">
+              <div class="input-cover">
+                <input class="input input-md pr-10" type="text" placeholder="Поиск">
+              </div>
+              <button class="form-icon form-icon-md form-icon--pointer form-icon--right text-black text-24 text-opacity-50 cursor-pointer" type="submit">
+                <svg class="icon">
+                  <use xlink:href="img/icons.svg#search">
+                </svg>
+              </button>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="mobile-menu__footer relative mt-auto px-4 pt-4 pb-10 duration-5 delay-9">
-        <div class="flex items-center justify-center gap-4">
-          <% for (var i = 0; i < social.length; i++) { %>
-          <button class="btn btn-second text-30 rounded-max" data-waved="dark">
-            <svg class="icon">
-              <use xlink:href="img/icons.svg#<%= social[i] %>">
-            </svg>
-          </button>
+          </label>
+        </form>
+        <nav class="flex flex-col items-start gap-3">
+          <% for (var i = 0; i < nav.length; i++) { %>
+          <a class="btn btn-gray font-normal text-20" data-waved="dark" href=""><%= nav[i] %></a>
           <% } %>
+        </nav>
+      </div>
+      <div class="mobile-menu__footer mt-auto pb-10 px-4 duration-5 delay-9">
+        <div class="flex flex-col items-start border-t border-solid border-black border-opacity-20 pt-5">
+          <a class="btn btn-gray mb-5" href="tel: +7 495 191-08-95" data-waved="light">
+            <svg class="icon text-24 mr-1">
+              <use xlink:href="img/icons.svg#phone">
+            </svg>
+            <span class="text-20">+7 495 191-08-95</span>
+          </a>
+          <div class="flex items-center gap-4">
+            <a class="btn btn-primary btn-fade rounded-max p-2" data-waved="light" href="/">
+              <svg class="icon text-28">
+                <use xlink:href="img/icons.svg#geo">
+              </svg>
+            </a>
+            <a class="btn btn-primary btn-fade rounded-max p-2" data-waved="light" href="mailto:">
+              <svg class="icon text-28">
+                <use xlink:href="img/icons.svg#email">
+              </svg>
+            </a>
+            <a class="btn btn-primary btn-fade rounded-max p-2" data-waved="light" href="/">
+              <svg class="icon text-28">
+                <use xlink:href="img/icons.svg#basket">
+              </svg>
+            </a>
+            <a class="btn btn-primary btn-fade rounded-max p-2" data-waved="light" href="/">
+              <svg class="icon text-28">
+                <use xlink:href="img/icons.svg#user">
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div> -->
+  </div>

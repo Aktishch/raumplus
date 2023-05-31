@@ -25,6 +25,8 @@ module.exports = {
       primary: {
         DEFAULT: '#B19777',
         dark: '#8D7557',
+        active: '#62503A',
+        focus: '#FCD9A5',
       },
 
       dark: {
@@ -87,6 +89,7 @@ module.exports = {
         46: '2.875rem',
         48: '3rem',
         50: '3.125rem',
+        title: '3.5rem',
       },
 
       lineHeight: {
@@ -186,8 +189,8 @@ module.exports = {
     },
 
     size: {
-      xs: '26px',
-      sm: '30px',
+      xs: '29px',
+      sm: '36px',
       md: '44px',
       lg: '54px',
       xl: '64px',

@@ -1,0 +1,89 @@
+<section class="creative container overflow-hidden">
+  <div class="xl:grid xl:grid-cols-[685px_625px]">
+    <div class="w-full mb-10 md:mb-16 xl:mb-0">
+      <h2 class="font-light text-primary text-30 sm:text-42 lg:text-48 leading-4 mb-5 md:mb-10 ease-in-out duration-4 anim anim--right" data-anim="hidden">Креативные решения</h2>
+      <p class="font-light text-14 sm:text-16 leading-5 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+        Компания raumplus производит системы интерьерных перегородок, придающих помещению неповторимый архитектурный облик. Распашные и раздвижныедвери, библиотеки и модульные системы для гостиной, гардеробные. Фабрика постоянно расширяет свою коллекцию и совершенствует стилистику своей продукции.
+      </p>
+      <% if (creative.text) { %>
+      <p class="font-light text-14 sm:text-16 leading-5 mt-5 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+        Компания raumplus производит системы интерьерных перегородок, придающих помещению неповторимый архитектурный облик. Распашные и раздвижныедвери, библиотеки и модульные системы для гостиной, гардеробные. Фабрика постоянно расширяет свою коллекцию и совершенствует стилистику своей продукции.
+      </p>
+      <% } %>
+      <div class="creative-slider mt-7 md:mt-16 ease-in-out duration-4 anim anim--up" data-anim="hidden">
+        <div class="swiper -mx-[15px] px-[15px] sm:mx-0 sm:px-0">
+          <div class="swiper-wrapper">
+            <% for (var i = 0; i < 3; i++) { %>
+            <a class="swiper-slide pack pack-[135] bg-grey" data-fancybox="creative" href="img/pictures/main-bg.jpg">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
+              </div>
+              <picture>
+                <img class="image" loading="lazy" src="img/pictures/main-bg.jpg" alt="">
+              </picture>
+              <div class="flex items-center justify-center absolute inset-0 bg-black font-extralight text-white text-center text-48 bg-opacity-30 opacity-0 hover:opacity-100 duration-2">+</div>
+            </a>
+            <% } %>
+          </div>
+          <button class="swiper-button-prev btn btn-dark btn-fade btn-active absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+            <svg class="icon">
+              <use xlink:href="img/icons.svg#arrow-left">
+            </svg>
+          </button>
+          <button class="swiper-button-next btn btn-dark btn-fade btn-active absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+            <svg class="icon">
+              <use xlink:href="img/icons.svg#arrow-right">
+            </svg>
+          </button>
+        </div>
+      </div>
+      <% if (creative.btn) { %>
+      <div class="mt-10 md:mt-16 ease-in-out duration-4 anim anim--up" data-anim="hidden">
+        <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe uppercase mx-auto xl:mx-0" data-waved="light">
+          ПРЕЗЕНТАЦИИ СИСТЕМ
+          <svg class="icon text-14 ml-2">
+            <use xlink:href="img/icons.svg#arrow-btn">
+          </svg>
+        </button>
+      </div>
+      <% } %>
+    </div>
+    <div class="w-full">
+      <div class="relative h-full xl:-right-8">
+        <div class="pack pack-rect-lg xs:pack-half h-full">
+          <picture>
+            <source srcset="img/pictures/points.webp" type="image/webp">
+            <img class="image" src="img/pictures/points.png" alt="">
+          </picture>
+        </div>
+        <div class="pack pack-rect-lg xs:pack-half absolute inset-0 bg-grey w-full lg:max-w-[700px] xl:max-w-[490px] h-full mx-auto ease-in-out duration-6 anim anim--left" data-anim="hidden">
+          <div class="loader">
+            <span class="loader-progress">
+              <svg class="loader-icon icon">
+                <use xlink:href="img/icons.svg#loader">
+              </svg>
+            </span>
+          </div>
+          <picture>
+            <img class="image" src="img/pictures/main-bg.jpg" alt="">
+          </picture>
+          <div class="flex items-center absolute left-2 bottom-2 xs:left-4 xs:bottom-4 bg-white w-max py-4 px-4 xs:py-6 xs:px-8">
+            <button class="btn btn-primary btn-fill btn-active bg-dark sm:text-20 rounded-max w-[42px] min-w-[42px] h-[42px] sm:w-[55px] sm:min-w-[55px] sm:h-[55px] mr-2 sm:mr-4" data-waved="light" data-fancybox href="https://www.youtube.com/watch?v=OOih21EjgW0">
+              <svg class="icon ml-1">
+                <use xlink:href="img/icons.svg#play">
+              </svg>
+            </button>
+            <div class="flex flex-col">
+              <span class="font-normal text-primary text-16 sm:text-18 leading-1 mb-1">Видео</span>
+              <span class="font-normal text-16 sm:text-18 leading-1">Производства</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

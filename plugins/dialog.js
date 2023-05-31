@@ -4,7 +4,7 @@ module.exports = plugin(
   ({ addComponents, matchComponents, theme }) => {
     addComponents({
       '.dialog': {
-        color: theme('colors.black.DEFAULT'),
+        color: theme('colors.dark.DEFAULT'),
         backgroundColor: theme('colors.white.DEFAULT'),
         maxWidth: '100%',
       },

@@ -1,14 +1,14 @@
 // Libraries
-// import fancybox from './lib/fancybox'
-// import sliderSwiper from './lib/slider-swiper'
+import fancybox from './lib/fancybox'
+import sliderSwiper from './lib/slider-swiper'
 // import yandexMap from './lib/yandex-map'
 // import airDatepicker from './lib/air-datepicker'
 // import gsap from './lib/gsap'
 
 // Scripts
-// import scrollHeader from './ts/scroll-header'
+import scrollHeader from './ts/scroll-header'
 // import currentTab from './ts/current-tab'
-// import mobileMenu from './ts/mobile-menu'
+import mobileMenu from './ts/mobile-menu'
 // import progressLine from './ts/progress-line'
 // import scrollTo from './ts/scroll-to'
 // import smartMenu from './ts/smart-menu'
@@ -16,8 +16,9 @@
 // import draggable from './ts/draggable'
 // import theme from './ts/theme'
 // import snowflakes from './ts/snowflakes'
-// // import animation from './ts/animation'
+import animation from './ts/animation'
 import waved from './ts/waved'
+import inverted from './ts/inverted'
 // import movement from './ts/movement'
 // import bubbles from './ts/bubbles'
 // import listing from './ts/listing'
@@ -28,7 +29,7 @@ import waved from './ts/waved'
 // import outNumber from './ts/out-number'
 // import writeText from './ts/write-text'
 // import downloadFiles from './ts/download-files'
-// import formSubmit from './ts/form-submit'
+import formSubmit from './ts/form-submit'
 // import formSave from './ts/form-save'
 // import dragAndDrop from './ts/drag-and-drop'
 // import choiceFile from './ts/choice-file'
@@ -54,12 +55,12 @@ import './scss/index.scss'
 
 // Connection
 window.addEventListener('DOMContentLoaded', () => {
-  // fancybox.init()
-  // sliderSwiper.init()
+  fancybox.init()
+  sliderSwiper.init()
   // airDatepicker.init()
   // currentTab.init()
-  // // scrollHeader.init()
-  // mobileMenu.init()
+  scrollHeader.init()
+  mobileMenu.init()
   // progressLine.init()
   // scrollTo.init()
   // smartMenu.init()
@@ -67,8 +68,9 @@ window.addEventListener('DOMContentLoaded', () => {
   // draggable.init()
   // theme.init()
   // snowflakes.init()
-  // // animation.init()
+  animation.init()
   waved.init()
+  inverted.init()
   // movement.init()
   // bubbles.init()
   // listing.init()
@@ -78,7 +80,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // filter.init()
   // outNumber.init()
   // writeText.init()
-  // formSubmit.init(downloadFiles.init())
+  formSubmit.init()
   // formSave.init()
   // dragAndDrop.init()
   // choiceFile.init()
@@ -103,5 +105,4 @@ window.addEventListener('load', () => {
   // yandexMap.init()
   // gsap.init()
   // warning.init()
-  // preloader.init()
 })

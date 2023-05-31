@@ -1,6 +1,6 @@
 <% var data = {
 
-  title: 'Raumplus ',
+  title: 'Главная',
   status: true
 
 } %>
@@ -8,6 +8,29 @@
 <%= _.template(require('./includes/header.html').default)({data}) %>
 
 <!-- Главный блок -->
+
+<% var main = {
+
+  height: 'min-h-[600px] xl:min-h-[750px]',
+  img: 'img/pictures/main-bg.jpg',
+  title: 'Раздвижные системы <br class="hidden md:block"> Премиум Класса',
+  text: 'современные решения для встроенной и корпусной мебели, раздвижных, распашных <br class="hidden md:block"> и подвесных дверей, гардеробных и интерьерных систем',
+  btn: 'ОСТАВИТЬ ЗАЯВКУ'
+
+} %>
+
+<%= _.template(require('./includes/main.html').default)({data, main}) %>
+
+<!-- Креатив -->
+
+<% var creative = {
+
+  text: false,
+  btn: true
+
+} %>
+
+<%= _.template(require('./includes/creative.html').default)({creative}) %>
 
 
 <%= require('./includes/footer.html').default %>

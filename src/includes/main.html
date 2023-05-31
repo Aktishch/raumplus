@@ -1,0 +1,37 @@
+<main class="main container flex flex-col items-center justify-center relative overflow-hidden <%= main.height %> py-0">
+  <div class="main__bg absolute inset-0">
+    <div class="pack bg-grey w-full h-full">
+      <div class="loader">
+        <span class="loader-progress">
+          <svg class="loader-icon icon">
+            <use xlink:href="img/icons.svg#loader">
+          </svg>
+        </span>
+      </div>
+      <picture>
+        <img class="image" loading="lazy" src="<%= main.img %>" alt="">
+      </picture>
+    </div>
+  </div>
+  <div class="flex flex-col flex-grow items-start justify-center relative text-white w-full h-full py-10">
+    <% if (data.title != 'Главная') { %>
+    <div class="flex items-center gap-1 absolute top-8 left-0 font-normal text-white text-16">
+      <a class="hover:underline underline-offset-4" href="/">Главная</a>/<span class="font-semibold text-primary pointer-events-none"><%= data.title %></span>
+    </div>
+    <% } %>
+    <h1 class="font-light uppercase text-30 sm:text-42 lg:text-title leading-4 ease-in-out duration-4 anim anim--up" data-anim="hidden"><%= main.title %></h1>
+    <% if (main.text) { %>
+    <p class="font-light text-14 sm:text-16 leading-5 mt-4 ease-in-out duration-4 delay-2 anim anim--up" data-anim="hidden"><%= main.text %></p>
+    <% } %>
+    <% if (main.btn) { %>
+    <div class="mt-11 ease-in-out duration-4 delay-4 anim anim--up" data-anim="hidden">
+      <button class="btn btn-white btn-lg btn-contur btn-active btn-swipe uppercase" data-waved="light">
+        <%= main.btn %>
+        <svg class="icon text-14 ml-2">
+          <use xlink:href="img/icons.svg#arrow-btn">
+        </svg>
+      </button>
+    </div>
+    <% } %>
+  </div>
+</main>

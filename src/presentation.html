@@ -1,0 +1,23 @@
+<% var data = {
+
+  title: 'Презентация',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Главный блок -->
+
+<% var main = {
+
+  height: 'min-h-[280px] xl:min-h-[380px]',
+  img: 'img/pictures/presentation-bg.jpg',
+  title: 'Презентация систем'
+
+} %>
+
+<%= _.template(require('./includes/main.html').default)({data, main}) %>
+
+
+<%= require('./includes/footer.html').default %>
