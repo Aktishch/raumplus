@@ -2,6 +2,8 @@ const plugin = require('tailwindcss/plugin')
 const { parseColor, formatColor } = require('tailwindcss/lib/util/color')
 
 module.exports = plugin(({ addComponents, theme }) => {
+  const grey = parseColor(theme('colors.dark.DEFAULT')).color
+
   addComponents({
     '.switch': {
       display: 'flex',
@@ -10,7 +12,11 @@ module.exports = plugin(({ addComponents, theme }) => {
       position: 'relative',
       userSelect: 'none',
       color: theme('colors.primary.DEFAULT'),
-      border: `1px solid ${theme('colors.gray.DEFAULT')}`,
+      border: `1px solid ${formatColor({
+        mode: 'rgba',
+        color: grey,
+        alpha: 0.2,
+      })}`,
       transition: '0.2s linear',
       appearance: 'none',
       cursor: 'pointer',
@@ -24,16 +30,16 @@ module.exports = plugin(({ addComponents, theme }) => {
         '&:hover': {
           boxShadow: `0 0 0 4px ${formatColor({
             mode: 'rgba',
-            color: parseColor(theme('colors.gray.DEFAULT')).color,
-            alpha: 0.4,
+            color: grey,
+            alpha: 0.1,
           })}`,
         },
       },
 
       '&--checkbox': {
-        minWidth: '24px',
-        width: '24px',
-        height: '24px',
+        minWidth: '20px',
+        width: '20px',
+        height: '20px',
         borderRadius: '2px',
 
         '&::after': {
@@ -45,7 +51,7 @@ module.exports = plugin(({ addComponents, theme }) => {
           borderRadius: 'inherit',
           opacity: 0,
           transition: 'opacity 0.1s linear',
-          mask: 'url("../img/pictures/checkbox.svg") no-repeat center / 16px',
+          mask: 'url("../img/pictures/checkbox.svg") no-repeat center / 12px',
         },
 
         '&:checked': {

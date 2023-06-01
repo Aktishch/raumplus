@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin')
 const { parseColor, formatColor } = require('tailwindcss/lib/util/color')
 
 module.exports = plugin(({ addComponents, matchComponents, theme }) => {
-  const grey = parseColor(theme('colors.black.DEFAULT')).color
+  const grey = parseColor(theme('colors.dark.DEFAULT')).color
 
   addComponents({
     '.input-cover': {

@@ -12,7 +12,7 @@
 <% var main = {
 
   height: 'min-h-[350px] lg:min-h-[500px]',
-  img: 'img/pictures/description-bg.jpg',
+  img: 'description-bg',
   title: 'Нижнеопорные <br class="hidden md:block"> раздвижные системы'
 
 } %>
@@ -31,4 +31,4 @@
 <%= _.template(require('./includes/creative.html').default)({creative}) %>
 
 
-<%= require('./includes/footer.html').default %>
+<%= _.template(require('./includes/footer.html').default)({}) %>

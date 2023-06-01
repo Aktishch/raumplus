@@ -1,12 +1,12 @@
 <section class="creative container overflow-hidden">
-  <div class="xl:grid xl:grid-cols-[685px_625px]">
-    <div class="w-full mb-10 md:mb-16 xl:mb-0">
-      <h2 class="font-light text-primary text-30 sm:text-42 lg:text-48 leading-4 mb-5 md:mb-10 ease-in-out duration-4 anim anim--right" data-anim="hidden">Креативные решения</h2>
-      <p class="font-light text-14 sm:text-16 leading-5 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+  <div class="flex flex-col xl:flex-row items-stretch justify-between">
+    <div class="w-full xl:max-w-[685px] mb-10 md:mb-16 xl:mb-0">
+      <h2 class="font-light text-primary text-30 sm:text-42 lg:text-48 leading-2 mb-5 md:mb-10 ease-in-out duration-4 anim anim--right" data-anim="hidden">Креативные решения</h2>
+      <p class="font-light text-16 leading-5 ease-in-out duration-4 anim anim--right" data-anim="hidden">
         Компания raumplus производит системы интерьерных перегородок, придающих помещению неповторимый архитектурный облик. Распашные и раздвижныедвери, библиотеки и модульные системы для гостиной, гардеробные. Фабрика постоянно расширяет свою коллекцию и совершенствует стилистику своей продукции.
       </p>
       <% if (creative.text) { %>
-      <p class="font-light text-14 sm:text-16 leading-5 mt-5 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+      <p class="font-light text-16 leading-5 mt-5 ease-in-out duration-4 anim anim--right" data-anim="hidden">
         Компания raumplus производит системы интерьерных перегородок, придающих помещению неповторимый архитектурный облик. Распашные и раздвижныедвери, библиотеки и модульные системы для гостиной, гардеробные. Фабрика постоянно расширяет свою коллекцию и совершенствует стилистику своей продукции.
       </p>
       <% } %>
@@ -23,7 +23,8 @@
                 </span>
               </div>
               <picture>
-                <img class="image" loading="lazy" src="img/pictures/main-bg.jpg" alt="">
+                <source srcset="img/pictures/creative-img.webp" type="image/webp">
+                <img class="image" loading="lazy" src="img/pictures/creative-img.jpg" alt="">
               </picture>
               <div class="flex items-center justify-center absolute inset-0 bg-black font-extralight text-white text-center text-48 bg-opacity-30 opacity-0 hover:opacity-100 duration-2">+</div>
             </a>
@@ -52,7 +53,7 @@
       </div>
       <% } %>
     </div>
-    <div class="w-full">
+    <div class="w-full xl:max-w-[625px]">
       <div class="relative h-full xl:-right-8">
         <div class="pack pack-rect-lg xs:pack-half h-full">
           <picture>
@@ -60,7 +61,7 @@
             <img class="image" src="img/pictures/points.png" alt="">
           </picture>
         </div>
-        <div class="pack pack-rect-lg xs:pack-half absolute inset-0 bg-grey w-full lg:max-w-[700px] xl:max-w-[490px] h-full mx-auto ease-in-out duration-6 anim anim--left" data-anim="hidden">
+        <div class="creative__pack pack pack-rect-lg xs:pack-half absolute inset-0 bg-grey w-full lg:max-w-[700px] xl:max-w-[490px] h-full mx-auto ease-in-out duration-6 anim anim--left" data-anim="hidden">
           <div class="loader">
             <span class="loader-progress">
               <svg class="loader-icon icon">
@@ -69,9 +70,10 @@
             </span>
           </div>
           <picture>
-            <img class="image" src="img/pictures/main-bg.jpg" alt="">
+            <source srcset="img/pictures/creative-img.webp" type="image/webp">
+            <img class="image" loading="lazy" src="img/pictures/creative-img.jpg" alt="">
           </picture>
-          <div class="flex items-center absolute left-2 bottom-2 xs:left-4 xs:bottom-4 bg-white w-max py-4 px-4 xs:py-6 xs:px-8">
+          <div class="flex items-center absolute z-1 left-2 bottom-2 xs:left-4 xs:bottom-4 bg-white w-max py-4 px-4 xs:py-6 xs:px-8">
             <button class="btn btn-primary btn-fill btn-active bg-dark sm:text-20 rounded-max w-[42px] min-w-[42px] h-[42px] sm:w-[55px] sm:min-w-[55px] sm:h-[55px] mr-2 sm:mr-4" data-waved="light" data-fancybox href="https://www.youtube.com/watch?v=OOih21EjgW0">
               <svg class="icon ml-1">
                 <use xlink:href="img/icons.svg#play">

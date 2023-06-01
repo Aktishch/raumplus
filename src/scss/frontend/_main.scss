@@ -103,3 +103,30 @@
     }
   }
 }
+
+// Креатив
+.creative {
+  &__pack {
+    &::after {
+      content   : "";
+      position  : absolute;
+      inset     : 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, theme("colors.black.DEFAULT") 100%);
+    }
+  }
+}
+
+// Презентация
+.presentation {
+  &__file {
+    @screen lg {
+      transform: translate(calc(var(--x) * 30), calc(var(--y) * 20));
+    }
+  }
+
+  &__pencils {
+    @screen lg {
+      transform: translate(calc(var(--x) * -20), calc(var(--y) * -10));
+    }
+  }
+}

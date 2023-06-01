@@ -90,6 +90,7 @@ module.exports = {
         48: '3rem',
         50: '3.125rem',
         title: '3.5rem',
+        number: '7.5rem',
       },
 
       lineHeight: {

@@ -1,35 +1,125 @@
-      <!-- Карта -->
+<!-- Контакты -->
 
-      <!-- <section class="container container--distance relative bg-grey overflow-hidden h-96 dark:bg-dark">
-        <div class="loader">
-          <span class="loader-progress">
-            <svg class="loader-icon icon">
-              <use xlink:href="img/icons.svg#loader">
+<% var contacts = [
+  'Каталог систем',
+  'Личный кабинет',
+  'Презентации систем',
+  'Закладки',
+  'Дистрибуция',
+  'Заказы',
+  'Загрузки',
+  'Политика конфиденциальности',
+  'Статьи',
+  'Условия обработки куки файлов',
+  'Контакты'
+] %>
+
+<section class="contacts container relative bg-black sm:bg-dark overflow-hidden">
+  <div class="hidden sm:block absolute inset-0">
+    <picture>
+      <source srcset="img/pictures/map.webp" type="image/webp">
+      <img class="image mix-blend-hard-light" src="img/pictures/map.png" alt="">
+    </picture>
+  </div>
+  </div>
+  <div class="relative text-white">
+    <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-4 sm:gap-8 xl:gap-5 border-b border-solid border-white pb-5 mb-5 lg:pb-10 lg:mb-10">
+      <div class="flex flex-col items-start">
+        <h2 class="font-light text-28 sm:text-34 leading-2 mb-2 xl:mb-5 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+          Служба поддержки клиентов <br class="hidden xl:block">
+          <span class="text-primary">raumplus</span>
+        </h2>
+        <p class="font-light text-14 leading-4 ease-in-out duration-4 anim anim--right" data-anim="hidden">Проконсультируем по всем интересущим вас вопросам</p>
+      </div>
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 ease-in-out duration-4 anim anim--left" data-anim="hidden">
+        <div class="flex flex-col sm:items-end">
+          <span class="font-normal text-14 leading-1 mb-3 sm:mb-1">Позвоните сейчас</span>
+          <a class="btn btn-white font-normal text-24 leading-1" href="tel: +7 495 191-08-95" data-waved="light">
+            <svg class="icon mr-1">
+              <use xlink:href="img/icons.svg#phone">
             </svg>
-          </span>
+            +7 495 191-08-95
+          </a>
         </div>
-        <div class="absolute inset-0 overflow-hidden" id="map"></div>
-      </section> -->
-
-      <!-- Подвал -->
-
-      <!-- <footer class="container flex flex-wrap flex-col md:flex-row items-center justify-between gap-4 bg-black text-second pt-4 pb-10 md:pb-4" id="footer">
-        <a class="btn w-[150px]" data-waved="light" href="/">
+        <button class="btn btn-primary btn-lg btn-light text-dark uppercase" data-waved="dark">
+          <svg class="icon mr-1">
+            <use xlink:href="img/icons.svg#phone">
+          </svg>
+          заказать звонок
+        </button>
+      </div>
+    </div>
+    <div class="flex flex-wrap xl:flex-nowrap justify-between gap-6 sm:gap-10 xl:gap-16">
+      <div class="flex flex-col items-start w-full xl:max-w-[340px] ease-in-out duration-4 anim anim--up" data-anim="hidden">
+        <a class="btn btn-white w-[120px] sm:w-[230px] mb-5 xl:mb-10" data-waved="dark" href="/">
           <picture>
             <source srcset="img/pictures/logo.webp" type="image/webp">
             <img class="w-full" src="img/pictures/logo.png" alt="">
           </picture>
         </a>
-        <address class="text-center text-16 leading-4">​Рождественская набережная, <br> 45/1​5 офис; 3 этаж</address>
-        <span class="btn btn-second text-18 w-max p-1" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Privacy policy</span>
-        <span class="text-18">
-          Разработка: <a class="underline w-max" href="https://stdkit.ru/" target="_blank">Студия К.И.Т.</a>
-        </span>
-      </footer>
-
+        <p class="font-light text-16 leading-5 mb-4 sm:mb-8">
+          Компания raumplus производит системы интерьерных перегородок, придающих помещению неповторимый архитектурный облик. Распашные и раздвижныедвери, библиотеки и модульные системы для гостиной, гардеробные.
+        </p>
+        <a class="btn btn-white font-light text-24 leading-1" href="tel: +7 495 191-08-95" data-waved="light">
+          <svg class="icon mr-1">
+            <use xlink:href="img/icons.svg#phone">
+          </svg>
+          +7 495 191-08-95
+        </a>
       </div>
-      </div> -->
+      <div class="flex flex-col items-start w-full lg:max-w-[510px] ease-in-out duration-4 xl:delay-2 anim anim--up" data-anim="hidden">
+        <div class="border-b border-solid border-white border-opacity-25 w-full max-w-[290px] mb-8">
+          <h3 class="font-light text-primary text-24 sm:text-30 leading-2 pb-3">Информация</h3>
+          <div class="border-b border-solid border-primary w-full max-w-[145px] -mb-px"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[230px_280px] gap-3">
+          <% for (var i = 0; i < contacts.length; i++) { %>
+          <div class="flex items-start">
+            <a class="btn btn-primary font-light" data-waved="dark" href="">
+              <svg class="icon text-20 mr-1">
+                <use xlink:href="img/icons.svg#arrow-right">
+              </svg>
+              <span class="text-white"><%= contacts[i] %></span>
+            </a>
+          </div>
+          <% } %>
+        </div>
+      </div>
+      <div class="flex flex-col items-start w-full lg:max-w-[305px] ease-in-out duration-4 xl:delay-4 anim anim--up" data-anim="hidden">
+        <div class="border-b border-solid border-white border-opacity-25 w-full max-w-[290px] mb-8">
+          <h3 class="font-light text-primary text-24 sm:text-30 leading-2 pb-3">Подпишитесь</h3>
+          <div class="border-b border-solid border-primary w-full max-w-[145px] -mb-px"></div>
+        </div>
+        <p class="font-light text-16 leading-5 mb-5">Подпишитесь на нашу рассылку, чтобы быть в курсе акций и новинок</p>
+        <form class="form" data-form="submit">
+          <div class="flex flex-row items-center mb-6">
+            <label class="form-label" data-label="input">
+              <div class="form-wrapper">
+                <div class="input-cover">
+                  <input class="input input-lg" data-input="email" type="text" placeholder="E-mail" name="email">
+                </div>
+                <span class="form-error" data-error>Введите корректный адрес!</span>
+              </div>
+            </label>
+            <button class="btn btn-primary btn-lg btn-fill btn-active uppercase px-5" data-waved="dark" type="submit">ОТПРАВИТЬ</button>
+          </div>
+          <label class="form-label flex-row items-center cursor-pointer">
+            <input class="switch switch--checkbox border-gray mr-2" type="checkbox" required>
+            <span class="font-normal text-12 leading-1">Я согласен с Политикой конфиденциальнсти</span>
+          </label>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
-      </body>
+<!-- Подвал -->
 
-      </html>
+<footer class="footer container flex flex-wrap items-center bg-dark text-white pt-6 pb-10 sm:pb-6">
+  <span class="font-normal text-primary text-14 leading-2 mr-1">raumplus</span>
+  <span class="font-normal text-14 leading-2">© Все права защищены - 2023</span>
+</footer>
+
+</body>
+
+</html>

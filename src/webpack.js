@@ -24,9 +24,9 @@ import inverted from './ts/inverted'
 // import listing from './ts/listing'
 // import accordion from './ts/accordion'
 // import formatBg from './ts/format-bg'
-// import parallax from './ts/parallax'
+import parallax from './ts/parallax'
 // import filter from './ts/filter'
-// import outNumber from './ts/out-number'
+import outNumber from './ts/out-number'
 // import writeText from './ts/write-text'
 // import downloadFiles from './ts/download-files'
 import formSubmit from './ts/form-submit'
@@ -76,9 +76,9 @@ window.addEventListener('DOMContentLoaded', () => {
   // listing.init()
   // accordion.init()
   // formatBg.init()
-  // parallax.init()
+  parallax.init()
   // filter.init()
-  // outNumber.init()
+  outNumber.init()
   // writeText.init()
   formSubmit.init()
   // formSave.init()

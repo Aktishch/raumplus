@@ -12,7 +12,7 @@
 <% var main = {
 
   height: 'min-h-[600px] xl:min-h-[750px]',
-  img: 'img/pictures/main-bg.jpg',
+  img: 'main-bg',
   title: 'Раздвижные системы <br class="hidden md:block"> Премиум Класса',
   text: 'современные решения для встроенной и корпусной мебели, раздвижных, распашных <br class="hidden md:block"> и подвесных дверей, гардеробных и интерьерных систем',
   btn: 'ОСТАВИТЬ ЗАЯВКУ'
@@ -32,5 +32,302 @@
 
 <%= _.template(require('./includes/creative.html').default)({creative}) %>
 
+<!-- О нас  -->
 
-<%= require('./includes/footer.html').default %>
+<% var about = [
+  {
+    img: '1',
+    title: 'О Компании',
+    text: 'Приглашаем к сотрудничеству дистрибьютеров, производителей <br class="hidden xl:block"> мебели, дизайнеров, архитекторов'
+  },
+  {
+    img: '2',
+    title: 'Качество',
+    text: 'Приглашаем к сотрудничеству дистрибьютеров, производителей <br class="hidden xl:block"> мебели, дизайнеров, архитекторов'
+  },
+] %>
+
+<section class="about bg-black bg-opacity-90 lg:bg-opacity-0">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-0 xxl:max-w-[1920px] xxl:mx-auto">
+    <% for (var i = 0; i < about.length; i++) { %>
+    <div class="relative text-white overflow-hidden">
+      <div class="absolute inset-0">
+        <div class="pack bg-grey w-full h-full">
+          <div class="loader">
+            <span class="loader-progress">
+              <svg class="loader-icon icon">
+                <use xlink:href="img/icons.svg#loader">
+              </svg>
+            </span>
+          </div>
+          <picture>
+            <source srcset="img/pictures/about-bg-<%= about[i].img %>.webp" type="image/webp">
+            <img class="image" loading="lazy" src="img/pictures/about-bg-<%= about[i].img %>.jpg" alt="">
+          </picture>
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-center relative bg-black bg-opacity-80 lg:bg-opacity-70 w-full min-h-[350px] lg:min-h-[570px] py-7 px-4 sm:py-10 sm:px-10">
+        <h2 class="font-light text-center text-30 sm:text-42 lg:text-48 leading-2 mb-6 ease-in-out duration-4 anim anim--up" data-anim="hidden"><%= about[i].title %></h2>
+        <p class="font-light text-center text-16 leading-5 mb-8 ease-in-out duration-4 anim anim--up" data-anim="hidden"><%= about[i].text %></p>
+        <div class="ease-in-out duration-4 anim anim--up" data-anim="hidden">
+          <button class="btn btn-white btn-lg btn-contur btn-active btn-swipe uppercase" data-waved="light">
+            подробнее
+            <svg class="icon text-14 ml-2">
+              <use xlink:href="img/icons.svg#arrow-btn">
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<!-- Этапы -->
+
+<% var stages = [
+  {
+    delay: '',
+    number: '01',
+    title: 'Заявка',
+    text: 'Заявка на продукцию raumplus <br class="hidden md:block"> формируется в вашем <br> <a class="font-medium text-primary underline underline-offset-4" href="">личном кабинете</a>'
+  },
+  {
+    delay: 'xl:delay-2',
+    number: '02',
+    title: 'Расчет',
+    text: 'Персональный менеджер <br class="hidden md:block"> проконсультирует, выполнит расчет <br class="hidden md:block"> и выставит счет'
+  },
+  {
+    delay: 'xl:delay-4',
+    number: '03',
+    title: 'Резерв',
+    text: 'После оплаты счета <br class="hidden md:block"> мы зарезервируем ваши товары <br class="hidden md:block"> на складе'
+  },
+  {
+    delay: 'xl:delay-6',
+    number: '04',
+    title: 'Отгрузка',
+    text: 'В согласованное время доставим <br class="hidden md:block"> ваш заказ до ТК или отгрузим <br class="hidden md:block"> с нашего склада'
+  }
+] %>
+
+<section class="stages container container--xs relative overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="pack w-full h-full">
+      <picture>
+        <source srcset="img/pictures/stages-bg.webp" type="image/webp">
+        <img class="image md:image-top-right xl:image-bottom-left" src="img/pictures/stages-bg.png" alt="">
+      </picture>
+    </div>
+  </div>
+  <div class="relative">
+    <h2 class="font-light text-center text-30 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-8 xl:mb-16 ease-in-out duration-4 anim anim--up" data-anim="hidden">
+      <span class="text-primary">Четыре простых шага</span> для заказа <br class="hidden md:block"> raumplus
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+      <% for (var i = 0; i < stages.length; i++) { %>
+      <div class="flex flex-col items-center justify-center text-center <%= stages[i].delay %> ease-in-out duration-4 anim anim--up" data-anim="hidden">
+        <div class="font-light text-primary text-7xl sm:text-number leading-1 sm:mb-5"><%= stages[i].number %></div>
+        <h3 class="font-light text-20 sm:text-24 leading-3 mb-4"><%= stages[i].title %></h3>
+        <p class="font-light text-dark text-opacity-70 text-16 leading-5"><%= stages[i].text %></p>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<!-- Преимущества -->
+
+<% var advantages = [
+  {
+    delay: '',
+    icon: 'protect',
+    title: '3 года гарантии',
+    plus: true
+  },
+  {
+    delay: 'xl:delay-2',
+    icon: 'delivery',
+    title: 'Доставка по РФ',
+    plus: true
+  },
+  {
+    delay: 'xl:delay-4',
+    icon: 'certificate',
+    title: 'Сертификаты',
+    plus: true
+  },
+  {
+    delay: 'xl:delay-6',
+    icon: 'percent',
+    title: 'Система скидок',
+    plus: false
+  }
+] %>
+
+<section class="advantages container container--xs relative overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="pack bg-black w-full h-full">
+      <div class="loader">
+        <span class="loader-progress">
+          <svg class="loader-icon icon">
+            <use xlink:href="img/icons.svg#loader">
+          </svg>
+        </span>
+      </div>
+      <picture>
+        <source srcset="img/pictures/advantages-bg.webp" type="image/webp">
+        <img class="image" loading="lazy" src="img/pictures/advantages-bg.jpg" alt="">
+      </picture>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:justify-between relative gap-7 sm:gap-4 text-white">
+    <% for (var i = 0; i < advantages.length; i++) { %>
+    <div class="flex items-center gap-4 <%= advantages[i].delay %> ease-in-out duration-4 anim anim--up" data-anim="hidden">
+      <div class="flex flex-col items-center justify-center text-center">
+        <svg class="icon text-primary text-44 mb-4">
+          <use xlink:href="img/icons.svg#<%= advantages[i].icon %>">
+        </svg>
+        <h3 class="font-light text-24 leading-3 mb-4"><%= advantages[i].title %></h3>
+        <p class="font-light text-16 leading-5">
+          Идеальное решение, когда напольная направляющая невозможна
+        </p>
+      </div>
+      <% if (advantages[i].plus) { %>
+      <div class="hidden xl:block text-6xl opacity-80">
+        <svg class="icon">
+          <use xlink:href="img/icons.svg#plus">
+        </svg>
+      </div>
+      <% } %>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<!-- Сотрудничество -->
+
+<section class="cooperation container flex items-center relative overflow-hidden lg:min-h-[640px]">
+  <div class="hidden sm:block absolute inset-0">
+    <div class="pack bg-grey w-full h-full">
+      <div class="loader">
+        <span class="loader-progress">
+          <svg class="loader-icon icon">
+            <use xlink:href="img/icons.svg#loader">
+          </svg>
+        </span>
+      </div>
+      <picture>
+        <source srcset="img/pictures/cooperation-bg.webp" type="image/webp">
+        <img class="image image-top-left" loading="lazy" src="img/pictures/cooperation-bg.jpg" alt="">
+      </picture>
+    </div>
+  </div>
+  <div class="flex flex-col items-start relative w-full sm:max-w-[450px] lg:max-w-[515px]">
+    <h2 class="font-light text-30 sm:text-42 lg:text-48 leading-2 mb-5 md:mb-8 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+      <span class="text-primary">Расширяем</span> партнерскую сеть
+    </h2>
+    <p class="font-light text-16 leading-5 mb-12 ease-in-out duration-4 anim anim--right" data-anim="hidden">Приглашаем к сотрудничеству дистрибьютеров, производителей мебели, дизайнеров, архитекторов</p>
+    <div class="ease-in-out duration-4 anim anim--right" data-anim="hidden">
+      <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe uppercase mx-auto xl:mx-0" data-waved="light">
+        СТАТЬ ПАРТНЕРОМ
+        <svg class="icon text-14 ml-2">
+          <use xlink:href="img/icons.svg#arrow-btn">
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Достижения -->
+
+<% var achievements = [
+  {
+    number: '70',
+    title: 'стран',
+    text: 'Международная сеть raumplus сотрудничает с партнерами на всех континентах'
+  },
+  {
+    number: '200',
+    title: 'шоурумов',
+    text: 'Предоставляем клиентам возможность заказать системы raumplus по всему миру'
+  },
+  {
+    number: '30',
+    title: 'лет истории',
+    text: 'Более 30 лет успешного развития вместе с Партнерами по всему миру'
+  },
+  {
+    number: '30',
+    title: 'международных наград',
+    text: 'Мы стабильно получаем международные награды за инновации в дизайне и качестве'
+  }
+] %>
+
+<section class="achievements container container--xs relative overflow-hidden" data-section>
+  <div class="absolute inset-0">
+    <div class="pack bg-black w-full h-full">
+      <div class="loader">
+        <span class="loader-progress">
+          <svg class="loader-icon icon">
+            <use xlink:href="img/icons.svg#loader">
+          </svg>
+        </span>
+      </div>
+      <picture>
+        <source srcset="img/pictures/achievements-bg.webp" type="image/webp">
+        <img class="image image-top-right" loading="lazy" src="img/pictures/achievements-bg.jpg" alt="">
+      </picture>
+    </div>
+  </div>
+  <div class="relative text-white">
+    <h2 class="font-light text-center text-30 sm:text-42 lg:text-48 leading-2 mb-8 xl:mb-16 ease-in-out duration-4 anim anim--up" data-anim="hidden">
+      <span class="text-primary">Достижения raumplus</span> <br> в цифрах
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 xl:gap-10">
+      <% for (var i = 0; i < achievements.length; i++) { %>
+      <div class="flex flex-col items-center text-center">
+        <div class="font-light text-primary text-42 sm:text-48 leading-1 mb-2 sm:mb-5">
+          <span data-number="<%= achievements[i].number %>" data-number-step="1" data-number-time="2">0</span>+
+        </div>
+        <h3 class="font-light text-22 leading-2 mb-4"><%= achievements[i].title %></h3>
+        <p class="font-light text-16 leading-5"><%= achievements[i].text %></p>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<!-- Презентация -->
+
+<section class="presentation container flex items-center relative overflow-hidden lg:min-h-[640px]" data-parallax>
+  <div class="hidden md:block absolute inset-0 opacity-30 lg:opacity-100">
+    <picture>
+      <source srcset="img/pictures/file.webp" type="image/webp">
+      <img class="presentation__file absolute top-40 xl:top-14 right-5 xl:right-[15%] w-full max-w-[500px] xl:max-w-[735px] ease-linear duration-2" data-parallax-item src="img/pictures/file.png" alt="">
+    </picture>
+    <picture>
+      <source srcset="img/pictures/pencils.webp" type="image/webp">
+      <img class="presentation__pencils absolute top-14 right-10 lg:right-1/3 xl:right-1/2 w-full max-w-[100px] xl:max-w-[135px] ease-linear duration-2" data-parallax-item src="img/pictures/pencils.png" alt="">
+    </picture>
+  </div>
+  <div class="flex flex-col items-start relative w-full sm:max-w-[450px] lg:max-w-[530px]">
+    <h2 class="font-light text-30 sm:text-42 lg:text-48 leading-2 mb-5 md:mb-8 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+      <span class="text-primary">Скачать каталог раздвижных</span> <br> систем raumplus
+    </h2>
+    <p class="font-light text-16 leading-5 mb-12 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+      Представляем Вам самую последнюю версию каталога продукции компании raumplus. Вы можете ознакомиться со всеми типами раздвижных систем, поставляемых нами в Россию.
+    </p>
+    <div class="ease-in-out duration-4 anim anim--right" data-anim="hidden">
+      <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe uppercase mx-auto xl:mx-0" data-waved="light">
+        СКАЧАТЬ КАТАЛОГ
+        <svg class="icon text-14 ml-2">
+          <use xlink:href="img/icons.svg#arrow-btn">
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>
