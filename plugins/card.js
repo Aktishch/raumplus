@@ -10,8 +10,11 @@ module.exports = plugin(({ addComponents, theme }) => {
       flexDirection: 'column',
       position: 'relative',
       backgroundColor: theme('colors.white.DEFAULT'),
-      boxShadow: `8px 8px 4px ${formatColor({ mode: 'rgba', color: shadow, alpha: 0.2 })}`,
-      borderRadius: '16px',
+      boxShadow: ` 0px 1px 4px ${formatColor({ mode: 'rgba', color: shadow, alpha: 0.1 })}, 0px 8px 16px ${formatColor({
+        mode: 'rgba',
+        color: shadow,
+        alpha: 0.1,
+      })}`,
       transition: 'box-shadow 0.2s ease, transform 0.2s ease',
       overflow: 'hidden',
 
@@ -22,7 +25,15 @@ module.exports = plugin(({ addComponents, theme }) => {
 
         '@media (hover)': {
           '&:hover': {
-            boxShadow: `8px 8px 4px ${formatColor({ mode: 'rgba', color: shadow, alpha: 0.4 })}`,
+            boxShadow: ` 0px 1px 4px ${formatColor({
+              mode: 'rgba',
+              color: shadow,
+              alpha: 0.2,
+            })}, 0px 8px 16px ${formatColor({
+              mode: 'rgba',
+              color: shadow,
+              alpha: 0.2,
+            })}`,
           },
         },
       },

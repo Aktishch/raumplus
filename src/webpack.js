@@ -10,7 +10,7 @@ import scrollHeader from './ts/scroll-header'
 // import currentTab from './ts/current-tab'
 import mobileMenu from './ts/mobile-menu'
 // import progressLine from './ts/progress-line'
-// import scrollTo from './ts/scroll-to'
+import scrollTo from './ts/scroll-to'
 // import smartMenu from './ts/smart-menu'
 // import social from './ts/social'
 // import draggable from './ts/draggable'
@@ -21,7 +21,7 @@ import waved from './ts/waved'
 import inverted from './ts/inverted'
 // import movement from './ts/movement'
 // import bubbles from './ts/bubbles'
-// import listing from './ts/listing'
+import listing from './ts/listing'
 // import accordion from './ts/accordion'
 // import formatBg from './ts/format-bg'
 import parallax from './ts/parallax'
@@ -62,7 +62,7 @@ window.addEventListener('DOMContentLoaded', () => {
   scrollHeader.init()
   mobileMenu.init()
   // progressLine.init()
-  // scrollTo.init()
+  scrollTo.init()
   // smartMenu.init()
   // social.init()
   // draggable.init()
@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
   inverted.init()
   // movement.init()
   // bubbles.init()
-  // listing.init()
+  listing.init()
   // accordion.init()
   // formatBg.init()
   parallax.init()

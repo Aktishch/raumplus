@@ -49,13 +49,18 @@ $close: ".carousel__button.is-close";
     display        : flex;
     align-items    : center;
     justify-content: center;
-    position       : static;
 
     &-bullet {
-      width           : 12px;
-      height          : 12px;
-      background-color: currentColor;
+      width           : 8px;
+      height          : 8px;
+      background-color: theme("colors.white.DEFAULT");
+      opacity         : 1;
       transition      : background-color 0.2s ease;
+      margin-inline   : 6px !important;
+
+      &-active {
+        background-color: theme("colors.dark.DEFAULT");
+      }
     }
   }
 

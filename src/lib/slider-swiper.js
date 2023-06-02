@@ -5,17 +5,19 @@ import media from '../ts/functions/media'
 // import quiz from '../ts/quiz'
 
 const init = () => {
-  const creativeSlider = new Swiper('.creative-slider .swiper', {
+  new Swiper('.creative-slider .swiper', {
     navigation: {
       prevEl: '.creative-slider .swiper-button-prev',
       nextEl: '.creative-slider .swiper-button-next',
     },
 
     slidesPerView: 1.3,
+    slidesPerGroup: 1,
     spaceBetween: 16,
     speed: 500,
     grabCursor: true,
     loop: true,
+    watchSlidesProgress: true,
 
     breakpoints: {
       [media.xs]: {
@@ -34,6 +36,65 @@ const init = () => {
       disableOnInteraction: false,
     },
   })
+
+  new Swiper('.system-slider .swiper', {
+    pagination: {
+      el: '.system-slider .swiper-pagination',
+      clickable: true,
+    },
+
+    navigation: {
+      prevEl: '.system-slider .swiper-button-prev',
+      nextEl: '.system-slider .swiper-button-next',
+    },
+
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 16,
+    speed: 500,
+    grabCursor: true,
+    watchSlidesProgress: true,
+  })
+
+  const productionBullets = new Swiper('.production-bullets .swiper', {
+    navigation: {
+      prevEl: '.production-bullets .swiper-button-prev',
+      nextEl: '.production-bullets .swiper-button-next',
+    },
+
+    slidesPerView: 3,
+    slidesPerGroup: 1,
+    spaceBetween: 16,
+    speed: 500,
+    grabCursor: true,
+    watchSlidesProgress: true,
+
+    breakpoints: {
+      [media.lg]: {
+        direction: 'vertical',
+        slidesPerView: 'auto',
+      },
+
+      [media.xl]: {
+        direction: 'horizontal',
+        slidesPerView: 4,
+      },
+    },
+  })
+
+  new Swiper('.production-slider .swiper', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 16,
+    speed: 500,
+    grabCursor: true,
+    watchSlidesProgress: true,
+
+    thumbs: {
+      swiper: productionBullets,
+    },
+  })
+
   // const gallerySlider = new Swiper('.gallery-slider .swiper', {
   //   pagination: {
   //     el: '.gallery-slider.swiper-pagination',

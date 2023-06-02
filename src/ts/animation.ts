@@ -20,7 +20,7 @@ const animationOnScroll = (): void => {
 
     const height: number = item.offsetHeight
     const offsetTop: number = setOffset(item).top
-    const screenPosition = 2
+    const screenPosition = 3
 
     let point: number = window.innerHeight - height / screenPosition
 

@@ -130,3 +130,14 @@
     }
   }
 }
+
+// Продукция
+.production {
+  &__color {
+    background-color: var(--production-color);
+  }
+
+  &__radio:checked+&__color {
+    box-shadow: 0 0 0 3px theme('colors.primary.DEFAULT');
+  }
+}

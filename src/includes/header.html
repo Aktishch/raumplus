@@ -31,7 +31,7 @@
 
   <% var nav = ['Каталог', 'Презентации', 'Загрузки', 'О компании', 'Статьи', 'Контакты'] %>
 
-  <header class="header container flex items-center justify-between gap-5 sm:gap-10 sticky z-3 top-0 left-0 right-0 bg-gray pt-4 pb-4 xl:pt-5 xl:pb-3 ease-linear duration-2" data-header>
+  <header class="header container flex items-center justify-between gap-5 sm:gap-10 sticky z-3 top-0 left-0 right-0 bg-gray pt-4 pb-4 xl:pt-5 xl:pb-3 ease-linear duration-1" data-header>
     <button class="btn btn-white xl:hidden text-34 sm:text-38" data-burger data-waved="light">
       <svg class="icon">
         <use xlink:href="img/icons.svg#burger">
@@ -51,7 +51,7 @@
           </svg>
           <span class="font-normal text-white">+7 495 191-08-95</span>
         </a>
-        <a class="btn btn-smoke hidden xs:flex rounded-max p-1" data-waved="light" href="/">
+        <a class="btn btn-smoke hidden xs:flex rounded-max p-1" data-scroll data-waved="light" href="#contacts">
           <svg class="icon text-24">
             <use xlink:href="img/icons.svg#geo">
           </svg>
@@ -91,7 +91,7 @@
               <label class="form-label">
                 <div class="form-wrapper">
                   <div class="input-cover">
-                    <input class="input input-light input-sm pr-10" type="text" placeholder="Поиск">
+                    <input class="input input-light input-sm pr-10" type="text" placeholder="Поиск" required>
                   </div>
                   <button class="form-icon form-icon-sm form-icon--pointer form-icon--right text-white text-24 cursor-pointer" type="submit">
                     <svg class="icon">
@@ -134,7 +134,7 @@
           <label class="form-label">
             <div class="form-wrapper">
               <div class="input-cover">
-                <input class="input input-md pr-10" type="text" placeholder="Поиск">
+                <input class="input input-md pr-10" type="text" placeholder="Поиск" required>
               </div>
               <button class="form-icon form-icon-md form-icon--pointer form-icon--right text-black text-24 text-opacity-50 cursor-pointer" type="submit">
                 <svg class="icon">
@@ -159,22 +159,22 @@
             <span class="text-20">+7 495 191-08-95</span>
           </a>
           <div class="flex items-center gap-4">
-            <a class="btn btn-primary btn-fade rounded-max p-2" data-waved="light" href="/">
+            <a class="btn btn-primary btn-fill rounded-max p-2" data-scroll data-waved="light" href="#contacts">
               <svg class="icon text-28">
                 <use xlink:href="img/icons.svg#geo">
               </svg>
             </a>
-            <a class="btn btn-primary btn-fade rounded-max p-2" data-waved="light" href="mailto:">
+            <a class="btn btn-primary btn-fill rounded-max p-2" data-waved="light" href="mailto:">
               <svg class="icon text-28">
                 <use xlink:href="img/icons.svg#email">
               </svg>
             </a>
-            <a class="btn btn-primary btn-fade rounded-max p-2" data-waved="light" href="/">
+            <a class="btn btn-primary btn-fill rounded-max p-2" data-waved="light" href="/">
               <svg class="icon text-28">
                 <use xlink:href="img/icons.svg#basket">
               </svg>
             </a>
-            <a class="btn btn-primary btn-fade rounded-max p-2" data-waved="light" href="/">
+            <a class="btn btn-primary btn-fill rounded-max p-2" data-waved="light" href="/">
               <svg class="icon text-28">
                 <use xlink:href="img/icons.svg#user">
               </svg>

@@ -32,6 +32,103 @@
 
 <%= _.template(require('./includes/creative.html').default)({creative}) %>
 
+<!-- Ассортимент -->
+
+<% var assortment = [
+  {
+    hidden: '',
+    delay: 'xl:delay-2',
+    data: '',
+    icon: 'sliding-doors',
+    title: 'Ниженопорные <br class="hidden md:block"> раздвижные системы',
+    text: 'Особенно хорошо подходят <br class="hidden md:block"> для небольших проемов'
+  },
+  {
+    hidden: '',
+    delay: 'xl:delay-4',
+    data: '',
+    icon: 'suspended-doors',
+    title: 'Подвесные <br class="hidden md:block"> системы AIR',
+    text: 'Идеальное решение, когда <br class="hidden md:block"> напольная направляющая <br class="hidden md:block"> невозможна'
+  },
+  {
+    hidden: 'hidden md:block',
+    delay: 'xl:delay-6',
+    data: 'data-listing-item',
+    icon: 'folding-doors',
+    title: 'Системы складных <br class="hidden md:block"> дверей',
+    text: 'Нет напольных направляющих <br class="hidden md:block"> и дверей, которые <br class="hidden md:block"> открываются в сторону'
+  },
+  {
+    hidden: 'hidden md:block',
+    delay: '',
+    data: 'data-listing-item',
+    icon: 'swing-doors',
+    title: 'Системы <br class="hidden md:block"> распашных дверей ',
+    text: 'Идеальное решение, когда <br class="hidden md:block"> напольная направляющая <br class="hidden md:block"> невозможна'
+  },
+  {
+    hidden: 'hidden md:block',
+    delay: 'xl:delay-2',
+    data: 'data-listing-item',
+    icon: 'attic-doors',
+    title: 'Мансардные <br class="hidden md:block"> системы',
+    text: 'Этот вариант систем подходит <br class="hidden md:block"> для интерьеров с наклонными <br class="hidden md:block"> потолками'
+  },
+  {
+    hidden: 'hidden md:block',
+    delay: 'xl:delay-4',
+    data: 'data-listing-item',
+    icon: 'facade-doors',
+    title: 'Фасадные системы <br class="hidden md:block"> RPE, RPS',
+    text: 'Идеальное решение, когда <br class="hidden md:block"> напольная направляющая <br class="hidden md:block"> невозможна'
+  },
+  {
+    hidden: 'hidden md:block',
+    delay: 'xl:delay-6',
+    data: 'data-listing-item',
+    icon: 'interior-doors',
+    title: 'Интерьерные <br class="hidden md:block"> системы',
+    text: 'Гардеробные, гостиные, <br class="hidden md:block"> кабинеты, детские комнаты, <br class="hidden md:block"> а также для офисов'
+  }
+] %>
+
+<section class="container container--xs bg-grey overflow-hidden" data-listing="3">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+    <div class="flex flex-col items-start justify-center md:min-h-[310px]">
+      <h2 class="font-light text-32 sm:text-40 leading-2 mb-4 md:mb-8 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+        <span class="text-primary">Каталог</span> <br class="xs:hidden md:block"> наших систем
+      </h2>
+      <span class="border-b border-solid border-dark border-opacity-20 w-full max-w-[205px] xs:max-w-[150px] md:max-w-[40px] mb-4 md:mb-8 ease-in-out duration-4 anim anim--right" data-anim="hidden"></span>
+      <p class="font-light text-16 leading-5 ease-in-out duration-4 anim anim--right" data-anim="hidden">Большое разнообразие продуктов позволяет планировать самые разнообразные интерьерные решения</p>
+    </div>
+    <% for (var i = 0; i < assortment.length; i++) { %>
+    <div class="<%= assortment[i].hidden %> min-h-[200px] md:min-h-[310px] <%= assortment[i].delay %> ease-in-out duration-4 anim anim--up" data-anim="hidden" <%= assortment[i].data %>>
+      <div class="inverted text-center h-full" data-waved="dark">
+        <div class="inverted-before card items-center justify-center py-7 px-4 sm:py-9 sm:px-6">
+          <svg class="icon text-primary text-7xl mb-6">
+            <use xlink:href="img/icons.svg#<%= assortment[i].icon %>">
+          </svg>
+          <h2 class="font-light text-20 sm:text-22 leading-2 mb-2 sm:mb-3"><%= assortment[i].title %></h2>
+          <p class="font-light text-16 leading-5 opacity-70"><%= assortment[i].text %></p>
+        </div>
+        <div class="inverted-after card items-center justify-center bg-dark text-white py-7 px-4 sm:py-9 sm:px-6">
+          <svg class="icon text-primary text-7xl mb-6">
+            <use xlink:href="img/icons.svg#<%= assortment[i].icon %>">
+          </svg>
+          <h2 class="font-light text-20 sm:text-22 leading-2 mb-2 sm:mb-3"><%= assortment[i].title %></h2>
+          <p class="font-light text-16 leading-5 opacity-70"><%= assortment[i].text %></p>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <div class="md:hidden mt-10 ease-in-out duration-4 anim anim--up" data-anim="hidden">
+    <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe uppercase mx-auto" data-listing-show data-waved="dark">Показать ещё</button>
+  </div>
+</section>
+
+
 <!-- О нас  -->
 
 <% var about = [
@@ -47,7 +144,7 @@
   },
 ] %>
 
-<section class="about bg-black bg-opacity-90 lg:bg-opacity-0">
+<section class="bg-black bg-opacity-90 lg:bg-opacity-0">
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-0 xxl:max-w-[1920px] xxl:mx-auto">
     <% for (var i = 0; i < about.length; i++) { %>
     <div class="relative text-white overflow-hidden">
@@ -62,14 +159,14 @@
           </div>
           <picture>
             <source srcset="img/pictures/about-bg-<%= about[i].img %>.webp" type="image/webp">
-            <img class="image" loading="lazy" src="img/pictures/about-bg-<%= about[i].img %>.jpg" alt="">
+            <img class="image image-rise" loading="lazy" src="img/pictures/about-bg-<%= about[i].img %>.jpg" alt="">
           </picture>
         </div>
       </div>
-      <div class="flex flex-col items-center justify-center relative bg-black bg-opacity-80 lg:bg-opacity-70 w-full min-h-[350px] lg:min-h-[570px] py-7 px-4 sm:py-10 sm:px-10">
-        <h2 class="font-light text-center text-30 sm:text-42 lg:text-48 leading-2 mb-6 ease-in-out duration-4 anim anim--up" data-anim="hidden"><%= about[i].title %></h2>
+      <div class="flex flex-col items-center justify-center relative bg-black bg-opacity-80 lg:bg-opacity-70 pointer-events-none w-full min-h-[350px] lg:min-h-[570px] py-7 px-4 sm:py-10 sm:px-10">
+        <h2 class="font-light text-center text-32 sm:text-42 lg:text-48 leading-2 mb-6 ease-in-out duration-4 anim anim--up" data-anim="hidden"><%= about[i].title %></h2>
         <p class="font-light text-center text-16 leading-5 mb-8 ease-in-out duration-4 anim anim--up" data-anim="hidden"><%= about[i].text %></p>
-        <div class="ease-in-out duration-4 anim anim--up" data-anim="hidden">
+        <div class="pointer-events-auto ease-in-out duration-4 anim anim--up" data-anim="hidden">
           <button class="btn btn-white btn-lg btn-contur btn-active btn-swipe uppercase" data-waved="light">
             подробнее
             <svg class="icon text-14 ml-2">
@@ -112,7 +209,7 @@
   }
 ] %>
 
-<section class="stages container container--xs relative overflow-hidden">
+<section class="container container--xs relative overflow-hidden">
   <div class="absolute inset-0">
     <div class="pack w-full h-full">
       <picture>
@@ -122,13 +219,13 @@
     </div>
   </div>
   <div class="relative">
-    <h2 class="font-light text-center text-30 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-8 xl:mb-16 ease-in-out duration-4 anim anim--up" data-anim="hidden">
+    <h2 class="font-light text-center text-32 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-8 xl:mb-16 ease-in-out duration-4 anim anim--up" data-anim="hidden">
       <span class="text-primary">Четыре простых шага</span> для заказа <br class="hidden md:block"> raumplus
     </h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
       <% for (var i = 0; i < stages.length; i++) { %>
       <div class="flex flex-col items-center justify-center text-center <%= stages[i].delay %> ease-in-out duration-4 anim anim--up" data-anim="hidden">
-        <div class="font-light text-primary text-7xl sm:text-number leading-1 sm:mb-5"><%= stages[i].number %></div>
+        <div class="font-light text-primary text-7xl md:text-number leading-1 sm:mb-5"><%= stages[i].number %></div>
         <h3 class="font-light text-20 sm:text-24 leading-3 mb-4"><%= stages[i].title %></h3>
         <p class="font-light text-dark text-opacity-70 text-16 leading-5"><%= stages[i].text %></p>
       </div>
@@ -166,7 +263,7 @@
   }
 ] %>
 
-<section class="advantages container container--xs relative overflow-hidden">
+<section class="container container--xs relative overflow-hidden">
   <div class="absolute inset-0">
     <div class="pack bg-black w-full h-full">
       <div class="loader">
@@ -208,7 +305,7 @@
 
 <!-- Сотрудничество -->
 
-<section class="cooperation container flex items-center relative overflow-hidden lg:min-h-[640px]">
+<section class="container flex items-center relative overflow-hidden lg:min-h-[640px]">
   <div class="hidden sm:block absolute inset-0">
     <div class="pack bg-grey w-full h-full">
       <div class="loader">
@@ -225,7 +322,7 @@
     </div>
   </div>
   <div class="flex flex-col items-start relative w-full sm:max-w-[450px] lg:max-w-[515px]">
-    <h2 class="font-light text-30 sm:text-42 lg:text-48 leading-2 mb-5 md:mb-8 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+    <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 md:mb-8 ease-in-out duration-4 anim anim--right" data-anim="hidden">
       <span class="text-primary">Расширяем</span> партнерскую сеть
     </h2>
     <p class="font-light text-16 leading-5 mb-12 ease-in-out duration-4 anim anim--right" data-anim="hidden">Приглашаем к сотрудничеству дистрибьютеров, производителей мебели, дизайнеров, архитекторов</p>
@@ -265,7 +362,7 @@
   }
 ] %>
 
-<section class="achievements container container--xs relative overflow-hidden" data-section>
+<section class="container container--xs relative overflow-hidden" data-section>
   <div class="absolute inset-0">
     <div class="pack bg-black w-full h-full">
       <div class="loader">
@@ -282,7 +379,7 @@
     </div>
   </div>
   <div class="relative text-white">
-    <h2 class="font-light text-center text-30 sm:text-42 lg:text-48 leading-2 mb-8 xl:mb-16 ease-in-out duration-4 anim anim--up" data-anim="hidden">
+    <h2 class="font-light text-center text-32 sm:text-42 lg:text-48 leading-2 mb-8 xl:mb-16 ease-in-out duration-4 anim anim--up" data-anim="hidden">
       <span class="text-primary">Достижения raumplus</span> <br> в цифрах
     </h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 xl:gap-10">
@@ -313,7 +410,7 @@
     </picture>
   </div>
   <div class="flex flex-col items-start relative w-full sm:max-w-[450px] lg:max-w-[530px]">
-    <h2 class="font-light text-30 sm:text-42 lg:text-48 leading-2 mb-5 md:mb-8 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+    <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 md:mb-8 ease-in-out duration-4 anim anim--right" data-anim="hidden">
       <span class="text-primary">Скачать каталог раздвижных</span> <br> систем raumplus
     </h2>
     <p class="font-light text-16 leading-5 mb-12 ease-in-out duration-4 anim anim--right" data-anim="hidden">

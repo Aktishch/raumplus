@@ -1,0 +1,160 @@
+<% var data = {
+
+  title: 'Раздвижная система S-1 200, черный',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Главный блок -->
+
+<% var main = {
+
+  height: 'min-h-[280px] xl:min-h-[380px]',
+  img: 'production-bg',
+  title: 'Раздвижная система <br> S-1 200, черный'
+
+} %>
+
+<%= _.template(require('./includes/main.html').default)({data, main}) %>
+
+<!-- Продукция -->
+
+<% var production = [
+  {
+    value: 'Черный',
+    color: '#000000'
+  },
+  {
+    value: 'Серый',
+    color: '#B3B3B3'
+  },
+  {
+    value: 'Золотой',
+    color: '#B78C3A'
+  }
+] %>
+
+<section class="production container">
+  <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+    <div class="flex flex-row xl:flex-col gap-4">
+      <div class="production-slider bg-grey w-full max-w-[800px] xl:max-w-full">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <% for (var i = 0; i < 6; i++) { %>
+            <a class="swiper-slide pack pack-rect-sm xl:pack-rect-lg bg-grey" data-fancybox="production" href="img/pictures/production-img.jpg">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
+              </div>
+              <picture>
+                <source srcset="img/pictures/production-img.webp" type="image/webp">
+                <img class="image" loading="lazy" src="img/pictures/production-img.jpg" alt="">
+              </picture>
+              <div class="flex items-center justify-center absolute inset-0 bg-black font-extralight text-white text-center text-48 bg-opacity-30 opacity-0 hover:opacity-100 duration-2">+</div>
+            </a>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <div class="production-bullets w-full max-w-[100px] xl:max-w-full">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <% for (var i = 0; i < 6; i++) { %>
+            <div class="swiper-slide pack pack-box bg-grey cursor-pointer">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
+              </div>
+              <picture>
+                <source srcset="img/pictures/production-img.webp" type="image/webp">
+                <img class="image" loading="lazy" src="img/pictures/production-img.jpg" alt="">
+              </picture>
+            </div>
+            <% } %>
+          </div>
+          <button class="swiper-button-prev btn btn-dark btn-fade btn-active absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+            <svg class="icon">
+              <use xlink:href="img/icons.svg#arrow-left">
+            </svg>
+          </button>
+          <button class="swiper-button-next btn btn-dark btn-fade btn-active absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+            <svg class="icon">
+              <use xlink:href="img/icons.svg#arrow-right">
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card h-full p-8">
+        <div class="card-content">
+          <h2 class="font-normal text-22 xs:text-26 md:text-32 leading-3 mb-6">Раздвижная система S-1200, черный</h2>
+          <div class="flex items-center gap-6 mb-6">
+            <span class="font-normal text-14 leading-1 opacity-60">Артикул: 82575553</span>
+            <div class="flex items-center justify-center bg-grey rounded-full py-1 px-2">
+              <svg class="icon text-green text-18 mr-2">
+                <use xlink:href="img/icons.svg#check">
+              </svg>
+              <span class="font-normal text-dark text-opacity-60 text-center text-14 leading-1">В наличии</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 mb-9">
+            <span class="flex items-center justify-center bg-grey font-normal text-center text-12 leading-1 rounded-full p-3">Система S42</span>
+            <span class="flex items-center justify-center bg-grey font-normal text-center text-12 leading-1 rounded-full p-3">Серия S1200</span>
+          </div>
+          <p class="font-normal text-16 leading-1 mb-5">Цвет: черный</p>
+          <div class="flex items-center gap-3 mb-12">
+            <% for (var i = 0; i < production.length; i++) { %>
+            <label class="block relative cursor-pointer" data-waved="light">
+              <input class="production__radio hidden" type="radio" value="<%= production[i].value %>" name="color">
+              <span class="production__color block rounded-max w-10 h-10 duration-3" style="--production-color: <%= production[i].color %>"></span>
+            </label>
+            <% } %>
+          </div>
+          <div class="flex items-center justify-between gap-5 mb-10">
+            <div class="flex flex-col">
+              <span class="font-normal text-dark text-opacity-70 leading-1 mb-2">Связь с менеджером:</span>
+              <a class="btn btn-primary text-dark border-b border-dashed" href="tel: +7 495 191-08-95" data-waved="dark">
+                <svg class="icon text-24 mr-1">
+                  <use xlink:href="img/icons.svg#tel">
+                </svg>
+                <span class="font-semibold text-20">+7 495 191-08-95</span>
+              </a>
+            </div>
+            <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe font-normal" data-waved="light">
+              <svg class="icon text-24 mr-2">
+                <use xlink:href="img/icons.svg#calc">
+              </svg>
+              Калькулятор стоимости
+            </button>
+          </div>
+          <div class="bg-grey mt-auto p-6">
+            <div class="flex justify-between gap-5">
+              <div class="flex flex-col w-full max-w-[270px]">
+                <span class="font-normal text-18 leading-1 line-through">7 140 ₽</span>
+                <span class="font-medium text-title leading-1 mb-4">5 140 ₽</span>
+                <button class="btn btn-primary btn-lg btn-fill btn-active font-medium uppercase" data-waved="light">
+                  <svg class="icon text-24 mr-2">
+                    <use xlink:href="img/icons.svg#basket">
+                  </svg>
+                  в корзину
+                </button>
+              </div>
+              <div class="flex items-center justify-center bg-green text-white text-center font-normal text-14 leading-1 rounded-full h-max py-2 px-3">Партнерская скидка 33%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>
