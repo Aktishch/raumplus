@@ -21,7 +21,7 @@
 
 <!-- Продукция -->
 
-<% var production = [
+<% var productionColor = [
   {
     value: 'Черный',
     color: '#000000'
@@ -36,14 +36,14 @@
   }
 ] %>
 
-<section class="production container">
-  <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
-    <div class="flex flex-row xl:flex-col gap-4">
-      <div class="production-slider bg-grey w-full max-w-[800px] xl:max-w-full">
+<section class="production container overflow-hidden">
+  <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-12">
+    <div class="flex flex-col md:flex-row xl:flex-col gap-2 md:gap-4 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+      <div class="production-slider bg-grey w-full md:max-w-[600px] lg:max-w-[800px] xl:max-w-full">
         <div class="swiper">
           <div class="swiper-wrapper">
             <% for (var i = 0; i < 6; i++) { %>
-            <a class="swiper-slide pack pack-rect-sm xl:pack-rect-lg bg-grey" data-fancybox="production" href="img/pictures/production-img.jpg">
+            <a class="swiper-slide pack pack-rect-md xs:pack-rect-sm xl:pack-rect-lg bg-grey" data-fancybox="production" href="img/pictures/production-img.jpg">
               <div class="loader">
                 <span class="loader-progress">
                   <svg class="loader-icon icon">
@@ -61,11 +61,11 @@
           </div>
         </div>
       </div>
-      <div class="production-bullets w-full max-w-[100px] xl:max-w-full">
-        <div class="swiper">
+      <div class="production-bullets w-full md:max-w-[100px] xl:max-w-full md:h-[360px] lg:h-[480px] xl:h-auto">
+        <div class="swiper md:h-full xl:h-auto">
           <div class="swiper-wrapper">
             <% for (var i = 0; i < 6; i++) { %>
-            <div class="swiper-slide pack pack-box bg-grey cursor-pointer">
+            <div class="swiper-slide pack pack-box bg-grey cursor-pointer md:h-max xl:h-auto">
               <div class="loader">
                 <span class="loader-progress">
                   <svg class="loader-icon icon">
@@ -80,12 +80,12 @@
             </div>
             <% } %>
           </div>
-          <button class="swiper-button-prev btn btn-dark btn-fade btn-active absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+          <button class="swiper-button-prev btn btn-dark btn-fade btn-active hidden xl:flex absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
             <svg class="icon">
               <use xlink:href="img/icons.svg#arrow-left">
             </svg>
           </button>
-          <button class="swiper-button-next btn btn-dark btn-fade btn-active absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+          <button class="swiper-button-next btn btn-dark btn-fade btn-active hidden xl:flex  absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
             <svg class="icon">
               <use xlink:href="img/icons.svg#arrow-right">
             </svg>
@@ -93,11 +93,11 @@
         </div>
       </div>
     </div>
-    <div>
-      <div class="card h-full p-8">
+    <div class="ease-in-out duration-4 anim anim--left" data-anim="hidden">
+      <div class="card h-full py-6 px-4 md:py-8 md:px-8">
         <div class="card-content">
-          <h2 class="font-normal text-22 xs:text-26 md:text-32 leading-3 mb-6">Раздвижная система S-1200, черный</h2>
-          <div class="flex items-center gap-6 mb-6">
+          <h2 class="font-normal text-22 xs:text-26 md:text-32 leading-3 mb-4 md:mb-6">Раздвижная система S-1200, черный</h2>
+          <div class="flex items-center gap-3 md:gap-6 mb-4 md:mb-6">
             <span class="font-normal text-14 leading-1 opacity-60">Артикул: 82575553</span>
             <div class="flex items-center justify-center bg-grey rounded-full py-1 px-2">
               <svg class="icon text-green text-18 mr-2">
@@ -106,20 +106,20 @@
               <span class="font-normal text-dark text-opacity-60 text-center text-14 leading-1">В наличии</span>
             </div>
           </div>
-          <div class="flex flex-wrap items-center gap-2 mb-9">
+          <div class="flex flex-wrap items-center gap-2 mb-5 md:mb-9">
             <span class="flex items-center justify-center bg-grey font-normal text-center text-12 leading-1 rounded-full p-3">Система S42</span>
             <span class="flex items-center justify-center bg-grey font-normal text-center text-12 leading-1 rounded-full p-3">Серия S1200</span>
           </div>
           <p class="font-normal text-16 leading-1 mb-5">Цвет: черный</p>
-          <div class="flex items-center gap-3 mb-12">
-            <% for (var i = 0; i < production.length; i++) { %>
+          <div class="flex items-center gap-3 mb-8 md:mb-12">
+            <% for (var i = 0; i < productionColor.length; i++) { %>
             <label class="block relative cursor-pointer" data-waved="light">
-              <input class="production__radio hidden" type="radio" value="<%= production[i].value %>" name="color">
-              <span class="production__color block rounded-max w-10 h-10 duration-3" style="--production-color: <%= production[i].color %>"></span>
+              <input class="production__radio hidden" type="radio" value="<%= productionColor[i].value %>" name="color">
+              <span class="production__color block rounded-max w-10 h-10 duration-3" style="--production-color: <%= productionColor[i].color %>"></span>
             </label>
             <% } %>
           </div>
-          <div class="flex items-center justify-between gap-5 mb-10">
+          <div class="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-5 mb-5 md:mb-10">
             <div class="flex flex-col">
               <span class="font-normal text-dark text-opacity-70 leading-1 mb-2">Связь с менеджером:</span>
               <a class="btn btn-primary text-dark border-b border-dashed" href="tel: +7 495 191-08-95" data-waved="dark">
@@ -129,18 +129,18 @@
                 <span class="font-semibold text-20">+7 495 191-08-95</span>
               </a>
             </div>
-            <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe font-normal" data-waved="light">
+            <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe font-normal px-4 md:px-7" data-waved="light">
               <svg class="icon text-24 mr-2">
                 <use xlink:href="img/icons.svg#calc">
               </svg>
               Калькулятор стоимости
             </button>
           </div>
-          <div class="bg-grey mt-auto p-6">
-            <div class="flex justify-between gap-5">
-              <div class="flex flex-col w-full max-w-[270px]">
-                <span class="font-normal text-18 leading-1 line-through">7 140 ₽</span>
-                <span class="font-medium text-title leading-1 mb-4">5 140 ₽</span>
+          <div class="bg-grey xl:mt-auto py-6 px-3 md:px-6">
+            <div class="flex flex-col md:flex-row items-start md:justify-between gap-5">
+              <div class="order-2 md:order-1 flex flex-col w-full max-w-[270px]">
+                <span class="font-normal text-16 md:text-18 leading-1 line-through">7 140 ₽</span>
+                <span class="font-medium text-40 md:text-title leading-1 mb-4">5 140 ₽</span>
                 <button class="btn btn-primary btn-lg btn-fill btn-active font-medium uppercase" data-waved="light">
                   <svg class="icon text-24 mr-2">
                     <use xlink:href="img/icons.svg#basket">
@@ -148,11 +148,38 @@
                   в корзину
                 </button>
               </div>
-              <div class="flex items-center justify-center bg-green text-white text-center font-normal text-14 leading-1 rounded-full h-max py-2 px-3">Партнерская скидка 33%</div>
+              <div class="order-1 md:order-2 flex items-center justify-center bg-green text-white text-center font-normal text-14 leading-1 rounded-full h-max py-2 px-3">Партнерская скидка 33%</div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div data-filter>
+    <div class="flex items-center gap-4 mb-8">
+      <button class="production__category filter-active btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark" data-filter-category="category-1" data-waved="dark">Описание</button>
+      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark" data-filter-category="category-2" data-waved="dark">Характеристики</button>
+      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark" data-filter-category="category-3" data-waved="dark">Комплектация</button>
+      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark" data-filter-category="category-4" data-waved="dark">Схема сборки</button>
+    </div>
+    <div class="block">
+      <div class="production__card" data-filter-card="category-1">
+        <p class="font-normal text-16 leading-5 mb-5">
+          Эта инновационная система позволяет легко и плавно раздвигать двери в стороны, обеспечивая максимальную эффективность использования помещения.
+        </p>
+        <p class="font-normal text-16 leading-5 mb-5">
+          Система дверей с раздвижным механизмом идеально подходит для различных типов помещений, будь то дом, офис или коммерческое пространство. <br>
+          Она позволяет максимизировать использование доступного пространства, особенно там, где каждый квадратный метр имеет значение.
+        </p>
+        <p class="font-normal text-16 leading-5 mb-5">
+          Одно из главных преимуществ раздвижной системы дверей — это возможность создания свободного и открытого пространства при необходимости. <br>
+          Вы можете легко открыть двери, скрывая их в стене, и таким образом объединить два смежных помещения или расширить доступ к балкону или террасе.
+        </p>
+        <p class="font-normal text-16 leading-5">
+          Дизайн раздвижной системы дверей также заслуживает внимания. Она предлагает широкий выбор материалов и отделки, позволяя адаптировать ее к любому интерьеру. Вы можете выбрать стеклянные панели для создания ощущения пространства и пропускания естественного света или использовать различные виды дерева или металла для придания современного или классического стиля.
+        </p>
+      </div>
+      <div class="production__card hidden" data-filter-card="category-2">534543543534</div>
     </div>
   </div>
 </section>

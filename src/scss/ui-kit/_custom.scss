@@ -53,7 +53,7 @@ $close: ".carousel__button.is-close";
     &-bullet {
       width           : 8px;
       height          : 8px;
-      background-color: theme("colors.white.DEFAULT");
+      background-color: currentColor;
       opacity         : 1;
       transition      : background-color 0.2s ease;
       margin-inline   : 6px !important;

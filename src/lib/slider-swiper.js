@@ -62,17 +62,19 @@ const init = () => {
       nextEl: '.production-bullets .swiper-button-next',
     },
 
+    direction: 'horizontal',
     slidesPerView: 3,
     slidesPerGroup: 1,
-    spaceBetween: 16,
+    spaceBetween: 8,
     speed: 500,
     grabCursor: true,
     watchSlidesProgress: true,
 
     breakpoints: {
-      [media.lg]: {
+      [media.md]: {
         direction: 'vertical',
         slidesPerView: 'auto',
+        spaceBetween: 16,
       },
 
       [media.xl]: {

@@ -25,7 +25,7 @@ import listing from './ts/listing'
 // import accordion from './ts/accordion'
 // import formatBg from './ts/format-bg'
 import parallax from './ts/parallax'
-// import filter from './ts/filter'
+import filter from './ts/filter'
 import outNumber from './ts/out-number'
 // import writeText from './ts/write-text'
 // import downloadFiles from './ts/download-files'
@@ -77,7 +77,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // accordion.init()
   // formatBg.init()
   parallax.init()
-  // filter.init()
+  filter.init()
   outNumber.init()
   // writeText.init()
   formSubmit.init()
