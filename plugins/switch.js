@@ -112,10 +112,11 @@ module.exports = plugin(({ addComponents, theme }) => {
       },
 
       '&--toggle': {
-        minWidth: '80px',
-        width: '80px',
-        height: '36px',
-        borderRadius: '20px',
+        minWidth: '30px',
+        width: '30px',
+        height: '16px',
+        border: 'none',
+        borderRadius: '38px',
 
         '&::after': {
           content: '""',
@@ -123,22 +124,29 @@ module.exports = plugin(({ addComponents, theme }) => {
           top: 0,
           bottom: 0,
           marginBlock: 'auto',
-          height: '24px',
-          borderRadius: '20px',
+          height: '14px',
+          borderRadius: '38px',
+          backgroundColor: theme('colors.white.DEFAULT'),
         },
 
-        '&:not(:checked)::after': {
-          left: '4px',
-          right: '50px',
-          backgroundColor: theme('colors.gray.DEFAULT'),
-          transition: 'left 0.5s ease, right 0.4s ease 0.2s',
+        '&:not(:checked)': {
+          backgroundColor: theme('colors.grey.dark'),
+
+          '&::after': {
+            left: '1px',
+            right: '15px',
+            transition: 'left 0.4s ease, right 0.3s ease 0.1s',
+          },
         },
 
-        '&:checked::after': {
-          left: '50px',
-          right: '4px',
-          backgroundColor: 'currentColor',
-          transition: 'left 0.4s ease 0.2s, right 0.5s ease, background-color 0.35s ease -0.1s',
+        '&:checked': {
+          backgroundColor: theme('colors.green.DEFAULT'),
+
+          '&::after': {
+            left: '15px',
+            right: '1px',
+            transition: 'left 0.3s ease 0.1s, right 0.4s ease',
+          },
         },
       },
     },

@@ -6,14 +6,14 @@ const setAccordion = (element: HTMLElement): void => {
 
   const setAccordionHeight = (): void => {
     if (accordion.dataset.accordion == 'hidden') {
-      content.style.maxHeight = '0'
+      content.style.height = '0'
     } else {
-      content.style.maxHeight = `${content.scrollHeight}px`
+      content.style.height = `${content.scrollHeight}px`
     }
   }
 
   toggle.classList.add('cursor-pointer')
-  content.classList.add('overflow-hidden', 'duration-3')
+  content.classList.add('overflow-auto', 'duration-3')
 
   setAccordionHeight()
 
@@ -39,9 +39,9 @@ const setAccordion = (element: HTMLElement): void => {
 
     accordionItemToggle.addEventListener('click', ((): void => {
       if (accordionItem.dataset.accordion == 'hidden') {
-        content.style.maxHeight = `${content.scrollHeight + accordionItemContent.scrollHeight}px`
+        content.style.height = `${content.scrollHeight + accordionItemContent.scrollHeight}px`
       } else {
-        content.style.maxHeight = `${content.scrollHeight - accordionItemContent.scrollHeight}px`
+        content.style.height = `${content.scrollHeight - accordionItemContent.scrollHeight}px`
       }
     }) as EventListener)
   })
@@ -59,7 +59,7 @@ const accordionClose = (value: string): void => {
 
     if (accordion.dataset.accordion == 'active') {
       accordion.dataset.accordion = 'hidden'
-      content.style.maxHeight = '0'
+      content.style.height = '0'
     }
   })
 }

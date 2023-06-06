@@ -1,0 +1,272 @@
+<% var data = {
+
+  title: 'Раздвижные системы Премиум Класса',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Главный блок -->
+
+<% var main = {
+
+  height: 'min-h-[280px] xl:min-h-[380px]',
+  img: 'production-bg',
+  title: 'Раздвижные системы <br> Премиум Класса'
+
+} %>
+
+<%= _.template(require('./includes/main.html').default)({data, main}) %>
+
+<!-- Каталог -->
+
+<% var catalog = [
+  {
+    accordion: 'data-accordion="active"',
+    content: 'data-accordion-content',
+    toggle: 'data-accordion-toggle',
+    input: false,
+    checkbox: true,
+    switchToggle: false,
+    title: 'Тип системы',
+    text: 'Мансардные',
+    number: 14
+  },
+  {
+    accordion: 'data-accordion="hidden"',
+    content: 'data-accordion-content',
+    toggle: 'data-accordion-toggle',
+    input: false,
+    checkbox: true,
+    switchToggle: false,
+    title: 'Наименование системы',
+    text: '34мм AIR',
+    number: 10
+  },
+  {
+    accordion: '',
+    content: '',
+    toggle: '',
+    input: true,
+    checkbox: true,
+    switchToggle: false,
+    title: 'Серия',
+    text: 'S300 симетр.',
+    number: 5
+  },
+  {
+    accordion: '',
+    content: '',
+    toggle: '',
+    input: false,
+    checkbox: true,
+    switchToggle: false,
+    title: 'Цвет',
+    text: 'Золото',
+    number: 3
+  },
+  {
+    accordion: '',
+    content: '',
+    toggle: '',
+    input: false,
+    checkbox: false,
+    switchToggle: true,
+    title: 'Наличие / Предзаказ',
+    text: '',
+    number: 3
+  },
+] %>
+
+<% var cards = [
+  {
+    color: 'text-green',
+    icon: 'check',
+    text: 'В наличии',
+    btn: true
+  },
+  {
+    color: 'text-dark text-opacity-30',
+    icon: 'minus',
+    text: 'В наличии',
+    btn: true
+  },
+  {
+    color: 'text-green',
+    icon: 'check',
+    text: 'В наличии',
+    btn: false
+  },
+] %>
+
+<section class="catalog container">
+  <div class="flex justify-between gap-10">
+    <div class="catalog__sidebar fixed inset-0 z-3 lg:z-0 lg:static invisible lg:visible opacity-0 lg:opacity-100 overflow-auto lg:overflow-visible w-full lg:max-w-[290px]">
+      <div class="catalog__content bg-white bg-opacity lg:bg-opacity-0 w-full max-w-[375px] lg:max-w-full p-4 lg:p-0">
+        <div class="flex lg:hidden items-center justify-between gap-5 sticky z-1 top-0 left-0 right-0 bg-white mb-7 py-4">
+          <h4 class="font-semibold text-24 leading-2">Фильтр</h4>
+          <button class="btn btn-dark text-38" data-waved="light">
+            <svg class="icon">
+              <use xlink:href="img/icons.svg#close">
+            </svg>
+          </button>
+        </div>
+        <form class="form mb-6">
+          <label class="form-label">
+            <div class="form-wrapper">
+              <div class="input-cover">
+                <input class="input input-lg pr-10" type="text" placeholder="Поиск товара" required>
+              </div>
+              <button class="form-icon form-icon-lg form-icon--pointer form-icon--right text-black text-24 text-opacity-30 cursor-pointer" type="submit">
+                <svg class="icon">
+                  <use xlink:href="img/icons.svg#search">
+                </svg>
+              </button>
+            </div>
+          </label>
+        </form>
+        <form class="form gap-6">
+          <% for (var i = 0; i < catalog.length; i++) { %>
+          <div class="catalog__accordion bg-white bg-opacity-60 border border-solid border-dark border-opacity-20" <%= catalog[i].accordion %>>
+            <div class="bg-grey py-3 px-6">
+              <h4 class="font-semibold text-16 leading-2"><%= catalog[i].title %></h4>
+            </div>
+            <div class="max-h-[390px]" <%= catalog[i].content %>>
+              <div class="py-4 px-6">
+                <% if (catalog[i].input) { %>
+                <div class="input-cover mb-4">
+                  <input class="input input-sm" type="text" placeholder="Поиск">
+                </div>
+                <% } %>
+                <% if (catalog[i].checkbox) { %>
+                <div class="flex flex-col gap-2">
+                  <% for (var j = 0; j < catalog[i].number; j++) { %>
+                  <div class="flex items-center justify-between gap-1">
+                    <label class="flex items-center cursor-pointer">
+                      <input class="catalog__switch switch switch--checkbox mr-2" type="checkbox">
+                      <span class="catalog__text font-normal text-16 leading-4 opacity-70 duration-1"><%= catalog[i].text %></span>
+                    </label>
+                    <div class="catalog__quantity flex items-center justify-center relative bg-primary rounded-1 min-w-[40px] w-[40px] h-[28px]">
+                      <span class="relative font-medium text-white text-center text-16 leading-4">123</span>
+                    </div>
+                  </div>
+                  <% } %>
+                </div>
+                <% } %>
+                <% if (catalog[i].switchToggle) { %>
+                <div class="flex flex-col gap-4">
+                  <label class="flex items-center cursor-pointer">
+                    <input class="catalog__switch switch switch--toggle mr-2" checked type="checkbox">
+                    <span class="catalog__text font-normal text-16 leading-4 opacity-70 duration-1">Наличие</span>
+                  </label>
+                  <label class="flex items-center cursor-pointer">
+                    <input class="catalog__switch switch switch--toggle mr-2" type="checkbox">
+                    <span class="catalog__text font-normal text-16 leading-4 opacity-70 duration-1">Предзаказ</span>
+                  </label>
+                </div>
+                <% } %>
+              </div>
+            </div>
+            <% if (catalog[i].toggle) { %>
+            <div class="flex items-center justify-center relative bg-grey w-full" <%= catalog[i].toggle %> data-waved="dark">
+              <svg class="catalog__arrow icon text-primary text-24 duration-3">
+                <use xlink:href="img/icons.svg#arrow-bottom">
+              </svg>
+            </div>
+            <% } %>
+          </div>
+          <% } %>
+          <button class="btn btn-primary btn-lg btn-fill btn-active font-normal uppercase" data-waved="light" type="submit">Показать</button>
+          <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe font-normal uppercase" data-waved="light" type="reset">Сбросить всё</button>
+        </form>
+      </div>
+    </div>
+    <div class="w-full max-w-[950px]">
+      <div class="flex items-center justify-between gap-5 mb-6">
+        <span class="font-normal text-16 leading-2 opacity-60">Отображено 50 товаров</span>
+        <div class="flex items-center gap-5">
+          <button class="btn btn-dark lg:hidden">
+            <svg class="icon text-30">
+              <use xlink:href="img/icons.svg#filter">
+            </svg>
+          </button>
+          <div class="form w-full max-w-[250px]">
+            <label class="form-label">
+              <div class="form-wrapper">
+                <div class="input-cover">
+                  <select class="input input-lg font-medium pr-10">
+                    <option selected>По популярности</option>
+                    <option>Сначала дороже</option>
+                    <option>Сначала дешевле</option>
+                    <option>По алфавиту</option>
+                  </select>
+                </div>
+                <span class="form-icon form-icon-lg form-icon--right text-black text-22">
+                  <svg class="icon">
+                    <use xlink:href="img/icons.svg#arrow-bottom">
+                  </svg>
+                </span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 xl:grid-cols-3 gap-10">
+        <% for (var i = 0; i < cards.length; i++) { %>
+        <div class="card card--active p-2">
+          <div class="pack pack-box bg-grey">
+            <div class="loader">
+              <span class="loader-progress">
+                <svg class="loader-icon icon">
+                  <use xlink:href="img/icons.svg#loader">
+                </svg>
+              </span>
+            </div>
+            <picture>
+              <source srcset="img/pictures/production-img.webp" type="image/webp">
+              <img class="image" loading="lazy" src="img/pictures/production-img.jpg" alt="">
+            </picture>
+          </div>
+          <div class="card-content items-start pt-6 pb-2 px-2">
+            <div class="flex items-center justify-center bg-grey rounded-full py-1 px-2 mb-3">
+              <svg class="icon <%= cards[i].color %> text-18 mr-2">
+                <use xlink:href="img/icons.svg#<%= cards[i].icon %>">
+              </svg>
+              <span class="font-normal text-dark text-opacity-60 text-center text-14 leading-1"><%= cards[i].text %></span>
+            </div>
+            <span class="font-normal text-14 leading-2 opacity-60 mb-4">Артикул: 82575553</span>
+            <a class="font-normal text-16 leading-4 hover:underline underline-offset-4 mb-5 sm:mb-7" href="">Система для деревянных дверей 28-32мм, серебро</a>
+            <div class="flex items-center gap-4 mt-auto mb-4">
+              <span class="font-semibold text-28 leading-4">от 5 140 ₽</span>
+              <span class="font-light text-18 leading-4 line-through">7 140 ₽</span>
+            </div>
+            <% if (cards[i].btn) { %>
+            <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe uppercase w-full" data-waved="light">
+              <% if (cards[i].icon == 'check') { %>
+              <svg class="icon text-24 mr-2">
+                <use xlink:href="img/icons.svg#basket">
+              </svg>
+              в корзину
+              <% } else { %>
+              Подробнее
+              <% } %>
+            </button>
+            <% } else { %>
+            <div class="quantity" data-quantity>
+              <button class="quantity-btn btn btn-white" data-quantity-decrease data-waved="dark">-</button>
+              <div class="quantity-cover input-cover">
+                <input class="quantity-input input" data-input="number" type="text" value="1" name="quantity">
+              </div>
+              <button class="quantity-btn btn btn-white" data-quantity-increase data-waved="dark">+</button>
+            </div>
+            <% } %>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>

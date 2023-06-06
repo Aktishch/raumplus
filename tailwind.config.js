@@ -47,6 +47,7 @@ module.exports = {
 
       grey: {
         DEFAULT: '#F3F3F3',
+        dark: '#AFAFAF',
       },
 
       smoke: {

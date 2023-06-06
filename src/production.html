@@ -21,7 +21,11 @@
 
 <!-- Продукция -->
 
-<% var productionColor = [
+<% var palette = [
+  {
+    value: 'Белый',
+    color: '#ffffff'
+  },
   {
     value: 'Черный',
     color: '#000000'
@@ -33,6 +37,93 @@
   {
     value: 'Золотой',
     color: '#B78C3A'
+  }
+] %>
+
+<% var production = [
+  {
+    hidden: '',
+    data: '',
+    color: 'text-green',
+    icon: 'check',
+    text: 'В наличии'
+  },
+  {
+    hidden: '',
+    data: '',
+    color: 'text-dark text-opacity-30',
+    icon: 'minus',
+    text: 'Предзаказ'
+  },
+  {
+    hidden: '',
+    data: '',
+    color: 'text-green',
+    icon: 'check',
+    text: 'В наличии'
+  },
+  {
+    hidden: '',
+    data: '',
+    color: 'text-dark text-opacity-30',
+    icon: 'minus',
+    text: 'Предзаказ'
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+    color: 'text-green',
+    icon: 'check',
+    text: 'В наличии'
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+    color: 'text-dark text-opacity-30',
+    icon: 'minus',
+    text: 'Предзаказ'
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+    color: 'text-green',
+    icon: 'check',
+    text: 'В наличии'
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+    color: 'text-dark text-opacity-30',
+    icon: 'minus',
+    text: 'Предзаказ'
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+    color: 'text-green',
+    icon: 'check',
+    text: 'В наличии'
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+    color: 'text-dark text-opacity-30',
+    icon: 'minus',
+    text: 'Предзаказ'
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+    color: 'text-green',
+    icon: 'check',
+    text: 'В наличии'
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+    color: 'text-dark text-opacity-30',
+    icon: 'minus',
+    text: 'Предзаказ'
   }
 ] %>
 
@@ -77,6 +168,7 @@
                 <source srcset="img/pictures/production-img.webp" type="image/webp">
                 <img class="image" loading="lazy" src="img/pictures/production-img.jpg" alt="">
               </picture>
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 hover:opacity-100 duration-2" data-waved="light"></div>
             </div>
             <% } %>
           </div>
@@ -112,10 +204,10 @@
           </div>
           <p class="font-normal text-16 leading-1 mb-5">Цвет: черный</p>
           <div class="flex items-center gap-3 mb-8 md:mb-12">
-            <% for (var i = 0; i < productionColor.length; i++) { %>
-            <label class="block relative cursor-pointer" data-waved="light">
-              <input class="production__radio hidden" type="radio" value="<%= productionColor[i].value %>" name="color">
-              <span class="production__color block rounded-max w-10 h-10 duration-3" style="--production-color: <%= productionColor[i].color %>"></span>
+            <% for (var i = 0; i < palette.length; i++) { %>
+            <label class="palette block relative cursor-pointer" data-waved="light">
+              <input class="palette__radio hidden" type="radio" value="<%= palette[i].value %>" name="color">
+              <span class="palette__color block rounded-max border border-solid border-dark border-opacity-10 hover:border-opacity-40 w-10 h-10 duration-3" style="--production-color: <%= palette[i].color %>"></span>
             </label>
             <% } %>
           </div>
@@ -129,11 +221,11 @@
                 <span class="font-semibold text-20">+7 495 191-08-95</span>
               </a>
             </div>
-            <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe font-normal px-4 md:px-7" data-waved="light">
+            <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe font-normal w-full max-w-[270px]" data-waved="light">
               <svg class="icon text-24 mr-2">
                 <use xlink:href="img/icons.svg#calc">
               </svg>
-              Калькулятор стоимости
+              Калькулятор
             </button>
           </div>
           <div class="bg-grey xl:mt-auto py-6 px-3 md:px-6">
@@ -156,14 +248,14 @@
     </div>
   </div>
   <div data-filter>
-    <div class="flex items-center gap-4 mb-8">
-      <button class="production__category filter-active btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark" data-filter-category="category-1" data-waved="dark">Описание</button>
-      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark" data-filter-category="category-2" data-waved="dark">Характеристики</button>
-      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark" data-filter-category="category-3" data-waved="dark">Комплектация</button>
-      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark" data-filter-category="category-4" data-waved="dark">Схема сборки</button>
+    <div class="flex items-center gap-4 overflow-auto md:overflow-visible -m-[15px] p-[15px] md:m-0 md:p-0">
+      <button class="production__category filter-active btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="description" data-waved="dark">Описание</button>
+      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="specifications" data-waved="dark">Характеристики</button>
+      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="equipment" data-waved="dark">Комплектация</button>
+      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="scheme" data-waved="dark">Схема сборки</button>
     </div>
-    <div class="block">
-      <div class="production__card" data-filter-card="category-1">
+    <div class="block mt-8">
+      <div class="production__card" data-filter-card="description">
         <p class="font-normal text-16 leading-5 mb-5">
           Эта инновационная система позволяет легко и плавно раздвигать двери в стороны, обеспечивая максимальную эффективность использования помещения.
         </p>
@@ -179,7 +271,63 @@
           Дизайн раздвижной системы дверей также заслуживает внимания. Она предлагает широкий выбор материалов и отделки, позволяя адаптировать ее к любому интерьеру. Вы можете выбрать стеклянные панели для создания ощущения пространства и пропускания естественного света или использовать различные виды дерева или металла для придания современного или классического стиля.
         </p>
       </div>
-      <div class="production__card hidden" data-filter-card="category-2">534543543534</div>
+      <div class="production__card hidden" data-filter-card="specifications">
+        <div class="flex flex-col md:gap-2">
+          <% for (var i = 0; i < 6; i++) { %>
+          <div class="production__item grid grid-cols-1 sm:grid-cols-2 sm:gap-1 py-4 px-3 md:py-5 md:px-6">
+            <p class="font-medium text-16 leading-4">Ширина двери</p>
+            <p class="font-normal sm:font-medium text-14 sm:text-16 leading-4">от 700 мм до 1 500 мм (две створки)</p>
+          </div>
+          <% } %>
+        </div>
+      </div>
+      <div class="production__card hidden" data-filter-card="equipment">
+        <div class="grid grid-cols-2 sm:grid-cols-1 gap-2 sm:gap-4" data-listing="6">
+          <% for (var i = 0; i < production.length; i++) { %>
+          <div class="card card--active <%= production[i].hidden %> pb-2 pl-2 pr-2 sm:pt-6 sm:pb-6 sm:pl-4 sm:pr-4 lg:pt-2 lg:pb-2 lg:pl-2 lg:pr-7" <%= production[i].data %>>
+            <div class="card-content sm:flex-wrap lg:flex-nowrap sm:flex-row items-start sm:items-center lg:justify-between sm:gap-5 xl:gap-10">
+              <div class="pack pack-box w-full sm:max-w-[150px] mb-3 sm:mb-0">
+                <picture>
+                  <img class="image image-scale-down" src="img/pictures/product.png" alt="">
+                </picture>
+              </div>
+              <div class="flex flex-col items-start w-full sm:max-w-[250px] mb-2 sm:mb-0">
+                <span class="font-normal text-14 sm:text-16 leading-4 mb-2 sm:mb-4">Уголок для верхней одиночной направляющей s34мм</span>
+                <span class="font-normal text-12 sm:text-14 leading-2 opacity-60">Артикул: 82575553</span>
+              </div>
+              <div class="font-normal text-14 sm:text-16 leading-4 opacity-60 xl:mx-auto mb-2 sm:mb-0">Цвет: бронза</div>
+              <div class="flex items-center justify-center bg-grey rounded-full py-1 px-2 mb-5 sm:mb-0">
+                <svg class="icon <%= production[i].color %> text-18 mr-2">
+                  <use xlink:href="img/icons.svg#<%= production[i].icon %>">
+                </svg>
+                <span class="font-normal text-dark text-opacity-60 text-center text-14 leading-1"><%= production[i].text %></span>
+              </div>
+              <div class="flex flex-col sm:flex-row lg:flex-col sm:items-end md:justify-end gap-3 sm:gap-6 lg:border-l lg:border-solid lg:border-dark lg:border-opacity-20 w-full lg:max-w-[200px] xl:max-w-[330px] lg:pl-5 xl:pl-10 mt-auto sm:mt-0">
+                <div class="font-medium text-22 sm:text-28 leading-4">5 140 ₽</div>
+                <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase lg:w-full px-2 sm:px-10" data-waved="light">В корзину</button>
+              </div>
+            </div>
+          </div>
+          <% } %>
+          <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe col-2 sm:col-1 uppercase mt-5 sm:mt-8 mx-auto" data-listing-show data-waved="light">показать еще</button>
+        </div>
+      </div>
+      <div class="production__card hidden" data-filter-card="scheme">
+        <div class="flex flex-col gap-6">
+          <% for (var i = 0; i < 6; i++) { %>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <p class="font-medium text-16 leading-4">Схема сборки раздвижной системы S-1 200</p>
+            <div class="flex items-center">
+              <svg class="icon text-24 mr-1">
+                <use xlink:href="img/icons.svg#pdf">
+              </svg>
+              <span class="font-normal sm:font-medium text-14 sm:text-16 leading-4 mr-4">Размер: 8 Мб</span>
+              <a class="font-normal text-16 underline underline-offset-4 hover:text-primary duration-1" href="" download>Скачать</a>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -1,0 +1,179 @@
+<% var data = {
+
+  title: 'Раздвижная система S-1 200, черный',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Главный блок -->
+
+<% var main = {
+
+  height: 'min-h-[280px] xl:min-h-[380px]',
+  img: 'production-bg',
+  title: 'Раздвижная система <br> S-1 200, черный'
+
+} %>
+
+<%= _.template(require('./includes/main.html').default)({data, main}) %>
+
+<!-- Продукция -->
+
+<% var palette = [
+  {
+    value: 'Белый',
+    color: '#ffffff'
+  },
+  {
+    value: 'Черный',
+    color: '#000000'
+  },
+  {
+    value: 'Серый',
+    color: '#B3B3B3'
+  },
+  {
+    value: 'Золотой',
+    color: '#B78C3A'
+  }
+] %>
+
+<section class="production container overflow-hidden">
+  <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-12">
+    <div class="flex flex-col md:flex-row xl:flex-col gap-2 md:gap-4 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+      <div class="production-slider bg-grey w-full md:max-w-[600px] lg:max-w-[800px] xl:max-w-full">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <% for (var i = 0; i < 6; i++) { %>
+            <a class="swiper-slide pack pack-rect-md xs:pack-rect-sm xl:pack-rect-lg bg-grey" data-fancybox="production" href="img/pictures/production-img.jpg">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
+              </div>
+              <picture>
+                <source srcset="img/pictures/production-img.webp" type="image/webp">
+                <img class="image" loading="lazy" src="img/pictures/production-img.jpg" alt="">
+              </picture>
+              <div class="flex items-center justify-center absolute inset-0 bg-black font-extralight text-white text-center text-48 bg-opacity-30 opacity-0 hover:opacity-100 duration-2">+</div>
+            </a>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <div class="production-bullets w-full md:max-w-[100px] xl:max-w-full md:h-[360px] lg:h-[480px] xl:h-auto">
+        <div class="swiper md:h-full xl:h-auto">
+          <div class="swiper-wrapper">
+            <% for (var i = 0; i < 6; i++) { %>
+            <div class="swiper-slide pack pack-box bg-grey cursor-pointer md:h-max xl:h-auto">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
+              </div>
+              <picture>
+                <source srcset="img/pictures/production-img.webp" type="image/webp">
+                <img class="image" loading="lazy" src="img/pictures/production-img.jpg" alt="">
+              </picture>
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 hover:opacity-100 duration-2" data-waved="light"></div>
+            </div>
+            <% } %>
+          </div>
+          <button class="swiper-button-prev btn btn-dark btn-fade btn-active hidden xl:flex absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+            <svg class="icon">
+              <use xlink:href="img/icons.svg#arrow-left">
+            </svg>
+          </button>
+          <button class="swiper-button-next btn btn-dark btn-fade btn-active hidden xl:flex  absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+            <svg class="icon">
+              <use xlink:href="img/icons.svg#arrow-right">
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="ease-in-out duration-4 anim anim--left" data-anim="hidden">
+      <div class="card h-full py-6 px-4 md:py-8 md:px-8">
+        <div class="card-content">
+          <h2 class="font-normal text-22 xs:text-26 md:text-32 leading-3 mb-4 md:mb-6">Раздвижная система S-1200, черный</h2>
+          <div class="flex items-center gap-3 md:gap-6 mb-4 md:mb-6">
+            <span class="font-normal text-14 leading-1 opacity-60">Артикул: 82575553</span>
+            <div class="flex items-center justify-center bg-grey rounded-full py-1 px-2">
+              <svg class="icon text-dark text-opacity-30 text-18 mr-2">
+                <use xlink:href="img/icons.svg#minus">
+              </svg>
+              <span class="font-normal text-dark text-opacity-60 text-center text-14 leading-1">Предзаказ</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 mb-5 md:mb-9">
+            <span class="flex items-center justify-center bg-grey font-normal text-center text-12 leading-1 rounded-full p-3">Система S42</span>
+            <span class="flex items-center justify-center bg-grey font-normal text-center text-12 leading-1 rounded-full p-3">Серия S1200</span>
+          </div>
+          <p class="font-normal text-16 leading-1 mb-5">Цвет: черный</p>
+          <div class="flex items-center gap-3 mb-8 md:mb-12">
+            <% for (var i = 0; i < palette.length; i++) { %>
+            <label class="palette block relative cursor-pointer" data-waved="light">
+              <input class="palette__radio hidden" type="radio" value="<%= palette[i].value %>" name="color">
+              <span class="palette__color block rounded-max border border-solid border-dark border-opacity-10 hover:border-opacity-40 w-10 h-10 duration-3" style="--production-color: <%= palette[i].color %>"></span>
+            </label>
+            <% } %>
+          </div>
+          <div class="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-5 mb-5 md:mb-10">
+            <div class="flex flex-col">
+              <span class="font-normal text-dark text-opacity-70 leading-1 mb-2">Связь с менеджером:</span>
+              <a class="btn btn-primary text-dark border-b border-dashed" href="tel: +7 495 191-08-95" data-waved="dark">
+                <svg class="icon text-24 mr-1">
+                  <use xlink:href="img/icons.svg#tel">
+                </svg>
+                <span class="font-semibold text-20">+7 495 191-08-95</span>
+              </a>
+            </div>
+            <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe font-normal w-full max-w-[270px]" data-waved="light">
+              <svg class="icon text-24 mr-2">
+                <use xlink:href="img/icons.svg#calc">
+              </svg>
+              Калькулятор
+            </button>
+          </div>
+          <div class="bg-grey xl:mt-auto py-6 px-3 md:px-6">
+            <div class="flex flex-col">
+              <p class="font-normal text-16 sm:text-18 leading-4 mb-5 md:mb-8">
+                Цены и заказ на комплектующих доступны только партнерам, но вы можете разместить заказ готового изделия в ваш интерьер.
+              </p>
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <button class="btn btn-primary btn-lg btn-fill btn-active flex-grow uppercase" data-waved="light">Стать партнером</button>
+                <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe flex-grow uppercase" data-waved="light">Заказать проект</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div data-filter>
+    <div class="flex items-center gap-4 overflow-auto md:overflow-visible -m-[15px] p-[15px] md:m-0 md:p-0">
+      <button class="production__category filter-active btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="description" data-waved="dark">Описание</button>
+      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="specifications" data-waved="dark">Характеристики</button>
+      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="equipment" data-waved="dark">Комплектация</button>
+      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="scheme" data-waved="dark">Схема сборки</button>
+    </div>
+    <div class="block mt-8">
+      <div class="production__card" data-filter-card="description">
+      </div>
+      <div class="production__card hidden" data-filter-card="specifications">
+      </div>
+      <div class="production__card hidden" data-filter-card="equipment">
+      </div>
+      <div class="production__card hidden" data-filter-card="scheme">
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>

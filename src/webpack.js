@@ -22,7 +22,7 @@ import inverted from './ts/inverted'
 // import movement from './ts/movement'
 // import bubbles from './ts/bubbles'
 import listing from './ts/listing'
-// import accordion from './ts/accordion'
+import accordion from './ts/accordion'
 // import formatBg from './ts/format-bg'
 import parallax from './ts/parallax'
 import filter from './ts/filter'
@@ -34,10 +34,10 @@ import formSubmit from './ts/form-submit'
 // import dragAndDrop from './ts/drag-and-drop'
 // import choiceFile from './ts/choice-file'
 // import copyLink from './ts/copy-link'
-// import formInputs from './ts/form-inputs'
+import formInputs from './ts/form-inputs'
 // import maskTel from './ts/mask-tel'
 // import password from './ts/password'
-// import quantity from './ts/quantity'
+import quantity from './ts/quantity'
 // import range from './ts/range'
 // import player from './ts/player'
 // import basket from './ts/basket'
@@ -74,7 +74,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // movement.init()
   // bubbles.init()
   listing.init()
-  // accordion.init()
+  accordion.init()
   // formatBg.init()
   parallax.init()
   filter.init()
@@ -85,10 +85,10 @@ window.addEventListener('DOMContentLoaded', () => {
   // dragAndDrop.init()
   // choiceFile.init()
   // copyLink.init()
-  // formInputs.init()
+  formInputs.init()
   // maskTel.init()
   // password.init()
-  // quantity.init()
+  quantity.init()
   // range.init()
   // player.init()
   // basket.init()
