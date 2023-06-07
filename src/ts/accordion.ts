@@ -13,7 +13,7 @@ const setAccordion = (element: HTMLElement): void => {
   }
 
   toggle.classList.add('cursor-pointer')
-  content.classList.add('overflow-auto', 'duration-3')
+  content.classList.add('overflow-hidden', 'duration-3')
 
   setAccordionHeight()
 

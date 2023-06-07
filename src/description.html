@@ -13,7 +13,7 @@
 
   height: 'min-h-[350px] lg:min-h-[500px]',
   img: 'description-bg',
-  title: 'Нижнеопорные <br class="hidden md:block"> раздвижные системы'
+  title: 'Нижнеопорные раздвижные системы'
 
 } %>
 
@@ -23,6 +23,7 @@
 
 <% var creative = {
 
+  bg: true,
   text: true,
   btn: false
 
@@ -30,5 +31,55 @@
 
 <%= _.template(require('./includes/creative.html').default)({creative}) %>
 
+<!-- Серии -->
+
+<section class="series container overflow-hidden">
+  <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-8 xl:mb-14 ease-in-out duration-4 anim anim--up" data-anim="hidden">Серии профилей</h2>
+  <div data-filter>
+    <div class="series-slider relative">
+      <div class="swiper border-b-2 border-solid border-black border-opacity-20">
+        <div class="swiper-wrapper">
+          <% for (var i = 0; i < 9; i++) { %>
+          <div class="swiper-slide h-auto">
+            <div class="series__category <%= i == 0 ? 'filter-active' : '' %> flex flex-col relative" data-filter-category="series-<%= i %>">
+              <div class="series__pack pack pack-box opacity-30 mb-8 duration-3">
+                <div class="loader">
+                  <span class="loader-progress">
+                    <svg class="loader-icon icon">
+                      <use xlink:href="img/icons.svg#loader">
+                    </svg>
+                  </span>
+                </div>
+                <picture>
+                  <source srcset="img/pictures/production-img.webp" type="image/webp">
+                  <img class="image" loading="lazy" src="img/pictures/production-img.jpg" alt="">
+                </picture>
+              </div>
+              <h4 class="series__subtitle font-light text-center text-24 leading-2 duration-3">Серия S800</h4>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+      <button class="swiper-button-prev btn btn-dark btn-fade btn-active absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+        <svg class="icon">
+          <use xlink:href="img/icons.svg#arrow-left">
+        </svg>
+      </button>
+      <button class="swiper-button-next btn btn-dark btn-fade btn-active absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+        <svg class="icon">
+          <use xlink:href="img/icons.svg#arrow-right">
+        </svg>
+      </button>
+    </div>
+    <div class="block">
+      <% for (var i = 0; i < 9; i++) { %>
+      <div class="series__card <%= i == 0 ? '' : 'hidden' %>" data-filter-card="series-<%= i %>">
+        series-<%= i %>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</section>
 
 <%= _.template(require('./includes/footer.html').default)({}) %>

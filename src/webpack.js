@@ -3,12 +3,12 @@ import fancybox from './lib/fancybox'
 import sliderSwiper from './lib/slider-swiper'
 // import yandexMap from './lib/yandex-map'
 // import airDatepicker from './lib/air-datepicker'
-// import gsap from './lib/gsap'
 
 // Scripts
 import scrollHeader from './ts/scroll-header'
 // import currentTab from './ts/current-tab'
 import mobileMenu from './ts/mobile-menu'
+import sidebar from './ts/sidebar'
 // import progressLine from './ts/progress-line'
 import scrollTo from './ts/scroll-to'
 // import smartMenu from './ts/smart-menu'
@@ -40,8 +40,7 @@ import formInputs from './ts/form-inputs'
 import quantity from './ts/quantity'
 // import range from './ts/range'
 // import player from './ts/player'
-// import basket from './ts/basket'
-// import warning from './ts/warning'
+import basket from './ts/basket'
 // import horizontalScrolling from './ts/horizontal-scrolling'
 // import quiz from './ts/quiz'
 // import compare from './ts/compare'
@@ -57,10 +56,12 @@ import './scss/index.scss'
 window.addEventListener('DOMContentLoaded', () => {
   fancybox.init()
   sliderSwiper.init()
+  // yandexMap.init()
   // airDatepicker.init()
   // currentTab.init()
   scrollHeader.init()
   mobileMenu.init()
+  sidebar.init()
   // progressLine.init()
   scrollTo.init()
   // smartMenu.init()
@@ -91,7 +92,7 @@ window.addEventListener('DOMContentLoaded', () => {
   quantity.init()
   // range.init()
   // player.init()
-  // basket.init()
+  basket.init()
   // horizontalScrolling.init()
   // quiz.init()
   // compare.init()
@@ -99,10 +100,4 @@ window.addEventListener('DOMContentLoaded', () => {
   // timer.init()
   // worldMap.init()
   preloader.init()
-})
-
-window.addEventListener('load', () => {
-  // yandexMap.init()
-  // gsap.init()
-  // warning.init()
 })

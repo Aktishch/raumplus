@@ -1,6 +1,6 @@
 const init = (): void => {
   document.addEventListener('click', ((event: Event): void => {
-    if ((event.target as HTMLButtonElement).closest('[data-inverted-search]')) {
+    if ((event.target as HTMLButtonElement).closest('[data-inverted-open]')) {
       const inverted = (event.target as HTMLButtonElement).closest('[data-inverted]') as HTMLElement
 
       inverted.dataset.inverted = 'after'

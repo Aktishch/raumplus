@@ -39,6 +39,27 @@ const init = (): void => {
     basket.classList.add('invisible', 'opacity-0')
   }
 
+  const productInBasket = (event: MouseEvent): void => {
+    const coordinates: coordinates = {
+      top: event.clientY,
+      left: event.clientX,
+    }
+
+    const inBasket = document.createElement('div') as HTMLDivElement
+
+    inBasket.classList.add(...classes)
+    inBasket.style.top = `${coordinates.top}px`
+    inBasket.style.left = `${coordinates.left}px`
+    inBasket.innerHTML = `
+      <svg class="icon text-white text-16">
+        <use xlink:href="img/icons.svg#basket">
+      </svg>`
+
+    body.appendChild(inBasket)
+
+    setTimeout((): void => inBasket.remove(), 2000)
+  }
+
   let timeOut: NodeJS.Timeout
 
   products.forEach((element: Element): void => {
@@ -47,29 +68,25 @@ const init = (): void => {
     const productName = product.querySelector('*[data-product-name]') as HTMLElement
     const productOldPrice = product.querySelector('*[data-product-oldprice]') as HTMLElement
     const productPrice = product.querySelector('*[data-product-price]') as HTMLElement
+    const productInverted = product.querySelector('*[data-product-inverted]') as HTMLElement
     const productQuantity = product.querySelector('*[data-product-quantity]') as HTMLInputElement
     const productBtn = product.querySelector('*[data-product-button]') as HTMLButtonElement
+    const productDecrease = product.querySelector('*[data-product-decrease]') as HTMLButtonElement
+    const productIncrease = product.querySelector('*[data-product-increase]') as HTMLButtonElement
 
-    productBtn.addEventListener('click', ((event: MouseEvent): void => {
-      const coordinates: coordinates = {
-        top: event.clientY,
-        left: event.clientX,
+    const firstValue = (): void => {
+      if (
+        productQuantity.value == null ||
+        productQuantity.value == '' ||
+        productQuantity.value.length == 0 ||
+        Number(productQuantity.value) == 0 ||
+        !Number(productQuantity.value)
+      ) {
+        productQuantity.value = '1'
       }
+    }
 
-      const inBasket = document.createElement('div') as HTMLDivElement
-
-      inBasket.classList.add(...classes)
-      inBasket.style.top = `${coordinates.top}px`
-      inBasket.style.left = `${coordinates.left}px`
-      inBasket.innerHTML = `
-        <svg class="icon text-second text-16">
-          <use xlink:href="img/icons.svg#basket">
-        </svg>`
-
-      body.appendChild(inBasket)
-
-      setTimeout((): void => inBasket.remove(), 2000)
-
+    const basketCompletion = (): void => {
       if (basket.dataset.basket == 'show') basketHidden()
 
       setTimeout((): void => {
@@ -97,9 +114,46 @@ const init = (): void => {
 
         timeOut = setTimeout((): void => basketHidden(), 5000)
       }, 300)
-    }) as EventListener)
+    }
 
+    const quantityDecrease = (): void => {
+      if (Number(productQuantity.value) == 1) {
+        basketHidden()
+        productInverted.dataset.inverted = 'before'
+      } else {
+        basketCompletion()
+      }
+    }
+
+    const quantityEmpty = (event: Event): void => {
+      if (
+        productQuantity.value == null ||
+        productQuantity.value == '' ||
+        productQuantity.value.length == 0 ||
+        Number(productQuantity.value) == 0 ||
+        !Number(productQuantity.value)
+      ) {
+        if (event.type === 'blur') {
+          productInverted.dataset.inverted = 'before'
+        }
+
+        basketHidden()
+      } else {
+        if (event.type === 'input') {
+          basketCompletion()
+        }
+      }
+    }
+
+    productBtn.addEventListener('click', firstValue as EventListener)
+    productBtn.addEventListener('click', productInBasket as EventListener)
+    productBtn.addEventListener('click', basketCompletion as EventListener)
+    productDecrease.addEventListener('click', quantityDecrease as EventListener)
+    productIncrease.addEventListener('click', productInBasket as EventListener)
+    productIncrease.addEventListener('click', basketCompletion as EventListener)
     basketClose.addEventListener('click', basketHidden as EventListener)
+    productQuantity.addEventListener('input', quantityEmpty as EventListener)
+    productQuantity.addEventListener('blur', quantityEmpty as EventListener)
   })
 }
 

@@ -1,33 +1,6 @@
 // Шапка документа
 .header {
   transform: translateY(var(--top));
-
-  &__inverted {
-    perspective: 600px;
-  }
-
-  &__inverted[data-inverted="before"] &__before {
-    transform: rotateX(0);
-  }
-
-  &__inverted[data-inverted="before"] &__after {
-    transform: rotateX(-180deg);
-  }
-
-  &__inverted[data-inverted="after"] &__before {
-    transform: rotateX(-180deg);
-  }
-
-  &__inverted[data-inverted="after"] &__after {
-    transform: rotateX(0);
-  }
-
-
-  &__before,
-  &__after {
-    transform-style    : preserve-3d;
-    backface-visibility: hidden;
-  }
 }
 
 // Мобильное меню
@@ -180,9 +153,11 @@
 .catalog {
   &__content {
     box-shadow: 0 0 0 100vw theme("colors.black.DEFAULT / 50%");
+    transform : translateX(-375px);
 
     @screen lg {
       box-shadow: none;
+      transform : translateX(0);
     }
   }
 
@@ -206,7 +181,70 @@
     }
   }
 
+  &__sidebar[data-sidebar="open"] {
+    visibility: visible;
+  }
+
+  &__sidebar[data-sidebar="open"] &__content {
+    opacity  : 1;
+    transform: translateX(0);
+  }
+
   &__accordion[data-accordion="active"] &__arrow {
     transform: rotate(180deg);
+  }
+}
+
+// Корзина
+.basket {
+  &:not([data-basket="show"]) {
+    transform: translateY(-40%);
+  }
+}
+
+// В корзину
+.in-basket {
+  animation: in-basket 2s ease both;
+}
+
+@keyframes in-basket {
+  100% {
+    top : -10%;
+    left: 90%;
+  }
+}
+
+// Серии
+.series {
+
+  &__card.filter-show {
+    animation: filtering-show 0.3s ease both 1;
+  }
+
+  &__category {
+    &::before {
+      content      : "";
+      display      : none;
+      position     : absolute;
+      right        : 0;
+      bottom       : 0;
+      left         : 0;
+      width        : 100%;
+      border-bottom: 2px solid theme('colors.black.DEFAULT');
+    }
+  }
+
+  &__category.filter-active {
+    &::before {
+      display: block;
+    }
+  }
+
+  &__category.filter-active &__pack {
+    @apply opacity-100 pointer-events-none;
+  }
+
+  &__category.filter-active &__subtitle {
+    @apply font-semibold;
   }
 }

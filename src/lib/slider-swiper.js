@@ -97,6 +97,20 @@ const init = () => {
     },
   })
 
+  new Swiper('.series-slider .swiper', {
+    navigation: {
+      prevEl: '.series-slider .swiper-button-prev',
+      nextEl: '.series-slider .swiper-button-next',
+    },
+
+    slidesPerView: 5,
+    slidesPerGroup: 1,
+    spaceBetween: 20,
+    speed: 500,
+    grabCursor: true,
+    watchSlidesProgress: true,
+  })
+
   // const gallerySlider = new Swiper('.gallery-slider .swiper', {
   //   pagination: {
   //     el: '.gallery-slider.swiper-pagination',

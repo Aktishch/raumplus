@@ -1,4 +1,4 @@
-<main class="main container flex flex-col items-center justify-center relative overflow-hidden <%= main.height %> py-0">
+<main class="main container flex flex-col relative overflow-hidden <%= main.height %> py-0">
   <div class="main__bg absolute inset-0">
     <div class="pack bg-grey w-full h-full">
       <div class="loader">
@@ -14,13 +14,13 @@
       </picture>
     </div>
   </div>
-  <div class="flex flex-col flex-grow items-start justify-center relative text-white w-full h-full py-10">
+  <div class="flex flex-col flex-grow items-start justify-center relative text-white w-full lg:max-w-[750px] h-full py-10">
     <% if (data.title != 'Главная') { %>
     <div class="flex items-center gap-1 absolute top-8 left-0 font-normal text-white text-12 xs:text-14 md:text-16">
       <a class="hover:underline underline-offset-4" href="/">Главная</a>/<span class="font-semibold text-primary pointer-events-none"><%= data.title %></span>
     </div>
     <% } %>
-    <h1 class="font-light uppercase text-34 sm:text-44 lg:text-title leading-4 ease-in-out duration-4 anim anim--up" data-anim="hidden"><%= main.title %></h1>
+    <h1 class="font-light uppercase text-34 md:text-44 lg:text-title leading-4 ease-in-out duration-4 anim anim--up" data-anim="hidden"><%= main.title %></h1>
     <% if (main.text) { %>
     <p class="font-light text-16 leading-5 mt-4 ease-in-out duration-4 delay-2 anim anim--up" data-anim="hidden"><%= main.text %></p>
     <% } %>

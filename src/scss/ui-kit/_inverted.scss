@@ -3,24 +3,42 @@
   position   : relative;
   perspective: 600px;
 
-  @media(hover) {
-    &:hover &-before {
-      transform: rotateY(-180deg);
-    }
+  &[data-inverted="before"] &-before {
+    transform: rotateX(0);
+  }
 
-    &:hover &-after {
-      transform: rotateY(0);
-    }
+  &[data-inverted="before"] &-after {
+    transform: rotateX(180deg);
+  }
+
+  &[data-inverted="after"] &-before {
+    transform: rotateX(-180deg);
+  }
+
+  &[data-inverted="after"] &-after {
+    transform: rotateX(0);
   }
 
   &-before {
-    position : absolute;
-    inset    : 0;
     transform: rotateY(0deg);
   }
 
   &-after {
+    position : absolute;
+    inset    : 0;
     transform: rotateY(180deg);
+  }
+
+  &--hover {
+    @media(hover) {
+      &:hover .inverted-before {
+        transform: rotateY(-180deg);
+      }
+
+      &:hover .inverted-after {
+        transform: rotateY(0);
+      }
+    }
   }
 
   &-before,
