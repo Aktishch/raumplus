@@ -13,7 +13,7 @@
 
   height: 'min-h-[350px] lg:min-h-[500px]',
   img: 'description-bg',
-  title: 'Нижнеопорные раздвижные системы'
+  title: '<span class="text-primary">Нижнеопорные</span> раздвижные системы'
 
 } %>
 
@@ -33,16 +33,35 @@
 
 <!-- Серии -->
 
+<% var palette = [
+  {
+    value: 'Белый',
+    color: '#ffffff'
+  },
+  {
+    value: 'Черный',
+    color: '#000000'
+  },
+  {
+    value: 'Серый',
+    color: '#B3B3B3'
+  },
+  {
+    value: 'Золотой',
+    color: '#B78C3A'
+  }
+] %>
+
 <section class="series container overflow-hidden">
   <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-8 xl:mb-14 ease-in-out duration-4 anim anim--up" data-anim="hidden">Серии профилей</h2>
   <div data-filter>
-    <div class="series-slider relative">
-      <div class="swiper border-b-2 border-solid border-black border-opacity-20">
+    <div class="series-slider relative mb-10 ease-in-out duration-4 anim anim--up" data-anim="hidden">
+      <div class="swiper -mx-[15px] px-[15px] sm:mx-0 sm:px-0 pb-3">
         <div class="swiper-wrapper">
           <% for (var i = 0; i < 9; i++) { %>
           <div class="swiper-slide h-auto">
-            <div class="series__category <%= i == 0 ? 'filter-active' : '' %> flex flex-col relative" data-filter-category="series-<%= i %>">
-              <div class="series__pack pack pack-box opacity-30 mb-8 duration-3">
+            <div class="series__category <%= i == 0 ? 'filter-active' : '' %> flex flex-col relative cursor-pointer pb-5 md:pb-9" data-filter-category="series-<%= i %>">
+              <div class="series__pack pack pack-box bg-grey opacity-30 mb-4 md:mb-8 duration-3">
                 <div class="loader">
                   <span class="loader-progress">
                     <svg class="loader-icon icon">
@@ -52,21 +71,21 @@
                 </div>
                 <picture>
                   <source srcset="img/pictures/production-img.webp" type="image/webp">
-                  <img class="image" loading="lazy" src="img/pictures/production-img.jpg" alt="">
+                  <img class="image image-rise" loading="lazy" src="img/pictures/production-img.jpg" alt="">
                 </picture>
               </div>
-              <h4 class="series__subtitle font-light text-center text-24 leading-2 duration-3">Серия S800</h4>
+              <h4 class="series__subtitle font-light text-center text-16 sm:text-20 lg:text-24 leading-2 duration-3">Серия S800</h4>
             </div>
           </div>
           <% } %>
         </div>
       </div>
-      <button class="swiper-button-prev btn btn-dark btn-fade btn-active absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+      <button class="swiper-button-prev btn btn-dark btn-fade btn-active hidden md:flex absolute xl:-left-14 text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
         <svg class="icon">
           <use xlink:href="img/icons.svg#arrow-left">
         </svg>
       </button>
-      <button class="swiper-button-next btn btn-dark btn-fade btn-active absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+      <button class="swiper-button-next btn btn-dark btn-fade btn-active hidden md:flex absolute xl:-right-14 text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
         <svg class="icon">
           <use xlink:href="img/icons.svg#arrow-right">
         </svg>
@@ -75,9 +94,144 @@
     <div class="block">
       <% for (var i = 0; i < 9; i++) { %>
       <div class="series__card <%= i == 0 ? '' : 'hidden' %>" data-filter-card="series-<%= i %>">
-        series-<%= i %>
+        <div class="flex flex-col lg:flex-row lg:justify-between gap-10 lg:gap-5">
+          <div class="w-full lg:max-w-[740px]">
+            <h2 class="font-light text-primary text-32 sm:text-42 lg:text-48 leading-2 mb-4 lg:mb-8">Описание S800</h2>
+            <div class="mb-8 lg:mb-14" data-listing>
+              <p class="font-light text-14 sm:text-16 leading-5 opacity-70">
+                Нижние ролики изготовлены из прочных полимерных материалов, имеют фторопластовое покрытие на металлическом подшипнике. <br>
+                Качественный подшипник отвечает за легкость и плавность хода двери, а также за долговечность службы. <br>
+                Точность центровки (балансировки) ролика обеспечивает отсутствие стука при движении двери. <br>
+                Ролики рассчитаны на нагрузку до 180 кг на каждую дверь. <br>
+                Возможна скрытая установка роликов, что предотвращает попадание пыли в механизм.
+              </p>
+              <p class="hidden font-light text-14 sm:text-16 leading-5 opacity-70" data-listing-item>
+                Нижние ролики изготовлены из прочных полимерных материалов, имеют фторопластовое покрытие на металлическом подшипнике. <br>
+                Качественный подшипник отвечает за легкость и плавность хода двери, а также за долговечность службы. <br>
+                Точность центровки (балансировки) ролика обеспечивает отсутствие стука при движении двери. <br>
+                Ролики рассчитаны на нагрузку до 180 кг на каждую дверь. <br>
+                Возможна скрытая установка роликов, что предотвращает попадание пыли в механизм.
+              </p>
+              <button class="btn btn-primary font-normal text-dark border-b border-r-0 border-l-0 border-t-0 border-dashed border-dark border-opacity-40 py-1 mt-2" data-listing-show data-waved="light">Показать еще...</button>
+            </div>
+            <p class="font-light text-20 lg:text-24 leading-1 mb-5">Цвет: черный</p>
+            <div class="flex items-center gap-3">
+              <% for (var j = 0; j < palette.length; j++) { %>
+              <label class="palette block relative cursor-pointer" data-waved="light">
+                <input class="palette__radio hidden" type="radio" value="<%= palette[j].value %>" name="color">
+                <span class="palette__color block rounded-max border border-solid border-dark border-opacity-10 hover:border-opacity-40 w-12 h-12 duration-3" style="--production-color: <%= palette[j].color %>"></span>
+              </label>
+              <% } %>
+            </div>
+          </div>
+          <div class="w-full lg:max-w-[425px]">
+            <div class="series-products">
+              <div class="swiper -mx-[15px] px-[15px] sm:mx-0 sm:px-0">
+                <div class="swiper-wrapper">
+                  <% for (var j = 0; j < 4; j++) { %>
+                  <div class="swiper-slide pack pack-box bg-grey">
+                    <div class="loader">
+                      <span class="loader-progress">
+                        <svg class="loader-icon icon">
+                          <use xlink:href="img/icons.svg#loader">
+                        </svg>
+                      </span>
+                    </div>
+                    <picture>
+                      <source srcset="img/pictures/series.webp" type="image/webp">
+                      <img class="image" loading="lazy" src="img/pictures/series.jpg" alt="">
+                    </picture>
+                  </div>
+                  <% } %>
+                </div>
+                <div class="swiper-pagination relative lg:absolute left-0 right-0 lg:bottom-2 text-primary mx-auto mt-10 lg:mt-0"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <% } %>
+    </div>
+  </div>
+</section>
+
+<!-- Ключевые преимущества -->
+
+<section class="container container--xs bg-grey overflow-hidden">
+  <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-8 xl:mb-14 ease-in-out duration-4 anim anim--right" data-anim="hidden">Ключевые <br> преимущества</h2>
+  <div class="flex flex-col gap-6">
+    <% for (var i = 0; i < 3; i++) { %>
+    <div class="ease-in-out duration-4 anim <%= i == 1 ? 'anim--right' : 'anim--left' %>" data-anim="hidden">
+      <div class="card card--active p-2 sm:p-4">
+        <div class="card-content <%= i == 1 ? 'lg:flex-row-reverse' : 'lg:flex-row' %> items-stretch lg:gap-10">
+          <div class="w-full sm:max-w-[380px]">
+            <div class="pack pack-box bg-grey">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
+              </div>
+              <picture>
+                <source srcset="img/pictures/significant-img.webp" type="image/webp">
+                <img class="image image-rise" loading="lazy" src="img/pictures/significant-img.jpg" alt="">
+              </picture>
+            </div>
+          </div>
+          <div class="flex flex-col items-start justify-center w-full lg:max-w-[850px] py-6 pl-4 pr-4 lg:py-4 <%= i == 1 ? 'lg:pl-10 lg:pr-0' : 'lg:pr-10 lg:pl-0' %>" data-listing>
+            <div class="font-light text-primary text-7xl md:text-number leading-1 lg:mb-5">0<%= i + 1 %></div>
+            <h3 class="font-light text-20 sm:text-24 leading-2 mb-5">Плавность и бесшумность хода систем</h3>
+            <p class="font-light text-dark text-opacity-70 text-14 sm:text-16 leading-5">
+              Нижние ролики изготовлены из прочных полимерных материалов, имеют фторопластовое покрытие на металлическом подшипнике. Качественный подшипник отвечает за легкость и плавность хода двери, а также за долговечность службы.Точность центровки (балансировки) ролика обеспечивает отсутствие стука при движении двери. Ролики рассчитаны
+              <span class="hidden" data-listing-item>
+                Нижние ролики изготовлены из прочных полимерных материалов, имеют фторопластовое покрытие на металлическом подшипнике. Качественный подшипник отвечает за легкость и плавность хода двери, а также за долговечность службы.Точность центровки (балансировки) ролика обеспечивает отсутствие стука при движении двери. Ролики рассчитаны Нижние ролики изготовлены из прочных полимерных материалов, имеют фторопластовое покрытие на металлическом подшипнике. Качественный подшипник отвечает за легкость и плавность хода двери, а также за долговечность службы.Точность центровки (балансировки) ролика обеспечивает отсутствие стука при движении двери. Ролики рассчитаны
+              </span>
+            </p>
+            <button class="btn btn-primary font-normal text-dark border-b border-r-0 border-l-0 border-t-0 border-dashed border-dark border-opacity-40 py-1 mt-2" data-listing-show data-waved="light">Показать еще...</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<!-- Галерея -->
+
+<section class="gallery bg-black overflow-hidden">
+  <div class="gallery-slider xxl:w-[1920px] xxl:mx-auto">
+    <div class="swiper xxl:overflow-visible">
+      <div class="swiper-wrapper">
+        <% for (var i = 0; i < 4; i++) { %>
+        <div class="gallery-slide swiper-slide">
+          <div class="gallery__pack pack pack-sheet sm:pack-rect-lg md:pack-[45] bg-black ease-linear duration-3 delay-2">
+            <div class="loader">
+              <span class="loader-progress">
+                <svg class="loader-icon icon">
+                  <use xlink:href="img/icons.svg#loader">
+                </svg>
+              </span>
+            </div>
+            <picture>
+              <source srcset="img/pictures/gallery-img.webp" type="image/webp">
+              <img class="image" loading="lazy" src="img/pictures/gallery-img.jpg" alt="">
+            </picture>
+          </div>
+        </div>
+        <% } %>
+      </div>
+      <div class="swiper-pagination left-0 right-0 lg:bottom-6 text-white mx-auto"></div>
+      <button class="swiper-button-prev btn btn-dark btn-fade btn-active absolute -left-9 xs:left-4 text-white text-22 rounded-max w-[76px] h-[76px] xs:w-[42px] xs:h-[42px]" data-waved="light">
+        <svg class="icon text-30 xs:text-20 ml-6 xs:ml-0">
+          <use xlink:href="img/icons.svg#arrow-left">
+        </svg>
+      </button>
+      <button class="swiper-button-next btn btn-dark btn-fade btn-active absolute -right-9 xs:right-4 text-white text-22 rounded-max w-[76px] h-[76px] xs:w-[42px] xs:h-[42px]" data-waved="light">
+        <svg class="icon text-30 xs:text-20 mr-6 xs:mr-0">
+          <use xlink:href="img/icons.svg#arrow-right">
+        </svg>
+      </button>
     </div>
   </div>
 </section>

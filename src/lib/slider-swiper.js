@@ -103,10 +103,72 @@ const init = () => {
       nextEl: '.series-slider .swiper-button-next',
     },
 
-    slidesPerView: 5,
+    slidesPerView: 2.3,
     slidesPerGroup: 1,
-    spaceBetween: 20,
+    spaceBetween: 16,
     speed: 500,
+    grabCursor: true,
+    watchSlidesProgress: true,
+
+    breakpoints: {
+      [media.sm]: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+
+      [media.lg]: {
+        slidesPerView: 4,
+      },
+
+      [media.xl]: {
+        slidesPerView: 5,
+      },
+    },
+  })
+
+  new Swiper('.series-products .swiper', {
+    pagination: {
+      el: '.series-products .swiper-pagination',
+      clickable: true,
+    },
+
+    slidesPerView: 1.4,
+    slidesPerGroup: 1,
+    spaceBetween: 16,
+    speed: 500,
+    grabCursor: true,
+    watchSlidesProgress: true,
+
+    breakpoints: {
+      [media.xs]: {
+        slidesPerView: 2,
+      },
+
+      [media.sm]: {
+        slidesPerView: 3,
+      },
+
+      [media.lg]: {
+        slidesPerView: 1,
+      },
+    },
+  })
+
+  new Swiper('.gallery-slider .swiper', {
+    pagination: {
+      el: '.gallery-slider .swiper-pagination',
+      clickable: true,
+    },
+
+    navigation: {
+      prevEl: '.gallery-slider .swiper-button-prev',
+      nextEl: '.gallery-slider .swiper-button-next',
+    },
+
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 16,
+    speed: 1000,
     grabCursor: true,
     watchSlidesProgress: true,
   })

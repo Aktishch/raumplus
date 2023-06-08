@@ -1,0 +1,213 @@
+<% var data = {
+
+  title: 'Партнеры',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Главный блок -->
+
+<% var main = {
+
+  height: 'min-h-[600px] xl:min-h-[750px]',
+  img: 'partners-bg',
+  title: '<span class="text-primary">Увеличивайте доходность</span> своего бизнеса вместе с RAUMPLUS',
+  list: true,
+  btn: 'заполнить Заявку'
+
+} %>
+
+<%= _.template(require('./includes/main.html').default)({data, main}) %>
+
+<!-- Сотрудничество -->
+
+<section class="container flex items-center relative overflow-hidden xl:min-h-[575px]">
+  <div class="hidden xl:block absolute inset-0 xxl:w-[1920px] xxl:mx-auto">
+    <div class="pack bg-grey w-1/2 h-full ml-auto">
+      <div class="loader">
+        <span class="loader-progress">
+          <svg class="loader-icon icon">
+            <use xlink:href="img/icons.svg#loader">
+          </svg>
+        </span>
+      </div>
+      <picture>
+        <source srcset="img/pictures/about-bg-2.webp" type="image/webp">
+        <img class="image" loading="lazy" src="img/pictures/about-bg-2.jpg" alt="">
+      </picture>
+    </div>
+  </div>
+  <div class="flex flex-col items-start relative w-full xl:max-w-[515px]">
+    <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-10 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+      Приглашаем <br> <span class="text-primary">к сотрудничеству</span>
+    </h2>
+    <p class="font-light text-16 leading-5 mb-5 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+      Международная компания-производитель интеллектуальных и инновационных решений для жилых и офисных помещений, raumplus праглашает к сотрудничеству производителей мебели, дизайнеров, архитекторов, салоны мебели, дизайн студии
+    </p>
+    <p class="font-light text-16 leading-5 mb-12 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+      Компания ООО "Раумплюс" — эксклюзивный представитель немецкого бренда raumplus в России с 2009 г.
+    </p>
+    <div class="ease-in-out duration-4 anim anim--right" data-anim="hidden">
+      <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe uppercase mx-auto xl:mx-0" data-waved="light">
+        СТАТЬ ПАРТНЕРОМ
+        <svg class="icon text-14 ml-2">
+          <use xlink:href="img/icons.svg#arrow-btn">
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Выгода -->
+
+<% var benefit = [
+  {
+    hidden: '',
+    delay: '',
+    data: '',
+    number: '01',
+    title: 'Популярность бренда',
+    text: 'наработанная десятилетиями позитивная репутация бренда и сотни положительных отзывов'
+  },
+  {
+    hidden: '',
+    delay: 'xl:delay-2',
+    data: '',
+    number: '02',
+    title: 'Соотношение бренд / цена / качество',
+    text: 'благодаря инновационным технологиям, прямым поставкам и эффективной схеме дистрибуции'
+  },
+  {
+    hidden: 'hidden md:block',
+    delay: 'xl:delay-4',
+    data: 'data-listing-item',
+    number: '03',
+    title: 'Широкий ассортимент складской программы',
+    text: 'полноценно покрывает потребности клиентов в средневысоком и высоком ценовом сегменте по всем типам систем'
+  },
+  {
+    hidden: 'hidden md:block',
+    delay: '',
+    data: 'data-listing-item',
+    number: '04',
+    title: 'Сервисная поддержка',
+    text: 'Калькуляция систем в течение рабочего дня а также техническая консультация on-line'
+  },
+  {
+    hidden: 'hidden md:block',
+    delay: 'xl:delay-2',
+    data: 'data-listing-item',
+    number: '05',
+    title: 'Обучение по продукту',
+    text: 'Обучающая on-line платформа «raumplus — Всегда рядом» индивидуальные форматы'
+  },
+  {
+    hidden: 'hidden md:block',
+    delay: 'xl:delay-4',
+    data: 'data-listing-item',
+    number: '06',
+    title: 'Высокая маржинальность',
+    text: 'использование престижных комплектующих LUX класса позволяет повысить маржинальность всего изделия'
+  }
+] %>
+
+<section class="container container--xs bg-grey overflow-hidden" data-listing="2">
+  <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-10 ease-in-out duration-4 anim anim--right" data-anim="hidden">Ваши выгоды при работе с нами</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+    <% for (var i = 0; i < benefit.length; i++) { %>
+    <div class="<%= benefit[i].hidden %> ease-in-out duration-4 <%= benefit[i].delay %> anim anim--right" <%= benefit[i].data %> data-anim="hidden">
+      <div class="inverted inverted--hover h-full">
+        <div class="inverted-before card p-4 sm:p-7 lg:p-12" data-waved="dark">
+          <div class="card-content">
+            <div class="font-light text-primary text-7xl md:text-number leading-1 mb-3"><%= benefit[i].number %></div>
+            <h3 class="font-light text-20 sm:text-24 leading-3 mb-4"><%= benefit[i].title %></h3>
+            <p class="font-light text-16 leading-5"><%= benefit[i].text %></p>
+          </div>
+        </div>
+        <div class="inverted-after card bg-dark text-white p-4 sm:p-7 lg:p-12" data-waved="light">
+          <div class="card-content">
+            <div class="font-light text-primary text-7xl md:text-number leading-1 mb-3"><%= benefit[i].number %></div>
+            <h3 class="font-light text-20 sm:text-24 leading-3 mb-4"><%= benefit[i].title %></h3>
+            <p class="font-light text-16 leading-5"><%= benefit[i].text %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <div class="md:hidden mt-10 ease-in-out duration-4 anim anim--up" data-anim="hidden">
+    <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe uppercase mx-auto" data-listing-show data-waved="dark">Показать ещё</button>
+  </div>
+</section>
+
+<!-- Стать партнером -->
+
+<section class="container relative text-white overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="pack bg-grey w-full h-full">
+      <div class="loader">
+        <span class="loader-progress">
+          <svg class="loader-icon icon">
+            <use xlink:href="img/icons.svg#loader">
+          </svg>
+        </span>
+      </div>
+      <picture>
+        <source srcset="img/pictures/partners-img.webp" type="image/webp">
+        <img class="image" loading="lazy" src="img/pictures/partners-img.jpg" alt="">
+      </picture>
+    </div>
+  </div>
+  <div class="relative">
+    <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-8 ease-in-out duration-4 anim anim--up" data-anim="hidden">Стать партнером raumplus</h2>
+    <p class="font-light text-16 leading-5 mb-10">Заполните форму на получение партнерства raumplus, наши менеджеры свяжутся с вами для уточнения деталей сотрудничества.</p>
+    <div class="card p-2">
+      <div class="card-content flex-row items-center justify-between">
+        <div class="w-full max-w-[640px] px-8">
+          <form class="form text-dark" data-form="submit">
+            <input type="hidden" value="Главная" name="theme">
+            <div class="grid grid-cols-6 gap-4">
+              <label class="form-label col-3" data-label="input">
+                <div class="font-normal text-14 leading-1 mb-2">Город<span class="text-red">*</span></div>
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input" data-input type="text">
+                  </div>
+                  <span class="form-error" data-error>Введите ваш город!</span>
+                </div>
+              </label>
+              <label class="form-label col-3" data-label="input">
+                <div class="font-normal text-14 leading-1 mb-2">Торговое название<span class="text-red">*</span></div>
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input" data-input type="text">
+                  </div>
+                  <span class="form-error" data-error>Введите торговое название!</span>
+                </div>
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="w-full max-w-[650px]">
+          <div class="pack pack-sheet bg-grey">
+            <div class="loader">
+              <span class="loader-progress">
+                <svg class="loader-icon icon">
+                  <use xlink:href="img/icons.svg#loader">
+                </svg>
+              </span>
+            </div>
+            <picture>
+              <source srcset="img/pictures/room.webp" type="image/webp">
+              <img class="image" loading="lazy" src="img/pictures/room.jpg" alt="">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>
