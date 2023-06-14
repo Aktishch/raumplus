@@ -35,7 +35,7 @@ import formSubmit from './ts/form-submit'
 // import choiceFile from './ts/choice-file'
 // import copyLink from './ts/copy-link'
 import formInputs from './ts/form-inputs'
-// import maskTel from './ts/mask-tel'
+import maskTel from './ts/mask-tel'
 // import password from './ts/password'
 import quantity from './ts/quantity'
 // import range from './ts/range'
@@ -87,7 +87,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // choiceFile.init()
   // copyLink.init()
   formInputs.init()
-  // maskTel.init()
+  maskTel.init()
   // password.init()
   quantity.init()
   // range.init()

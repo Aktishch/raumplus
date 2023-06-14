@@ -83,7 +83,7 @@ select {
     &,
     &:hover,
     &:focus {
-      border                 : 1px solid transparent;
+      border                 : 1px solid theme("colors.dark.DEFAULT / 50%");
       box-shadow             : inset 0 0 0 1000px transparent;
       transition             : background-color 5000s ease-in-out 0s;
       -webkit-text-fill-color: theme("colors.dark.DEFAULT");

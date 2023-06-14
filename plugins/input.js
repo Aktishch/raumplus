@@ -14,9 +14,8 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       flexGrow: 1,
       display: 'block',
       width: '100%',
-
       backgroundColor: theme('colors.white.DEFAULT'),
-      padding: '12px 20px',
+      padding: '8px 16px',
       border: `1px solid ${formatColor({
         mode: 'rgba',
         color: grey,

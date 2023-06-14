@@ -127,7 +127,7 @@
   }
 ] %>
 
-<section class="production container overflow-hidden">
+<section class="production container overflow-hidden" data-product>
   <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-12">
     <div class="flex flex-col md:flex-row xl:flex-col gap-2 md:gap-4 ease-in-out duration-4 anim anim--right" data-anim="hidden">
       <div class="production-slider bg-grey w-full md:max-w-[600px] lg:max-w-[800px] xl:max-w-full">
@@ -144,7 +144,7 @@
               </div>
               <picture>
                 <source srcset="img/pictures/production-img.webp" type="image/webp">
-                <img class="image" loading="lazy" src="img/pictures/production-img.jpg" alt="">
+                <img class="image" <%= i == 0 ? 'data-product-image="img/pictures/production-img.jpg"' : '' %> loading="lazy" src="img/pictures/production-img.jpg" alt="">
               </picture>
               <div class="flex items-center justify-center absolute inset-0 bg-black font-extralight text-white text-center text-48 bg-opacity-30 opacity-0 hover:opacity-100 duration-2">+</div>
             </a>
@@ -188,7 +188,7 @@
     <div class="ease-in-out duration-4 anim anim--left" data-anim="hidden">
       <div class="card h-full py-6 px-4 md:py-8 md:px-8">
         <div class="card-content">
-          <h2 class="font-normal text-22 xs:text-26 md:text-32 leading-3 mb-4 md:mb-6">Раздвижная система S-1200, черный</h2>
+          <h2 class="font-normal text-22 xs:text-26 md:text-32 leading-3 mb-4 md:mb-6" data-product-name>Раздвижная система S-1200, черный</h2>
           <div class="flex items-center gap-3 md:gap-6 mb-4 md:mb-6">
             <span class="font-normal text-14 leading-1 opacity-60">Артикул: 82575553</span>
             <div class="flex items-center justify-center bg-grey rounded-full py-1 px-2">
@@ -216,7 +216,7 @@
               <span class="font-normal text-dark text-opacity-70 leading-1 mb-2">Связь с менеджером:</span>
               <a class="btn btn-primary text-dark border-b border-dashed" href="tel: +7 495 191-08-95" data-waved="dark">
                 <svg class="icon text-24 mr-1">
-                  <use xlink:href="img/icons.svg#tel">
+                  <use xlink:href="img/icons.svg#phone">
                 </svg>
                 <span class="font-semibold text-20">+7 495 191-08-95</span>
               </a>
@@ -231,14 +231,27 @@
           <div class="bg-grey xl:mt-auto py-6 px-3 md:px-6">
             <div class="flex flex-col md:flex-row items-start md:justify-between gap-5">
               <div class="order-2 md:order-1 flex flex-col w-full max-w-[270px]">
-                <span class="font-normal text-16 md:text-18 leading-1 line-through">7 140 ₽</span>
-                <span class="font-medium text-40 md:text-title leading-1 mb-4">5 140 ₽</span>
-                <button class="btn btn-primary btn-lg btn-fill btn-active font-medium uppercase" data-waved="light">
-                  <svg class="icon text-24 mr-2">
-                    <use xlink:href="img/icons.svg#basket">
-                  </svg>
-                  в корзину
-                </button>
+                <span class="font-normal text-16 md:text-18 leading-1 line-through" data-product-price>7 140 ₽</span>
+                <span class="font-medium text-40 md:text-title leading-1 mb-4" data-product-oldprice>5 140 ₽</span>
+                <div class="inverted w-full" data-product-inverted data-inverted="before">
+                  <div class="inverted-before duration-3" data-inverted-before>
+                    <button class="btn btn-primary btn-lg btn-fill btn-active font-medium uppercase w-full" data-product-button data-inverted-open data-waved="light">
+                      <svg class="icon text-24 mr-2">
+                        <use xlink:href="img/icons.svg#basket">
+                      </svg>
+                      в корзину
+                    </button>
+                  </div>
+                  <div class="inverted-after duration-3" data-inverted-after>
+                    <div class="quantity" data-quantity>
+                      <button class="quantity-btn btn btn-white" data-product-decrease data-quantity-decrease data-waved="dark">-</button>
+                      <div class="quantity-cover input-cover">
+                        <input class="quantity-input input" data-product-quantity data-input="number" type="text" value="1" maxlength="3" name="quantity">
+                      </div>
+                      <button class="quantity-btn btn btn-white" data-product-increase data-quantity-increase data-waved="dark">+</button>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="order-1 md:order-2 flex items-center justify-center bg-green text-white text-center font-normal text-14 leading-1 rounded-full h-max py-2 px-3">Партнерская скидка 33%</div>
             </div>
@@ -284,15 +297,15 @@
       <div class="production__card hidden" data-filter-card="equipment">
         <div class="grid grid-cols-2 sm:grid-cols-1 gap-2 sm:gap-4" data-listing="6">
           <% for (var i = 0; i < production.length; i++) { %>
-          <div class="card card--active <%= production[i].hidden %> pb-2 pl-2 pr-2 sm:pt-6 sm:pb-6 sm:pl-4 sm:pr-4 lg:pt-2 lg:pb-2 lg:pl-2 lg:pr-7" <%= production[i].data %>>
+          <div class="card card--active <%= production[i].hidden %> pb-2 pl-2 pr-2 sm:pt-6 sm:pb-6 sm:pl-4 sm:pr-4 lg:pt-2 lg:pb-2 lg:pl-2 lg:pr-7" data-product <%= production[i].data %>>
             <div class="card-content sm:flex-wrap lg:flex-nowrap sm:flex-row items-start sm:items-center lg:justify-between sm:gap-5 xl:gap-10">
               <div class="pack pack-box w-full sm:max-w-[150px] mb-3 sm:mb-0">
                 <picture>
-                  <img class="image image-scale-down" src="img/pictures/product.png" alt="">
+                  <img class="image image-scale-down" data-product-image="img/pictures/product.png" src="img/pictures/product.png" alt="">
                 </picture>
               </div>
               <div class="flex flex-col items-start w-full sm:max-w-[250px] mb-2 sm:mb-0">
-                <span class="font-normal text-14 sm:text-16 leading-4 mb-2 sm:mb-4">Уголок для верхней одиночной направляющей s34мм</span>
+                <span class="font-normal text-14 sm:text-16 leading-4 mb-2 sm:mb-4" data-product-name>Уголок для верхней одиночной направляющей s34мм</span>
                 <span class="font-normal text-12 sm:text-14 leading-2 opacity-60">Артикул: 82575553</span>
               </div>
               <div class="font-normal text-14 sm:text-16 leading-4 opacity-60 xl:mx-auto mb-2 sm:mb-0">Цвет: бронза</div>
@@ -303,8 +316,21 @@
                 <span class="font-normal text-dark text-opacity-60 text-center text-14 leading-1"><%= production[i].text %></span>
               </div>
               <div class="flex flex-col sm:flex-row lg:flex-col sm:items-end md:justify-end gap-3 sm:gap-6 lg:border-l lg:border-solid lg:border-dark lg:border-opacity-20 w-full lg:max-w-[200px] xl:max-w-[330px] lg:pl-5 xl:pl-10 mt-auto sm:mt-0">
-                <div class="font-medium text-22 sm:text-28 leading-4">5 140 ₽</div>
-                <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-14 sm:text-16 lg:w-full px-2 sm:px-10" data-waved="light">В корзину</button>
+                <div class="font-medium text-22 sm:text-28 leading-4" data-product-price>5 140 ₽</div>
+                <div class="inverted lg:w-full" data-product-inverted data-inverted="before">
+                  <div class="inverted-before duration-3" data-inverted-before>
+                    <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-14 sm:text-16 w-full px-2 sm:px-10" data-product-button data-inverted-open data-waved="light">В корзину</button>
+                  </div>
+                  <div class="inverted-after duration-3" data-inverted-after>
+                    <div class="quantity" data-quantity>
+                      <button class="quantity-btn btn btn-white" data-product-decrease data-quantity-decrease data-waved="dark">-</button>
+                      <div class="quantity-cover input-cover">
+                        <input class="quantity-input input" data-product-quantity data-input="number" type="text" value="1" maxlength="3" name="quantity">
+                      </div>
+                      <button class="quantity-btn btn btn-white" data-product-increase data-quantity-increase data-waved="dark">+</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -331,5 +357,9 @@
     </div>
   </div>
 </section>
+
+<!-- Корзина -->
+
+<%= _.template(require('./includes/basket.html').default)({}) %>
 
 <%= _.template(require('./includes/footer.html').default)({}) %>

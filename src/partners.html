@@ -144,7 +144,7 @@
 
 <!-- Стать партнером -->
 
-<section class="container relative text-white overflow-hidden">
+<section class="container container--xs relative text-white overflow-hidden">
   <div class="absolute inset-0">
     <div class="pack bg-grey w-full h-full">
       <div class="loader">
@@ -161,37 +161,129 @@
     </div>
   </div>
   <div class="relative">
-    <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-8 ease-in-out duration-4 anim anim--up" data-anim="hidden">Стать партнером raumplus</h2>
-    <p class="font-light text-16 leading-5 mb-10">Заполните форму на получение партнерства raumplus, наши менеджеры свяжутся с вами для уточнения деталей сотрудничества.</p>
-    <div class="card p-2">
+    <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-3 sm:mb-8 ease-in-out duration-4 anim anim--up" data-anim="hidden">Стать партнером raumplus</h2>
+    <p class="font-light text-16 leading-5 mb-5 sm:mb-10 ease-in-out duration-4 anim anim--up" data-anim="hidden">Заполните форму на получение партнерства raumplus, наши менеджеры свяжутся с вами для уточнения деталей сотрудничества.</p>
+    <div class="card p-6 sm:p-8 xl:p-2">
       <div class="card-content flex-row items-center justify-between">
-        <div class="w-full max-w-[640px] px-8">
+        <div class="w-full xl:max-w-[640px] xl:px-8">
           <form class="form text-dark" data-form="submit">
             <input type="hidden" value="Главная" name="theme">
-            <div class="grid grid-cols-6 gap-4">
-              <label class="form-label col-3" data-label="input">
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-5 mb-6 sm:mb-8">
+              <label class="form-label sm:col-3" data-label="input">
                 <div class="font-normal text-14 leading-1 mb-2">Город<span class="text-red">*</span></div>
                 <div class="form-wrapper">
                   <div class="input-cover">
-                    <input class="input" data-input type="text">
+                    <input class="input input-md text-14" data-input type="text">
                   </div>
-                  <span class="form-error" data-error>Введите ваш город!</span>
+                  <span class="form-error" data-error>Введите город</span>
                 </div>
               </label>
-              <label class="form-label col-3" data-label="input">
+              <label class="form-label sm:col-3" data-label="input">
                 <div class="font-normal text-14 leading-1 mb-2">Торговое название<span class="text-red">*</span></div>
                 <div class="form-wrapper">
                   <div class="input-cover">
-                    <input class="input" data-input type="text">
+                    <input class="input input-md text-14" data-input type="text">
                   </div>
-                  <span class="form-error" data-error>Введите торговое название!</span>
+                  <span class="form-error" data-error>Введите торговое название</span>
+                </div>
+              </label>
+              <label class="form-label sm:col-6">
+                <div class="font-normal text-14 leading-1 mb-2">Юридическое название</div>
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input input-md text-14" type="text">
+                  </div>
+                </div>
+              </label>
+              <label class="form-label sm:col-3">
+                <div class="font-normal text-14 leading-1 mb-2">Сайт</div>
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input input-md text-14" type="text">
+                  </div>
+                </div>
+              </label>
+              <label class="form-label sm:col-3" data-label="input">
+                <div class="font-normal text-14 leading-1 mb-2">Форма сотрудничества<span class="text-red">*</span></div>
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <select class="input input-md text-14" data-input="select">
+                      <option value="0" disabled hidden selected>Выберите из списка</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </div>
+                  <div class="form-icon form-icon-md form-icon--right text-24">
+                    <svg class="icon">
+                      <use xlink:href="img/icons.svg#arrow-bottom">
+                    </svg>
+                  </div>
+                  <span class="form-error" data-error>Выберите вариант</span>
+                </div>
+              </label>
+              <label class="form-label sm:col-2" data-label="input">
+                <div class="font-normal text-14 leading-1 mb-2">Имя<span class="text-red">*</span></div>
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input input-md text-14" data-input="name" type="text">
+                  </div>
+                  <span class="form-error" data-error>Введите имя</span>
+                </div>
+              </label>
+              <label class="form-label sm:col-2" data-label="input">
+                <div class="font-normal text-14 leading-1 mb-2">Фамилия<span class="text-red">*</span></div>
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input input-md text-14" data-input="name" type="text">
+                  </div>
+                  <span class="form-error" data-error>Введите фамилию</span>
+                </div>
+              </label>
+              <label class="form-label sm:col-2" data-label="input">
+                <div class="font-normal text-14 leading-1 mb-2">Отчество<span class="text-red">*</span></div>
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input input-md text-14" data-input="name" type="text">
+                  </div>
+                  <span class="form-error" data-error>Введите отчество</span>
+                </div>
+              </label>
+              <label class="form-label sm:col-6">
+                <div class="font-normal text-14 leading-1 mb-2">Должность</div>
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input input-md text-14" type="text">
+                  </div>
+                </div>
+              </label>
+              <label class="form-label sm:col-3" data-label="input">
+                <div class="font-normal text-14 leading-1 mb-2">Телефон<span class="text-red">*</span></div>
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input input-md text-14" data-input="tel" type="tel">
+                  </div>
+                  <span class="form-error" data-error>Введите телефон</span>
+                </div>
+              </label>
+              <label class="form-label sm:col-3">
+                <div class="font-normal text-14 leading-1 mb-2">E-mail<span class="text-red">*</span></div>
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input input-md text-14" type="text">
+                  </div>
                 </div>
               </label>
             </div>
+            <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-14 sm:text-16 w-full sm:max-w-[270px] mb-4" type="submit" data-waved="light">Отправить заявку</button>
+            <div class="font-medium text-12 sm:text-14 leading-4 cursor-pointer">
+              Нажимая кнопку <span class="text-primary underline underline-offset-4">вы соглашаетесь с условиями хранения персональных данных</span>
+            </div>
           </form>
         </div>
-        <div class="w-full max-w-[650px]">
-          <div class="pack pack-sheet bg-grey">
+        <div class="hidden xl:block w-full max-w-[650px]">
+          <div class="pack pack-[110] bg-grey">
             <div class="loader">
               <span class="loader-progress">
                 <svg class="loader-icon icon">
@@ -207,6 +299,55 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Вопросы -->
+
+<% var questions = [
+  {
+    title: [
+      'Как стать партнером raumplus?',
+      'Как стать партнером raumplus?',
+      'Как получить прайс с оптовыми ценами на системы raumplus?'
+    ]
+  },
+  {
+    title: [
+      'Как получить образцы комплектующих raumplus?',
+      'Что произойдет после отправки заявки на регистрацию в партнерском разделе сайта?',
+      'Как раcсчитать изделие?',
+      'Как получить инструкцию по расчету и сборке системы?'
+    ]
+  }
+] %>
+
+<section class="questions container">
+  <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-3 sm:mb-8 ease-in-out duration-4 anim anim--up" data-anim="hidden">Ответы на вопрос</h2>
+  <p class="font-light text-16 leading-5 mb-5 sm:mb-10 ease-in-out duration-4 anim anim--up" data-anim="hidden">Посмотрите ответы на частозадаваемые вопросы о совместной работе с raumplus</p>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
+    <% for (var i = 0; i < questions.length; i++) { %>
+    <div class="flex flex-col gap-4 lg:gap-6">
+      <% for (var j = 0; j < questions[i].title.length; j++) { %>
+      <div class="ease-in-out duration-4 anim anim--up" data-anim="hidden">
+        <div class="questions__accordion" data-accordion="hidden">
+          <div class="questions__toggle flex items-center justify-between gap-5 relative bg-grey p-4 lg:p-6 duration-3" data-accordion-toggle data-waved="dark">
+            <h4 class="font-medium text-16 leading-4"><%= questions[i].title[j] %></h4>
+            <div class="flex items-center justify-center relative w-[18px] min-w-[18px] h-[18px]">
+              <span class="bg-[currentColor] w-full h-[2px] duration-3"></span>
+              <span class="questions__line absolute bg-[currentColor] rotate-90 w-full h-[2px] duration-3"></span>
+            </div>
+          </div>
+          <div data-accordion-content>
+            <div class="pt-4 px-4 xl:pt-8 xl:px-8">
+              <p class="font-light text-14 md:text-16 leading-5">Для регистрации вас как партнера и отправки специального прайса заполните заявку на регистрацию в партнерском разделе сайта https://www.raumplus.ru/partners/registration/ или напишите на почту info@raumplus.ru.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <% } %>
   </div>
 </section>
 

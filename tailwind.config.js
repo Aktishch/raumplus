@@ -26,7 +26,7 @@ module.exports = {
         DEFAULT: '#B19777',
         dark: '#8D7557',
         active: '#62503A',
-        focus: '#FCD9A5',
+        focus: '#62503A',
       },
 
       dark: {

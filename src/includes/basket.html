@@ -1,14 +1,14 @@
-<div class="basket fixed z-1 top-2/4 left-0 md:left-auto right-0 md:right-10 bg-white rounded-4 -translate-y-1/2 shadow-md invisible opacity-0 duration-3 w-full max-w-[320px] mx-auto p-5" data-basket="hidden">
-  <div class="flex items-center justify-between mb-4">
-    <h4 class="font-alt font-semibold text-24 mr-3">Product in basket</h4>
-    <button class="btn btn-primary text-18 rounded-1 p-1" data-basket-close data-waved="light">
-      <svg class="icon">
+<div class="basket fixed z-1 top-2/4 left-0 md:left-auto right-0 md:right-8 bg-white -translate-y-1/2 shadow-md invisible opacity-0 duration-3 w-full max-w-[300px] mx-auto p-4 sm:p-6" data-basket="hidden">
+  <div class="flex items-start justify-between gap-4 mb-6">
+    <h4 class="font-semibold text-18 mr-3">Товар добавлен в корзину</h4>
+    <button class="btn btn-primary text-24 opacity-70 p-1" data-basket-close data-waved="light">
+      <svg class="icon text-dark">
         <use xlink:href="img/icons.svg#close">
       </svg>
     </button>
   </div>
   <div class="flex items-center mb-4">
-    <div class="pack pack-box bg-grey rounded-4 w-[100px] min-w-[100px] mr-5">
+    <div class="pack pack-box bg-grey w-[120px] min-w-[120px] mr-9">
       <div class="loader">
         <span class="loader-progress">
           <svg class="loader-icon icon">
@@ -17,19 +17,17 @@
         </span>
       </div>
       <picture>
-        <img class="image" data-basket-image src="https://picsum.photos/600/400?random=5" loading="lazy" alt="">
+        <img class="image" data-basket-image src="" loading="lazy" alt="">
       </picture>
     </div>
-    <div class="flex flex-col">
-      <span class="font-bold text-18 md:text-20 mb-3" data-basket-name>Name 4</span>
-      <span class="text-20 md:text-24" data-basket-quantity>4 шт</span>
+    <div class="flex flex-col items-center gap-2">
+      <p class="font-light text-24 leading-4">
+        <span data-basket-quantity>1</span> шт.
+      </p>
+      <p class="text-16 line-through opacity-60" data-basket-oldprice></p>
+      <p class="font-semibold text-20" data-basket-price></p>
     </div>
   </div>
-  <div class="flex items-end justify-between gap-2">
-    <div class="flex flex-col">
-      <span class="text-12 md:text-16 line-through opacity-60" data-basket-oldprice>8 000$</span>
-      <span class="font-semibold text-20 md:text-24" data-basket-price>7 000$</span>
-    </div>
-    <button class="btn btn-second btn-lg btn-fade px-10" data-waved="dark">Basket</button>
-  </div>
+  <p class="font-normal text-16 leading-4 mb-6" data-basket-name>Name 4</p>
+  <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-14 sm:text-16 w-full px-5" data-waved="light">Перейти В корзину</button>
 </div>

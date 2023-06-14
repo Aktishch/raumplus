@@ -303,3 +303,14 @@
     @apply opacity-30;
   }
 }
+
+// Вопросы
+.questions {
+  &__accordion[data-accordion="active"] &__toggle {
+    @apply bg-primary text-white;
+  }
+
+  &__accordion[data-accordion="active"] &__line {
+    @apply rotate-0;
+  }
+}

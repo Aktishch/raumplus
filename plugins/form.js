@@ -49,7 +49,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
         position: 'absolute',
         left: 0,
         right: 0,
-        bottom: '-20px',
+        bottom: '-18px',
         opacity: 0,
         visibility: 'hidden',
         transition: '0.3s ease',
