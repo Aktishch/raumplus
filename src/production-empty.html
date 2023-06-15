@@ -11,7 +11,7 @@
 
 <% var main = {
 
-  height: 'min-h-[280px] xl:min-h-[380px]',
+  height: false,
   img: 'production-bg',
   title: 'Раздвижная система S-1 200, черный'
 
@@ -41,6 +41,7 @@
 ] %>
 
 <section class="production container overflow-hidden">
+  <%= _.template(require('./includes/back.html').default)({}) %>
   <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-12">
     <div class="flex flex-col md:flex-row xl:flex-col gap-2 md:gap-4 ease-in-out duration-4 anim anim--right" data-anim="hidden">
       <div class="production-slider bg-grey w-full md:max-w-[600px] lg:max-w-[800px] xl:max-w-full">
@@ -104,12 +105,7 @@
           <h2 class="font-normal text-22 xs:text-26 md:text-32 leading-3 mb-4 md:mb-6">Раздвижная система S-1200, черный</h2>
           <div class="flex items-center gap-3 md:gap-6 mb-4 md:mb-6">
             <span class="font-normal text-14 leading-1 opacity-60">Артикул: 82575553</span>
-            <div class="flex items-center justify-center bg-grey rounded-full py-1 px-2">
-              <svg class="icon text-dark text-opacity-30 text-18 mr-2">
-                <use xlink:href="img/icons.svg#minus">
-              </svg>
-              <span class="font-normal text-dark text-opacity-60 text-center text-14 leading-1">Предзаказ</span>
-            </div>
+            <%= _.template(require('./includes/availability.html').default)({status: false}) %>
           </div>
           <div class="flex flex-wrap items-center gap-2 mb-5 md:mb-9">
             <span class="flex items-center justify-center bg-grey font-normal text-center text-12 leading-1 rounded-full p-3">Система S42</span>
@@ -165,40 +161,16 @@
     </div>
     <div class="block mt-8">
       <div class="production__card" data-filter-card="description">
-        <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 bg-grey w-full py-6 px-4 md:px-4">
-          <picture>
-            <source srcset="img/pictures/logo-dark.webp" type="image/webp">
-            <img class="w-[120px]" src="img/pictures/logo-dark.png" alt="">
-          </picture>
-          <p class="font-normal text-16 md:text-18 leading-3">Скоро здесь появится информация о товаре </p>
-        </div>
+        <%= _.template(require('./includes/plug.html').default)({text: 'Скоро здесь появится информация о товаре'}) %>
       </div>
       <div class="production__card hidden" data-filter-card="specifications">
-        <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 bg-grey w-full py-6 px-4 md:px-4">
-          <picture>
-            <source srcset="img/pictures/logo-dark.webp" type="image/webp">
-            <img class="w-[120px]" src="img/pictures/logo-dark.png" alt="">
-          </picture>
-          <p class="font-normal text-16 md:text-18 leading-3">Скоро здесь появится информация о товаре </p>
-        </div>
+        <%= _.template(require('./includes/plug.html').default)({text: 'Скоро здесь появится информация о товаре'}) %>
       </div>
       <div class="production__card hidden" data-filter-card="equipment">
-        <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 bg-grey w-full py-6 px-4 md:px-4">
-          <picture>
-            <source srcset="img/pictures/logo-dark.webp" type="image/webp">
-            <img class="w-[120px]" src="img/pictures/logo-dark.png" alt="">
-          </picture>
-          <p class="font-normal text-16 md:text-18 leading-3">Скоро здесь появится информация о товаре </p>
-        </div>
+        <%= _.template(require('./includes/plug.html').default)({text: 'Скоро здесь появится информация о товаре'}) %>
       </div>
       <div class="production__card hidden" data-filter-card="scheme">
-        <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 bg-grey w-full py-6 px-4 md:px-4">
-          <picture>
-            <source srcset="img/pictures/logo-dark.webp" type="image/webp">
-            <img class="w-[120px]" src="img/pictures/logo-dark.png" alt="">
-          </picture>
-          <p class="font-normal text-16 md:text-18 leading-3">Скоро здесь появится информация о товаре </p>
-        </div>
+        <%= _.template(require('./includes/plug.html').default)({text: 'Скоро здесь появится информация о товаре'}) %>
       </div>
     </div>
   </div>

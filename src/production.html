@@ -11,7 +11,7 @@
 
 <% var main = {
 
-  height: 'min-h-[280px] xl:min-h-[380px]',
+  height: false,
   img: 'production-bg',
   title: 'Раздвижная система S-1 200, черный'
 
@@ -44,90 +44,67 @@
   {
     hidden: '',
     data: '',
-    color: 'text-green',
-    icon: 'check',
-    text: 'В наличии'
+    status: true
   },
   {
     hidden: '',
     data: '',
-    color: 'text-dark text-opacity-30',
-    icon: 'minus',
-    text: 'Предзаказ'
+    status: false
   },
   {
     hidden: '',
     data: '',
-    color: 'text-green',
-    icon: 'check',
-    text: 'В наличии'
+    status: true
   },
   {
     hidden: '',
     data: '',
-    color: 'text-dark text-opacity-30',
-    icon: 'minus',
-    text: 'Предзаказ'
+    status: false
   },
   {
     hidden: 'hidden',
     data: 'data-listing-item',
-    color: 'text-green',
-    icon: 'check',
-    text: 'В наличии'
+    status: true
   },
   {
     hidden: 'hidden',
     data: 'data-listing-item',
-    color: 'text-dark text-opacity-30',
-    icon: 'minus',
-    text: 'Предзаказ'
+    status: false
   },
   {
     hidden: 'hidden',
     data: 'data-listing-item',
-    color: 'text-green',
-    icon: 'check',
-    text: 'В наличии'
+    status: true
   },
   {
     hidden: 'hidden',
     data: 'data-listing-item',
-    color: 'text-dark text-opacity-30',
-    icon: 'minus',
-    text: 'Предзаказ'
+    status: false
   },
   {
     hidden: 'hidden',
     data: 'data-listing-item',
-    color: 'text-green',
-    icon: 'check',
-    text: 'В наличии'
+    status: true
   },
   {
     hidden: 'hidden',
     data: 'data-listing-item',
-    color: 'text-dark text-opacity-30',
-    icon: 'minus',
-    text: 'Предзаказ'
+    status: false
   },
   {
     hidden: 'hidden',
     data: 'data-listing-item',
-    color: 'text-green',
-    icon: 'check',
-    text: 'В наличии'
+    status: true
   },
   {
     hidden: 'hidden',
     data: 'data-listing-item',
-    color: 'text-dark text-opacity-30',
-    icon: 'minus',
-    text: 'Предзаказ'
+    status: false
   }
 ] %>
 
 <section class="production container overflow-hidden" data-product>
+  <%= _.template(require('./includes/back.html').default)({}) %>
   <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-12">
     <div class="flex flex-col md:flex-row xl:flex-col gap-2 md:gap-4 ease-in-out duration-4 anim anim--right" data-anim="hidden">
       <div class="production-slider bg-grey w-full md:max-w-[600px] lg:max-w-[800px] xl:max-w-full">
@@ -191,12 +168,7 @@
           <h2 class="font-normal text-22 xs:text-26 md:text-32 leading-3 mb-4 md:mb-6" data-product-name>Раздвижная система S-1200, черный</h2>
           <div class="flex items-center gap-3 md:gap-6 mb-4 md:mb-6">
             <span class="font-normal text-14 leading-1 opacity-60">Артикул: 82575553</span>
-            <div class="flex items-center justify-center bg-grey rounded-full py-1 px-2">
-              <svg class="icon text-green text-18 mr-2">
-                <use xlink:href="img/icons.svg#check">
-              </svg>
-              <span class="font-normal text-dark text-opacity-60 text-center text-14 leading-1">В наличии</span>
-            </div>
+            <%= _.template(require('./includes/availability.html').default)({status: true}) %>
           </div>
           <div class="flex flex-wrap items-center gap-2 mb-5 md:mb-9">
             <span class="flex items-center justify-center bg-grey font-normal text-center text-12 leading-1 rounded-full p-3">Система S42</span>
@@ -309,11 +281,8 @@
                 <span class="font-normal text-12 sm:text-14 leading-2 opacity-60">Артикул: 82575553</span>
               </div>
               <div class="font-normal text-14 sm:text-16 leading-4 opacity-60 xl:mx-auto mb-2 sm:mb-0">Цвет: бронза</div>
-              <div class="flex items-center justify-center bg-grey rounded-full py-1 px-2 mb-5 sm:mb-0">
-                <svg class="icon <%= production[i].color %> text-18 mr-2">
-                  <use xlink:href="img/icons.svg#<%= production[i].icon %>">
-                </svg>
-                <span class="font-normal text-dark text-opacity-60 text-center text-14 leading-1"><%= production[i].text %></span>
+              <div class="mb-5 sm:mb-0">
+                <%= _.template(require('./includes/availability.html').default)({status: production[i].status}) %>
               </div>
               <div class="flex flex-col sm:flex-row lg:flex-col sm:items-end md:justify-end gap-3 sm:gap-6 lg:border-l lg:border-solid lg:border-dark lg:border-opacity-20 w-full lg:max-w-[200px] xl:max-w-[330px] lg:pl-5 xl:pl-10 mt-auto sm:mt-0">
                 <div class="font-medium text-22 sm:text-28 leading-4" data-product-price>5 140 ₽</div>

@@ -1,0 +1,96 @@
+<% var data = {
+
+  title: 'О компании',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Главный блок -->
+
+<% var main = {
+
+  height: false,
+  img: 'presentation-bg',
+  title: 'О компании'
+
+} %>
+
+<%= _.template(require('./includes/main.html').default)({data, main}) %>
+
+<!-- О Компании -->
+
+<section class="container flex items-center relative overflow-hidden xl:min-h-[575px]">
+  <div class="hidden xl:block absolute inset-0 xxl:w-[1920px] xxl:mx-auto">
+    <div class="pack bg-grey w-1/2 h-full ml-auto">
+      <div class="loader">
+        <span class="loader-progress">
+          <svg class="loader-icon icon">
+            <use xlink:href="img/icons.svg#loader">
+          </svg>
+        </span>
+      </div>
+      <picture>
+        <source srcset="img/pictures/about-bg-2.webp" type="image/webp">
+        <img class="image" loading="lazy" src="img/pictures/about-bg-2.jpg" alt="">
+      </picture>
+    </div>
+  </div>
+  <div class="flex flex-col items-start relative w-full xl:max-w-[515px]">
+    <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-10 ease-in-out duration-4 anim anim--right" data-anim="hidden">О Компании</h2>
+    <p class="font-light text-16 leading-5 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+      Международная компания-производитель инновационных
+      раздвижных дверей, перегородок и шкафных систем премиум
+      класса для жилых и офисных помещений, представленная
+      в 200 шоурумах в 70 странах на всех континентах, включая корпоративные холдинги в США, Канаде, России, Швейцарии
+      и Польше. Основана в 1986 г Юргеном Гуддасом. Штаб-квартира в г. Бремен, Германия. <br>
+      Ключевая часть философии бренда — «Выполнение желаний
+      Клиентов всегда в центре наших усилий».
+      Компания ООО «Раумплюс» — совместный с raumplus GmbH
+      холдинг и эксклюзивный поставщик продукции raumplus
+      на территории России с 2009 г.
+    </p>
+  </div>
+</section>
+
+<!-- История -->
+
+<section class="container flex items-center relative overflow-hidden xl:min-h-[575px]">
+  <div class="hidden xl:block absolute inset-0 xxl:w-[1920px] xxl:mx-auto">
+    <div class="pack bg-grey w-1/2 h-full">
+      <div class="loader">
+        <span class="loader-progress">
+          <svg class="loader-icon icon">
+            <use xlink:href="img/icons.svg#loader">
+          </svg>
+        </span>
+      </div>
+      <picture>
+        <source srcset="img/pictures/history-img.webp" type="image/webp">
+        <img class="image" loading="lazy" src="img/pictures/history-img.jpg" alt="">
+      </picture>
+    </div>
+  </div>
+  <div class="flex flex-col items-start relative w-full xl:max-w-[515px] ml-auto">
+    <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-10 ease-in-out duration-4 anim anim--left" data-anim="hidden">История успеха</h2>
+    <p class="font-light text-16 leading-5 ease-in-out duration-4 anim anim--left" data-anim="hidden">
+      Наша история успеха охватывает три поколения: от первой раздвижной
+      двери, построенной в 1986 году основателем компании Юргеном
+      Гуддасом, до превращения в всемирно известный бренд под
+      руководством Карстена и Уты Бергманн, с раздвижной дверью S1200 Led
+      со светодиодной подсветкой, разработанной внучкой и промышленным
+      дизайнером Нане-Софи Бергманн к 30-летию компании. Несмотря
+      на постоянный успех и рост бренда, raumplus неизменно придерживается
+      этических принципов, существующих с момента основания, которые были
+      определены как неотъемлемая часть бренда: дружелюбие к клиентам,
+      разнообразие, бескомпромиссное качество и компетентность.
+    </p>
+  </div>
+</section>
+
+<!-- Преимущества -->
+
+<%= _.template(require('./includes/advantages.html').default)({status: false}) %>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>

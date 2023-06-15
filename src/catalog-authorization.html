@@ -197,7 +197,7 @@
       </div>
       <div class="grid grid-cols-2 xl:grid-cols-3 gap-2 sm:gap-5 md:gap-10">
         <% for (var i = 0; i < 6; i++) { %>
-        <div class="card card--active sm:p-2" data-product>
+        <div class="card card--active sm:p-2">
           <div class="pack pack-box bg-grey">
             <div class="loader">
               <span class="loader-progress">
@@ -208,38 +208,20 @@
             </div>
             <picture>
               <source srcset="img/pictures/production-img.webp" type="image/webp">
-              <img class="image" loading="lazy" data-product-image="img/pictures/production-img.jpg" src="img/pictures/production-img.jpg" alt="">
+              <img class="image" loading="lazy" src="img/pictures/production-img.jpg" alt="">
             </picture>
           </div>
           <div class="card-content items-start pt-4 sm:pt-6 pb-2 px-2">
             <div class="mb-3">
-              <%= _.template(require('./includes/availability.html').default)({status: true}) %>
+              <%= _.template(require('./includes/availability.html').default)({status: false}) %>
             </div>
             <span class="font-normal text-12 sm:text-14 leading-2 opacity-60 mb-2 sm:mb-4">Артикул: 82575553</span>
-            <a class="font-normal text-14 sm:text-16 leading-4 hover:underline underline-offset-4 mb-3 sm:mb-7" data-product-name href="">Система для деревянных дверей 28-32мм, серебро</a>
+            <a class="font-normal text-14 sm:text-16 leading-4 hover:underline underline-offset-4 mb-3 sm:mb-7" href="">Система для деревянных дверей 28-32мм, серебро</a>
             <div class="flex flex-col md:flex-row md:items-center md:gap-4 mt-auto mb-2 sm:mb-4">
-              <span class="order-2 md:order-1 font-semibold text-22 sm:text-28 leading-4" data-product-price>от 5 140 ₽</span>
-              <span class="order-1 md:order-2 font-light text-16 sm:text-18 leading-4 line-through" data-product-oldprice>7 140 ₽</span>
+              <span class="order-2 md:order-1 font-semibold text-22 sm:text-28 leading-4">от 5 140 ₽</span>
+              <span class="order-1 md:order-2 font-light text-16 sm:text-18 leading-4 line-through">7 140 ₽</span>
             </div>
-            <div class="inverted w-full" data-product-inverted data-inverted="before">
-              <div class="inverted-before duration-3" data-inverted-before>
-                <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-14 sm:text-16 w-full px-2 sm:px-10" data-product-button data-inverted-open data-waved="light">
-                  <svg class="icon hidden sm:block text-24 mr-2">
-                    <use xlink:href="img/icons.svg#basket">
-                  </svg>
-                  в корзину
-                </button>
-              </div>
-              <div class="inverted-after duration-3" data-inverted-after>
-                <div class="quantity" data-quantity>
-                  <button class="quantity-btn btn btn-white" data-product-decrease data-quantity-decrease data-waved="dark">-</button>
-                  <div class="quantity-cover input-cover">
-                    <input class="quantity-input input" data-product-quantity data-input="number" type="text" value="1" maxlength="3" name="quantity">
-                  </div>
-                  <button class="quantity-btn btn btn-white" data-product-increase data-quantity-increase data-waved="dark">+</button>
-                </div>
-              </div>
-            </div>
+            <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-14 sm:text-16 w-full px-2 sm:px-10" data-waved="light">Подробнее</button>
           </div>
         </div>
         <% } %>
@@ -248,9 +230,5 @@
     </div>
   </div>
 </section>
-
-<!-- Корзина -->
-
-<%= _.template(require('./includes/basket.html').default)({}) %>
 
 <%= _.template(require('./includes/footer.html').default)({}) %>

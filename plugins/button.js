@@ -22,6 +22,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       cursor: 'pointer',
 
       '&:focus': {
+        outline: 'none',
         boxShadow: '0 0 0 3px var(--btn-focus)',
         backgroundColor: 'var(--btn-fade)',
       },

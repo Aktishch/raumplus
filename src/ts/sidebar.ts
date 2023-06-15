@@ -9,6 +9,8 @@ const init = (): void => {
   const open = document.querySelector('*[data-sidebar-open]') as HTMLButtonElement
   const close = sidebar.querySelector('*[data-sidebar-close]') as HTMLButtonElement
 
+  if (!open || !close) return
+
   const openSidebar = (): void => {
     scrollbar.hidden()
 

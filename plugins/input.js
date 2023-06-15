@@ -24,6 +24,10 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       transition: '0.2s ease',
       userSelect: 'initial',
 
+      '&:focus': {
+        outline: 'none',
+      },
+
       '&:not(&--error):focus': {
         borderColor: formatColor({
           mode: 'rgba',

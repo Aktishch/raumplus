@@ -1,0 +1,6 @@
+<div class="flex items-center justify-center bg-grey rounded-full py-1 px-2">
+  <svg class="icon <%= status ? 'text-green' : 'text-dark text-opacity-30' %> text-18 mr-2">
+    <use xlink:href="img/icons.svg#<%= status ? 'check' : 'minus' %>">
+  </svg>
+  <span class="font-normal text-dark text-opacity-60 text-center text-14 leading-1"><%= status ? 'В наличии' : 'Предзаказ' %></span>
+</div>
