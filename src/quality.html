@@ -1,0 +1,105 @@
+<% var data = {
+
+  title: 'Качество',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Главный блок -->
+
+<% var main = {
+
+  height: true,
+  img: 'quality-bg',
+  title: '<span class="text-primary">Качество продукции</span> <br> И награды',
+  subtitle: 'Клиенты raumplus могут быть уверены, что покупают качественную продукцию немецкого производства.',
+  btn: 'НАГРАДЫ'
+
+} %>
+
+<%= _.template(require('./includes/main.html').default)({data, main}) %>
+
+<!-- Качество -->
+
+<% var quality = {
+  title: 'Немецкое качество',
+  number: 7
+} %>
+
+<%= _.template(require('./includes/quality.html').default)({quality}) %>
+
+<!-- Награды -->
+
+<section class="container overflow-hidden">
+  <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-5">
+    <div class="flex flex-col items-start relative w-full xl:max-w-[380px]">
+      <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-8 ease-in-out duration-4 anim anim--right" data-anim="hidden">Награды</h2>
+      <p class="font-light text-16 leading-5 mb-5 sm:mb-8 ease-in-out duration-4 anim anim--right" data-anim="hidden">
+        raumplus сотрудничает с известными дизайнерами и признанными исследовательскими институтами для разработки и тестирования новых продуктов, технических инноваций и новых методов производства. В этом контексте мы особенно гордимся присуждением важных премий и наград от национальных и международных специализированных организаций.
+      </p>
+      <div class="ease-in-out duration-4 anim anim--right" data-anim="hidden">
+        <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe uppercase mx-auto xl:mx-0" data-waved="light">
+          Скачать награды
+          <svg class="icon text-14 ml-2">
+            <use xlink:href="img/icons.svg#arrow-btn">
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="w-full xl:max-w-[710px] xl:pr-14">
+      <div class="awards-slider relative">
+        <div class="swiper -my-[15px] -mx-[15px] py-[15px] px-[15px] sm:-my-5 sm:-mx-2 sm:py-5 sm:px-2">
+          <div class="swiper-wrapper grid grid-rows-2 grid-flow-col">
+            <% for (var i = 0; i < 12; i++) { %>
+            <div class="swiper-slide pack pack-box shadow-md" data-waved="dark">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
+              </div>
+              <picture>
+                <source srcset="img/pictures/award.webp" type="image/webp">
+                <img class="image" loading="lazy" src="img/pictures/award.jpg" alt="">
+              </picture>
+            </div>
+            <% } %>
+          </div>
+        </div>
+        <div class="swiper-pagination xl:hidden static text-primary mt-10"></div>
+        <button class="swiper-button-prev btn btn-dark btn-fade hidden xl:flex absolute left-2 xl:-left-14 text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+          <svg class="icon">
+            <use xlink:href="img/icons.svg#arrow-left">
+          </svg>
+        </button>
+        <button class="swiper-button-next btn btn-dark btn-fade hidden xl:flex absolute right-2 xl:-right-14 text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+          <svg class="icon">
+            <use xlink:href="img/icons.svg#arrow-right">
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- О нас  -->
+
+<% var about = [
+  {
+    img: '1',
+    title: 'О Компании',
+    text: 'Приглашаем к сотрудничеству дистрибьютеров, производителей <br class="hidden xl:block"> мебели, дизайнеров, архитекторов'
+  },
+  {
+    img: '2',
+    title: 'Стать партнером',
+    text: 'Приглашаем к сотрудничеству дистрибьютеров, производителей <br class="hidden xl:block"> мебели, дизайнеров, архитекторов'
+  },
+] %>
+
+<%= _.template(require('./includes/about.html').default)({about}) %>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>

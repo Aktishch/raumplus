@@ -1,0 +1,37 @@
+<section class="bg-black bg-opacity-90 lg:bg-opacity-0">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-0 xxl:max-w-[1920px] xxl:mx-auto">
+    <% for (var i = 0; i < about.length; i++) { %>
+    <div class="relative text-white overflow-hidden">
+      <div class="absolute inset-0">
+        <div class="pack bg-grey w-full h-full">
+          <div class="loader">
+            <span class="loader-progress">
+              <svg class="loader-icon icon">
+                <use xlink:href="img/icons.svg#loader">
+              </svg>
+            </span>
+          </div>
+          <picture>
+            <source srcset="img/pictures/about-bg-<%= about[i].img %>.webp" type="image/webp">
+            <img class="image image-rise" loading="lazy" src="img/pictures/about-bg-<%= about[i].img %>.jpg" alt="">
+          </picture>
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-center relative bg-black bg-opacity-80 lg:bg-opacity-70 pointer-events-none w-full min-h-[350px] lg:min-h-[570px] py-7 px-4 sm:py-10 sm:px-10">
+        <h2 class="font-light text-center text-32 sm:text-42 lg:text-48 leading-2 mb-6 ease-in-out duration-4 anim anim--up" data-anim="hidden"><%= about[i].title %></h2>
+        <% if (about[i].text) { %>
+        <p class="font-light text-center text-16 leading-5 mb-8 ease-in-out duration-4 anim anim--up" data-anim="hidden"><%= about[i].text %></p>
+        <% } %>
+        <div class="pointer-events-auto ease-in-out duration-4 anim anim--up" data-anim="hidden">
+          <button class="btn btn-white btn-lg btn-contur btn-active btn-swipe uppercase" data-waved="light">
+            подробнее
+            <svg class="icon text-14 ml-2">
+              <use xlink:href="img/icons.svg#arrow-btn">
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</section>

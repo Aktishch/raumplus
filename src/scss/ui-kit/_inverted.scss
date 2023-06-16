@@ -3,14 +3,6 @@
   position   : relative;
   perspective: 600px;
 
-  &[data-inverted="before"] &-before {
-    transform: rotateX(0);
-  }
-
-  &[data-inverted="before"] &-after {
-    transform: rotateX(180deg);
-  }
-
   &[data-inverted="after"] &-before {
     transform: rotateX(-180deg);
   }
@@ -20,25 +12,13 @@
   }
 
   &-before {
-    transform: rotateY(0deg);
+    transform: rotateX(0);
   }
 
   &-after {
     position : absolute;
     inset    : 0;
-    transform: rotateY(180deg);
-  }
-
-  &--hover {
-    @media(hover) {
-      &:hover .inverted-before {
-        transform: rotateY(-180deg);
-      }
-
-      &:hover .inverted-after {
-        transform: rotateY(0);
-      }
-    }
+    transform: rotateX(180deg);
   }
 
   &-before,

@@ -173,6 +173,43 @@ const init = () => {
     watchSlidesProgress: true,
   })
 
+  new Swiper('.awards-slider .swiper', {
+    pagination: {
+      el: '.awards-slider .swiper-pagination',
+      clickable: true,
+    },
+
+    navigation: {
+      prevEl: '.awards-slider .swiper-button-prev',
+      nextEl: '.awards-slider .swiper-button-next',
+    },
+
+    slidesPerView: 2,
+    slidesPerGroup: 1,
+    spaceBetween: 12,
+    speed: 500,
+    grabCursor: true,
+    watchSlidesProgress: true,
+
+    breakpoints: {
+      // [media.sm]: {
+      //   slidesPerView: 2,
+      // },
+
+      [media.md]: {
+        slidesPerView: 3,
+      },
+
+      [media.lg]: {
+        slidesPerView: 4,
+      },
+    },
+
+    grid: {
+      rows: 2,
+    },
+  })
+
   // const gallerySlider = new Swiper('.gallery-slider .swiper', {
   //   pagination: {
   //     el: '.gallery-slider.swiper-pagination',

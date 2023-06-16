@@ -1,0 +1,39 @@
+<section class="container container--xs bg-grey overflow-hidden">
+  <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-8 xl:mb-14 ease-in-out duration-4 anim anim--right" data-anim="hidden"><%= quality.title %></h2>
+  <div class="flex flex-col gap-6">
+    <% for (var i = 0; i < quality.number; i++) { %>
+    <div class="ease-in-out duration-4 anim <%= i % 2 != 0 ? 'anim--right' : 'anim--left' %>" data-anim="hidden">
+      <div class="card card--active p-2 sm:p-4">
+        <div class="card-content <%= i % 2 != 0 ? 'lg:flex-row-reverse' : 'lg:flex-row' %> items-stretch lg:gap-10">
+          <div class="w-full sm:max-w-[380px]">
+            <div class="pack pack-box bg-grey">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
+              </div>
+              <picture>
+                <source srcset="img/pictures/significant-img.webp" type="image/webp">
+                <img class="image image-rise" loading="lazy" src="img/pictures/significant-img.jpg" alt="">
+              </picture>
+            </div>
+          </div>
+          <div class="flex flex-col items-start justify-center w-full lg:max-w-[850px] py-6 pl-4 pr-4 lg:py-4 <%= i % 2 != 0 ? 'lg:pl-10 lg:pr-0' : 'lg:pr-10 lg:pl-0' %>" data-listing>
+            <div class="font-light text-primary text-7xl md:text-number leading-1 lg:mb-5">0<%= i + 1 %></div>
+            <h3 class="font-light text-20 sm:text-24 leading-2 mb-5">Плавность и бесшумность хода систем</h3>
+            <p class="font-light text-dark text-opacity-70 text-14 sm:text-16 leading-5">
+              Нижние ролики изготовлены из прочных полимерных материалов, имеют фторопластовое покрытие на металлическом подшипнике. Качественный подшипник отвечает за легкость и плавность хода двери, а также за долговечность службы.Точность центровки (балансировки) ролика обеспечивает отсутствие стука при движении двери. Ролики рассчитаны
+              <span class="hidden" data-listing-item>
+                Нижние ролики изготовлены из прочных полимерных материалов, имеют фторопластовое покрытие на металлическом подшипнике. Качественный подшипник отвечает за легкость и плавность хода двери, а также за долговечность службы.Точность центровки (балансировки) ролика обеспечивает отсутствие стука при движении двери. Ролики рассчитаны Нижние ролики изготовлены из прочных полимерных материалов, имеют фторопластовое покрытие на металлическом подшипнике. Качественный подшипник отвечает за легкость и плавность хода двери, а также за долговечность службы.Точность центровки (балансировки) ролика обеспечивает отсутствие стука при движении двери. Ролики рассчитаны
+              </span>
+            </p>
+            <button class="btn btn-primary font-normal text-dark border-b border-r-0 border-l-0 border-t-0 border-dashed border-dark border-opacity-40 py-1 mt-2" data-listing-show data-waved="light">Показать еще...</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</section>

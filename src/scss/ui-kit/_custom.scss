@@ -30,13 +30,17 @@ $close: ".carousel__button.is-close";
       top             : 8px;
       right           : 8px;
       background-color: theme("colors.white.DEFAULT");
-      box-shadow      : 0 4px 8px theme("colors.black.DEFAULT / 10%");
-      color           : theme("colors.black.DEFAULT");
+      border          : 1px solid theme("colors.dark.DEFAULT");
+      color           : theme("colors.dark.DEFAULT");
 
       @screen md {
-        & {
-          position: absolute;
-        }
+        position: absolute;
+        opacity : 0.6;
+      }
+
+      @screen lg {
+        top  : 30px;
+        right: 30px;
       }
 
     }

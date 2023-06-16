@@ -118,27 +118,18 @@
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
     <% for (var i = 0; i < benefit.length; i++) { %>
     <div class="<%= benefit[i].hidden %> ease-in-out duration-4 <%= benefit[i].delay %> anim anim--right" <%= benefit[i].data %> data-anim="hidden">
-      <div class="inverted inverted--hover h-full">
-        <div class="inverted-before card p-4 sm:p-7 lg:p-12" data-waved="dark">
-          <div class="card-content">
-            <div class="font-light text-primary text-7xl md:text-number leading-1 mb-3"><%= benefit[i].number %></div>
-            <h3 class="font-light text-20 sm:text-24 leading-3 mb-4"><%= benefit[i].title %></h3>
-            <p class="font-light text-16 leading-5"><%= benefit[i].text %></p>
-          </div>
-        </div>
-        <div class="inverted-after card bg-dark text-white p-4 sm:p-7 lg:p-12" data-waved="light">
-          <div class="card-content">
-            <div class="font-light text-primary text-7xl md:text-number leading-1 mb-3"><%= benefit[i].number %></div>
-            <h3 class="font-light text-20 sm:text-24 leading-3 mb-4"><%= benefit[i].title %></h3>
-            <p class="font-light text-16 leading-5"><%= benefit[i].text %></p>
-          </div>
+      <div class="card h-full p-4 sm:p-7 lg:p-12" data-waved="dark">
+        <div class="card-content">
+          <div class="font-light text-primary text-7xl md:text-number leading-1 mb-3"><%= benefit[i].number %></div>
+          <h3 class="font-light text-20 sm:text-24 leading-3 mb-4"><%= benefit[i].title %></h3>
+          <p class="font-light text-16 leading-5"><%= benefit[i].text %></p>
         </div>
       </div>
     </div>
     <% } %>
   </div>
-  <div class="md:hidden mt-10 ease-in-out duration-4 anim anim--up" data-anim="hidden">
-    <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe uppercase mx-auto" data-listing-show data-waved="dark">Показать ещё</button>
+  <div class="md:hidden ease-in-out duration-4 anim anim--up" data-anim="hidden">
+    <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe uppercase mt-10 mx-auto" data-listing-show data-waved="dark">Показать ещё</button>
   </div>
 </section>
 
@@ -277,7 +268,7 @@
               </label>
             </div>
             <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-14 sm:text-16 w-full sm:max-w-[270px] mb-4" type="submit" data-waved="light">Отправить заявку</button>
-            <div class="font-medium text-12 sm:text-14 leading-4 cursor-pointer">
+            <div class="font-medium text-12 sm:text-14 leading-4 cursor-pointer" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">
               Нажимая кнопку <span class="text-primary underline underline-offset-4">вы соглашаетесь с условиями хранения персональных данных</span>
             </div>
           </form>

@@ -84,7 +84,7 @@
   <div class="lg:flex lg:justify-between lg:gap-10">
     <div class="catalog__sidebar fixed inset-0 z-3 lg:z-0 lg:static invisible lg:visible overflow-auto lg:overflow-visible w-full lg:max-w-[290px]" data-sidebar="close">
       <div class="catalog__content bg-white bg-opacity lg:bg-opacity-0 opacity-0 lg:opacity-100 w-full max-w-[375px] lg:max-w-full min-h-full p-4 lg:p-0 duration-3">
-        <div class="flex lg:hidden items-center justify-between gap-5 sticky z-1 top-0 left-0 right-0 bg-white mb-7 py-4">
+        <div class="flex lg:hidden items-center justify-between gap-5 sticky z-1 top-0 left-0 right-0 bg-white mb-4 py-4">
           <h4 class="font-semibold text-24 leading-2">Фильтр</h4>
           <button class="btn btn-dark text-38" data-waved="light" data-sidebar-close>
             <svg class="icon">
@@ -163,6 +163,38 @@
       </div>
     </div>
     <div class="w-full max-w-[950px]">
+      <div class="flex items-center justify-between gap-3 sm:gap-5 mb-6">
+        <span class="font-normal text-16 leading-2 opacity-60">Отображено 0 товаров</span>
+        <div class="flex items-center gap-5">
+          <button class="btn btn-primary lg:hidden" data-waved="light" data-sidebar-open>
+            <svg class="icon text-dark text-24 sm:text-30">
+              <use xlink:href="img/icons.svg#filter">
+            </svg>
+          </button>
+          <div class="relative" data-accordion="hidden" data-accordion-close="scroll">
+            <div class="flex items-center lg:gap-5" data-accordion-toggle>
+              <button class="btn btn-primary lg:hidden" data-waved="light">
+                <svg class="icon text-dark text-24 sm:text-30">
+                  <use xlink:href="img/icons.svg#sorting">
+                </svg>
+              </button>
+              <div class="hidden lg:flex items-center justify-between relative border border-solid border-dark border-opacity-30 w-[250px] h-[54px] py-4 px-5" data-waved="dark">
+                <span class="font-medium text-16 leading-1">По популярности</span>
+                <svg class="icon text-22">
+                  <use xlink:href="img/icons.svg#arrow-bottom">
+                </svg>
+              </div>
+            </div>
+            <div class="absolute z-1 top-10 lg:top-14 right-0 shadow-md w-[200px] lg:w-[250px]" data-accordion-content>
+              <div class="flex flex-col items-start gap-2 lg:gap-3 bg-white py-4 px-4 lg:px-6">
+                <a class="btn btn-primary font-normal text-dark lg:text-18" data-waved="light" href="">Сначала дороже</a>
+                <a class="btn btn-primary font-normal text-dark lg:text-18" data-waved="light" href="">Сначала дешевле</a>
+                <a class="btn btn-primary font-normal text-dark lg:text-18" data-waved="light" href="">По алфавиту</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <%= _.template(require('./includes/plug.html').default)({text: 'По вашему запросу не найдено ни одного товара'}) %>
     </div>
   </div>

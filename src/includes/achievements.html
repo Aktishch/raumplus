@@ -1,0 +1,58 @@
+<% var achievements = [
+  {
+    number: '70',
+    title: 'стран',
+    text: 'Международная сеть raumplus сотрудничает с партнерами на всех континентах'
+  },
+  {
+    number: '200',
+    title: 'шоурумов',
+    text: 'Предоставляем клиентам возможность заказать системы raumplus по всему миру'
+  },
+  {
+    number: '30',
+    title: 'лет истории',
+    text: 'Более 30 лет успешного развития вместе с Партнерами по всему миру'
+  },
+  {
+    number: '30',
+    title: 'международных наград',
+    text: 'Мы стабильно получаем международные награды за инновации в дизайне и качестве'
+  }
+] %>
+
+<section class="container container--xs relative bg-grey overflow-hidden" data-section>
+  <% if (status) { %>
+  <div class="absolute inset-0">
+    <div class="pack bg-black w-full h-full">
+      <div class="loader">
+        <span class="loader-progress">
+          <svg class="loader-icon icon">
+            <use xlink:href="img/icons.svg#loader">
+          </svg>
+        </span>
+      </div>
+      <picture>
+        <source srcset="img/pictures/achievements-bg.webp" type="image/webp">
+        <img class="image image-top-right" loading="lazy" src="img/pictures/achievements-bg.jpg" alt="">
+      </picture>
+    </div>
+  </div>
+  <% } %>
+  <div class="relative <%= status ? 'text-white' : '' %>">
+    <h2 class="font-light text-center text-32 sm:text-42 lg:text-48 leading-2 mb-8 xl:mb-16 ease-in-out duration-4 anim anim--up" data-anim="hidden">
+      <span class="text-primary">Достижения raumplus</span> <br> в цифрах
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 xl:gap-10">
+      <% for (var i = 0; i < achievements.length; i++) { %>
+      <div class="flex flex-col items-center text-center">
+        <div class="font-light text-primary text-42 sm:text-48 leading-1 mb-2 sm:mb-5">
+          <span data-number="<%= achievements[i].number %>" data-number-step="1" data-number-time="2">0</span>+
+        </div>
+        <h3 class="font-light text-22 leading-2 mb-4"><%= achievements[i].title %></h3>
+        <p class="font-light text-16 leading-5"><%= achievements[i].text %></p>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</section>

@@ -19,93 +19,11 @@
 
 <%= _.template(require('./includes/main.html').default)({data, main}) %>
 
-<!-- Продукция -->
-
-<% var palette = [
-  {
-    value: 'Белый',
-    color: '#ffffff'
-  },
-  {
-    value: 'Черный',
-    color: '#000000'
-  },
-  {
-    value: 'Серый',
-    color: '#B3B3B3'
-  },
-  {
-    value: 'Золотой',
-    color: '#B78C3A'
-  }
-] %>
-
-<% var production = [
-  {
-    hidden: '',
-    data: '',
-    status: true
-  },
-  {
-    hidden: '',
-    data: '',
-    status: false
-  },
-  {
-    hidden: '',
-    data: '',
-    status: true
-  },
-  {
-    hidden: '',
-    data: '',
-    status: false
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: true
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: false
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: true
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: false
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: true
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: false
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: true
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: false
-  }
-] %>
+<!-- Поиск -->
 
 <section class="container overflow-hidden">
   <%= _.template(require('./includes/back.html').default)({}) %>
-  <form class="form xs:flex-row xs:items-center xs:justify-between gap-4 mb-5 sm:mb-8">
+  <form class="form xs:flex-row xs:items-center xs:justify-between gap-4 mb-8">
     <label class="form-label w-full">
       <div class="form-wrapper">
         <div class="input-cover">

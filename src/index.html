@@ -40,6 +40,7 @@
     hidden: '',
     delay: 'xl:delay-2',
     data: '',
+    img: '1',
     icon: 'sliding-doors',
     title: 'Ниженопорные <br class="hidden md:block"> раздвижные системы',
     text: 'Особенно хорошо подходят <br class="hidden md:block"> для небольших проемов'
@@ -48,6 +49,7 @@
     hidden: '',
     delay: 'xl:delay-4',
     data: '',
+    img: '2',
     icon: 'suspended-doors',
     title: 'Подвесные <br class="hidden md:block"> системы AIR',
     text: 'Идеальное решение, когда <br class="hidden md:block"> напольная направляющая <br class="hidden md:block"> невозможна'
@@ -56,6 +58,7 @@
     hidden: 'hidden md:block',
     delay: 'xl:delay-6',
     data: 'data-listing-item',
+    img: '3',
     icon: 'folding-doors',
     title: 'Системы складных <br class="hidden md:block"> дверей',
     text: 'Нет напольных направляющих <br class="hidden md:block"> и дверей, которые <br class="hidden md:block"> открываются в сторону'
@@ -64,6 +67,7 @@
     hidden: 'hidden md:block',
     delay: '',
     data: 'data-listing-item',
+    img: '4',
     icon: 'swing-doors',
     title: 'Системы <br class="hidden md:block"> распашных дверей ',
     text: 'Идеальное решение, когда <br class="hidden md:block"> напольная направляющая <br class="hidden md:block"> невозможна'
@@ -72,6 +76,7 @@
     hidden: 'hidden md:block',
     delay: 'xl:delay-2',
     data: 'data-listing-item',
+    img: '5',
     icon: 'attic-doors',
     title: 'Мансардные <br class="hidden md:block"> системы',
     text: 'Этот вариант систем подходит <br class="hidden md:block"> для интерьеров с наклонными <br class="hidden md:block"> потолками'
@@ -80,6 +85,7 @@
     hidden: 'hidden md:block',
     delay: 'xl:delay-4',
     data: 'data-listing-item',
+    img: '6',
     icon: 'facade-doors',
     title: 'Фасадные системы <br class="hidden md:block"> RPE, RPS',
     text: 'Идеальное решение, когда <br class="hidden md:block"> напольная направляющая <br class="hidden md:block"> невозможна'
@@ -88,13 +94,14 @@
     hidden: 'hidden md:block',
     delay: 'xl:delay-6',
     data: 'data-listing-item',
+    img: '7',
     icon: 'interior-doors',
     title: 'Интерьерные <br class="hidden md:block"> системы',
     text: 'Гардеробные, гостиные, <br class="hidden md:block"> кабинеты, детские комнаты, <br class="hidden md:block"> а также для офисов'
   }
 ] %>
 
-<section class="container container--xs bg-grey overflow-hidden" data-listing="3">
+<section class="assortment container container--xs bg-grey overflow-hidden" data-listing="3">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
     <div class="flex flex-col items-start justify-center md:min-h-[310px]">
       <h2 class="font-light text-32 sm:text-40 leading-2 mb-4 md:mb-8 ease-in-out duration-4 anim anim--right" data-anim="hidden">
@@ -105,34 +112,35 @@
     </div>
     <% for (var i = 0; i < assortment.length; i++) { %>
     <div class="<%= assortment[i].hidden %> min-h-[200px] md:min-h-[310px] <%= assortment[i].delay %> ease-in-out duration-4 anim anim--up" data-anim="hidden" <%= assortment[i].data %>>
-      <div class="inverted inverted--hover text-center h-full">
-        <div class="inverted-before card items-center justify-center py-7 px-4 sm:py-9 sm:px-6" data-waved="dark">
-          <div class="card-content items-center justify-between">
-            <svg class="icon text-primary text-7xl mb-6">
-              <use xlink:href="img/icons.svg#<%= assortment[i].icon %>">
-            </svg>
-            <h2 class="font-light text-20 sm:text-22 leading-2 mb-2 sm:mb-3"><%= assortment[i].title %></h2>
-            <p class="font-light text-16 leading-5 opacity-70"><%= assortment[i].text %></p>
+      <div class="assortment__card card items-center justify-center text-center hover:text-white h-full py-7 px-4 sm:py-9 sm:px-6" data-waved="dark">
+        <div class="assortment__pack pack absolute bottom-full left-0 right-0 bg-grey w-full h-full duration-5">
+          <div class="loader">
+            <span class="loader-progress">
+              <svg class="loader-icon icon">
+                <use xlink:href="img/icons.svg#loader">
+              </svg>
+            </span>
           </div>
+          <picture>
+            <source srcset="img/pictures/assortment-img-<%= assortment[i].img %>.webp" type="image/webp">
+            <img class="image" loading="lazy" src="img/pictures/assortment-img-<%= assortment[i].img %>.jpg" alt="">
+          </picture>
         </div>
-        <div class="inverted-after card items-center justify-center bg-dark text-white py-7 px-4 sm:py-9 sm:px-6" data-waved="light">
-          <div class="card-content items-center justify-between">
-            <svg class="icon text-primary text-7xl mb-6">
-              <use xlink:href="img/icons.svg#<%= assortment[i].icon %>">
-            </svg>
-            <h2 class="font-light text-20 sm:text-22 leading-2 mb-2 sm:mb-3"><%= assortment[i].title %></h2>
-            <p class="font-light text-16 leading-5 opacity-70"><%= assortment[i].text %></p>
-          </div>
+        <div class="card-content items-center justify-between relative">
+          <svg class="icon text-primary text-7xl mb-6">
+            <use xlink:href="img/icons.svg#<%= assortment[i].icon %>">
+          </svg>
+          <h2 class="font-light text-20 sm:text-22 leading-2 mb-2 sm:mb-3 duration-5"><%= assortment[i].title %></h2>
+          <p class="font-light text-16 leading-5 opacity-70 duration-5"><%= assortment[i].text %></p>
         </div>
       </div>
     </div>
     <% } %>
   </div>
-  <div class="md:hidden mt-10 ease-in-out duration-4 anim anim--up" data-anim="hidden">
-    <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe uppercase mx-auto" data-listing-show data-waved="dark">Показать ещё</button>
+  <div class="md:hidden ease-in-out duration-4 anim anim--up" data-anim="hidden">
+    <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe uppercase mt-10 mx-auto" data-listing-show data-waved="dark">Показать ещё</button>
   </div>
 </section>
-
 
 <!-- О нас  -->
 
@@ -149,41 +157,7 @@
   },
 ] %>
 
-<section class="bg-black bg-opacity-90 lg:bg-opacity-0">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-0 xxl:max-w-[1920px] xxl:mx-auto">
-    <% for (var i = 0; i < about.length; i++) { %>
-    <div class="relative text-white overflow-hidden">
-      <div class="absolute inset-0">
-        <div class="pack bg-grey w-full h-full">
-          <div class="loader">
-            <span class="loader-progress">
-              <svg class="loader-icon icon">
-                <use xlink:href="img/icons.svg#loader">
-              </svg>
-            </span>
-          </div>
-          <picture>
-            <source srcset="img/pictures/about-bg-<%= about[i].img %>.webp" type="image/webp">
-            <img class="image image-rise" loading="lazy" src="img/pictures/about-bg-<%= about[i].img %>.jpg" alt="">
-          </picture>
-        </div>
-      </div>
-      <div class="flex flex-col items-center justify-center relative bg-black bg-opacity-80 lg:bg-opacity-70 pointer-events-none w-full min-h-[350px] lg:min-h-[570px] py-7 px-4 sm:py-10 sm:px-10">
-        <h2 class="font-light text-center text-32 sm:text-42 lg:text-48 leading-2 mb-6 ease-in-out duration-4 anim anim--up" data-anim="hidden"><%= about[i].title %></h2>
-        <p class="font-light text-center text-16 leading-5 mb-8 ease-in-out duration-4 anim anim--up" data-anim="hidden"><%= about[i].text %></p>
-        <div class="pointer-events-auto ease-in-out duration-4 anim anim--up" data-anim="hidden">
-          <button class="btn btn-white btn-lg btn-contur btn-active btn-swipe uppercase" data-waved="light">
-            подробнее
-            <svg class="icon text-14 ml-2">
-              <use xlink:href="img/icons.svg#arrow-btn">
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <% } %>
-  </div>
-</section>
+<%= _.template(require('./includes/about.html').default)({about}) %>
 
 <!-- Этапы -->
 
@@ -279,62 +253,7 @@
 
 <!-- Достижения -->
 
-<% var achievements = [
-  {
-    number: '70',
-    title: 'стран',
-    text: 'Международная сеть raumplus сотрудничает с партнерами на всех континентах'
-  },
-  {
-    number: '200',
-    title: 'шоурумов',
-    text: 'Предоставляем клиентам возможность заказать системы raumplus по всему миру'
-  },
-  {
-    number: '30',
-    title: 'лет истории',
-    text: 'Более 30 лет успешного развития вместе с Партнерами по всему миру'
-  },
-  {
-    number: '30',
-    title: 'международных наград',
-    text: 'Мы стабильно получаем международные награды за инновации в дизайне и качестве'
-  }
-] %>
-
-<section class="container container--xs relative overflow-hidden" data-section>
-  <div class="absolute inset-0">
-    <div class="pack bg-black w-full h-full">
-      <div class="loader">
-        <span class="loader-progress">
-          <svg class="loader-icon icon">
-            <use xlink:href="img/icons.svg#loader">
-          </svg>
-        </span>
-      </div>
-      <picture>
-        <source srcset="img/pictures/achievements-bg.webp" type="image/webp">
-        <img class="image image-top-right" loading="lazy" src="img/pictures/achievements-bg.jpg" alt="">
-      </picture>
-    </div>
-  </div>
-  <div class="relative text-white">
-    <h2 class="font-light text-center text-32 sm:text-42 lg:text-48 leading-2 mb-8 xl:mb-16 ease-in-out duration-4 anim anim--up" data-anim="hidden">
-      <span class="text-primary">Достижения raumplus</span> <br> в цифрах
-    </h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 xl:gap-10">
-      <% for (var i = 0; i < achievements.length; i++) { %>
-      <div class="flex flex-col items-center text-center">
-        <div class="font-light text-primary text-42 sm:text-48 leading-1 mb-2 sm:mb-5">
-          <span data-number="<%= achievements[i].number %>" data-number-step="1" data-number-time="2">0</span>+
-        </div>
-        <h3 class="font-light text-22 leading-2 mb-4"><%= achievements[i].title %></h3>
-        <p class="font-light text-16 leading-5"><%= achievements[i].text %></p>
-      </div>
-      <% } %>
-    </div>
-  </div>
-</section>
+<%= _.template(require('./includes/achievements.html').default)({status: true}) %>
 
 <!-- Презентация -->
 

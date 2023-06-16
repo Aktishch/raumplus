@@ -89,6 +89,26 @@
   }
 }
 
+// Ассортимент
+.assortment {
+  &__card {
+    @media(hover) {
+      &:hover .assortment__pack {
+        bottom: 0;
+      }
+    }
+  }
+
+  &__pack {
+    &::after {
+      content         : "";
+      position        : absolute;
+      inset           : 0;
+      background-color: theme("colors.black.DEFAULT / 90%");
+    }
+  }
+}
+
 // Презентация
 .presentation {
   &__file {

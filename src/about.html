@@ -93,4 +93,92 @@
 
 <%= _.template(require('./includes/advantages.html').default)({status: false}) %>
 
+<!-- Развитие -->
+
+<% var development = [
+  {
+    hidden: '',
+    data: '',
+  },
+  {
+    hidden: '',
+    data: '',
+  },
+  {
+    hidden: '',
+    data: '',
+  },
+  {
+    hidden: '',
+    data: '',
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+  },
+] %>
+
+<section class="container" data-listing="4">
+  <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-10 ease-in-out duration-4 anim anim--left" data-anim="hidden">История развития</h2>
+  <div class="flex flex-col gap-5">
+    <% for (var i = 0; i < development.length; i++) { %>
+    <div class="<%= development[i].hidden %> card md:flex-row md:items-center gap-5 p-3 sm:p-5" <%= development[i].data %> data-waved="dark">
+      <div class="pack pack-box bg-grey w-full max-w-[150px]">
+        <div class="loader">
+          <span class="loader-progress">
+            <svg class="loader-icon icon">
+              <use xlink:href="img/icons.svg#loader">
+            </svg>
+          </span>
+        </div>
+        <picture>
+          <source srcset="img/pictures/system-img.webp" type="image/webp">
+          <img class="image" loading="lazy" src="img/pictures/system-img.jpg" alt="">
+        </picture>
+      </div>
+      <div class="card-content">
+        <h4 class="font-light text-20 sm:text-24 leading-2mb-5">1986</h4>
+        <p class="font-light text-16 leading-5 opacity-70">
+          Начинается разработка первой профильной серии. Юрген Гуддас поставил перед собой цель создать профильную систему, отвечающую самым высоким стандартам качества. Совершенная технология системы должна незримо впечатлять.
+        </p>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <div class="ease-in-out duration-4 anim anim--up" data-anim="hidden">
+    <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe uppercase mt-10 mx-auto" data-listing-show data-waved="dark">Показать ещё</button>
+  </div>
+</section>
+
+<!-- Достижения -->
+
+<%= _.template(require('./includes/achievements.html').default)({status: false}) %>
+
+<!-- О нас  -->
+
+<% var about = [
+  {
+    img: '1',
+    title: 'Награды'
+  },
+  {
+    img: '2',
+    title: 'Качество'
+  },
+] %>
+
+<%= _.template(require('./includes/about.html').default)({about}) %>
+
 <%= _.template(require('./includes/footer.html').default)({}) %>
