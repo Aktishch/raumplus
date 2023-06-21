@@ -1,0 +1,20 @@
+<% var data = {
+
+  title: 'Корзина',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Заголовок -->
+
+<%= _.template(require('./includes/heading.html').default)({data}) %>
+
+<!-- Корзина -->
+
+<section class="basket container">
+  <%= _.template(require('./includes/plug.html').default)({text: 'Скоро здесь появится информация о товаре'}) %>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>

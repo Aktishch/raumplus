@@ -1,0 +1,21 @@
+<% var data = {
+
+  title: '404',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- 404 -->
+
+<section class="container flex flex-col items-center justify-center text-center">
+  <div class="font-normal text-primary text-number sm:text-[14rem] lg:text-[22rem] leading-2">404</div>
+  <p class="font-normal text-16 leading-3 mb-5 sm:mb-10">Возможно, запрашиваемая вами страница была перенесена или удалена</p>
+  <div class="flex flex-col xs:flex-row xs:items-center xs:justify-center gap-4 w-full xs:w-auto">
+    <button class="btn btn-primary btn-lg btn-fill btn-active uppercase" data-waved="light">Вернуться на главную</button>
+    <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe uppercase" data-waved="dark">В каталог</button>
+  </div>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>

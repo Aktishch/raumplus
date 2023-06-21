@@ -1,6 +1,7 @@
 // Шапка документа
 .header {
-  transform: translateY(var(--top));
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.44);
+  transform : translateY(var(--top));
 }
 
 // Мобильное меню
@@ -215,8 +216,8 @@
   }
 }
 
-// Корзина
-.basket {
+// Закупка
+.basket-shop {
   &:not([data-basket="show"]) {
     transform: translateY(-40%);
   }
@@ -332,5 +333,19 @@
 
   &__accordion[data-accordion="active"] &__line {
     @apply rotate-0;
+  }
+}
+
+// Корзина
+.basket {
+  &__item {
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &:not(:last-child) {
+      @apply border-b border-solid border-grey;
+    }
   }
 }

@@ -192,10 +192,6 @@ const init = () => {
     watchSlidesProgress: true,
 
     breakpoints: {
-      // [media.sm]: {
-      //   slidesPerView: 2,
-      // },
-
       [media.md]: {
         slidesPerView: 3,
       },

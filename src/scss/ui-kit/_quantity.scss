@@ -21,7 +21,8 @@
   }
 
   &-cover {
-    max-width: 36px;
+    min-width: 28px;
+    max-width: 28px;
   }
 
   &-input {

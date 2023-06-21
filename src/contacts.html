@@ -1,0 +1,175 @@
+<% var data = {
+
+  title: 'Контакты',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Главный блок -->
+
+<% var main = {
+
+  height: false,
+  img: 'presentation-bg',
+  title: 'Контакты'
+
+} %>
+
+<%= _.template(require('./includes/main.html').default)({data, main}) %>
+
+<!-- Контакты -->
+
+<% var contacts = [
+  {
+    anim: 'anim--right',
+    title: 'Склад',
+    address: 'Московская обл, г.Одинцово, Западная промзона, ул. Западная д9, строение 10'
+  },
+  {
+    anim: 'anim--left',
+    title: 'Офис',
+    address: 'Московская обл, г.Одинцово, бульвар Маршала Крылова 25а, пом. 9'
+  }
+] %>
+
+<section class="container overflow-hidden">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-7">
+    <% for (var i = 0; i < contacts.length; i++) { %>
+    <div class="ease-in-out duration-4 anim <%= contacts[i].anim %>" data-anim="hidden">
+      <div class="card h-auto py-7 px-4 sm:px-7 lg:py-10 lg:px-10">
+        <div class="card-content items-start">
+          <h3 class="font-light text-24 sm:text-24 leading-2 mb-5 sm:mb-9"><%= contacts[i].title %></h3>
+          <div class="flex flex-col items-start gap-3 mb-7 sm:mb-10">
+            <div class="flex items-center">
+              <div class="flex items-center justify-center bg-grey w-7 min-w-[28px] h-7 sm:w-10 sm:min-w-[40px] sm:h-10 mr-2 sm:mr-3">
+                <svg class="icon text-dark text-18 sm:text-30">
+                  <use xlink:href="img/icons.svg#geo">
+                </svg>
+              </div>
+              <p class="font-light text-14 sm:text-16 leading-4 opacity-60"><%= contacts[i].address %></p>
+            </div>
+            <a class="flex items-center hover:underline underline-offset-4 hover:text-primary duration-2" href="tel: +7(812)404-58-84">
+              <div class="flex items-center justify-center bg-grey w-7 min-w-[28px] h-7 sm:w-10 sm:min-w-[40px] sm:h-10 mr-2 sm:mr-3">
+                <svg class="icon text-dark text-18 sm:text-30">
+                  <use xlink:href="img/icons.svg#phone">
+                </svg>
+              </div>
+              <p class="font-light text-14 sm:text-16 leading-4 opacity-60">+7(812)404-58-84, доб. 2</p>
+            </a>
+            <a class="flex items-center hover:underline underline-offset-4 hover:text-primary duration-2" href="mailto: zakaz@raum-expert.ru">
+              <div class="flex items-center justify-center bg-grey w-7 min-w-[28px] h-7 sm:w-10 sm:min-w-[40px] sm:h-10 mr-2 sm:mr-3">
+                <svg class="icon text-dark text-18 sm:text-30">
+                  <use xlink:href="img/icons.svg#email">
+                </svg>
+              </div>
+              <p class="font-light text-14 sm:text-16 leading-4 opacity-60">zakaz@raum-expert.ru</p>
+            </a>
+            <a class="flex items-center hover:underline underline-offset-4 hover:text-primary duration-2" href="https://raum-expert.ru/" target="_blank">
+              <div class="flex items-center justify-center bg-grey w-7 min-w-[28px] h-7 sm:w-10 sm:min-w-[40px] sm:h-10 mr-2 sm:mr-3">
+                <svg class="icon text-dark text-18 sm:text-30">
+                  <use xlink:href="img/icons.svg#world">
+                </svg>
+              </div>
+              <p class="font-light text-14 sm:text-16 leading-4 opacity-60">https://raum-expert.ru/</p>
+            </a>
+          </div>
+          <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-14 sm:text-16" data-waved="dark">посмотреть на карте</button>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<!-- Обратная связь -->
+
+<section class="container container--xs overflow-hidden">
+  <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-3 sm:mb-8 ease-in-out duration-4 anim anim--up" data-anim="hidden">Напишите нам</h2>
+  <p class="font-light text-16 leading-5 mb-5 sm:mb-10 ease-in-out duration-4 anim anim--up" data-anim="hidden">Можете написать свое предложение или задать вопрос </p>
+  <div class="card p-6 sm:p-8 xl:p-2">
+    <div class="card-content flex-row items-center justify-between">
+      <div class="w-full xl:max-w-[640px] xl:px-8">
+        <form class="form text-dark" data-form="submit">
+          <input type="hidden" value="Главная" name="theme">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6 sm:mb-8">
+            <label class="form-label" data-label="input">
+              <div class="font-normal text-14 leading-1 mb-2">Имя<span class="text-red">*</span></div>
+              <div class="form-wrapper">
+                <div class="input-cover">
+                  <input class="input input-md text-14" data-input="name" type="text">
+                </div>
+                <span class="form-error" data-error>Введите имя</span>
+              </div>
+            </label>
+            <label class="form-label" data-label="input">
+              <div class="font-normal text-14 leading-1 mb-2">Фамилия<span class="text-red">*</span></div>
+              <div class="form-wrapper">
+                <div class="input-cover">
+                  <input class="input input-md text-14" data-input="name" type="text">
+                </div>
+                <span class="form-error" data-error>Введите фамилию</span>
+              </div>
+            </label>
+            <label class="form-label sm:col-2">
+              <div class="font-normal text-14 leading-1 mb-2">Компания</div>
+              <div class="form-wrapper">
+                <div class="input-cover">
+                  <input class="input input-md text-14" type="text">
+                </div>
+              </div>
+            </label>
+            <label class="form-label" data-label="input">
+              <div class="font-normal text-14 leading-1 mb-2">E-mail<span class="text-red">*</span></div>
+              <div class="form-wrapper">
+                <div class="input-cover">
+                  <input class="input input-md text-14" data-input="email" type="text" placeholder="E-mail">
+                </div>
+                <span class="form-error" data-error>Введите корректный адрес!</span>
+              </div>
+            </label>
+            <label class="form-label" data-label="input">
+              <div class="font-normal text-14 leading-1 mb-2">Телефон<span class="text-red">*</span></div>
+              <div class="form-wrapper">
+                <div class="input-cover">
+                  <input class="input input-md text-14" data-input="tel" type="tel">
+                </div>
+                <span class="form-error" data-error>Введите телефон</span>
+              </div>
+            </label>
+            <label class="form-label sm:col-2">
+              <div class="font-normal text-14 leading-1 mb-2">Сообщения</div>
+              <div class="form-wrapper">
+                <div class="input-cover">
+                  <textarea class="input text-14 h-[140px]" type="text"></textarea>
+                </div>
+              </div>
+            </label>
+          </div>
+          <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-14 sm:text-16 w-full sm:max-w-[270px] mb-4" type="submit" data-waved="light">Отправить заявку</button>
+          <div class="font-medium text-12 sm:text-14 leading-4 cursor-pointer" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">
+            Нажимая кнопку <span class="text-primary underline underline-offset-4">вы соглашаетесь с условиями хранения персональных данных</span>
+          </div>
+        </form>
+      </div>
+      <div class="hidden xl:block w-full max-w-[650px]">
+        <div class="pack pack-box bg-grey">
+          <div class="loader">
+            <span class="loader-progress">
+              <svg class="loader-icon icon">
+                <use xlink:href="img/icons.svg#loader">
+              </svg>
+            </span>
+          </div>
+          <picture>
+            <source srcset="img/pictures/room.webp" type="image/webp">
+            <img class="image" loading="lazy" src="img/pictures/room.jpg" alt="">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>
