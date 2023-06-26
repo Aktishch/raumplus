@@ -1,0 +1,74 @@
+<% var data = {
+
+  title: 'Личный кабинет',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Заголовок -->
+
+<%= _.template(require('./includes/heading.html').default)({data}) %>
+
+<!-- Корзина -->
+
+<section class="container flex justify-between gap-8">
+  <%= _.template(require('./includes/lk-sidebar.html').default)({text: 'Мои заказы'}) %>
+  <div class="w-full max-w-[980px]">
+    <h3 class="font-light text-24 mb-6">Мои заказы</h3>
+    <div class="relative mb-4" data-accordion="hidden" data-accordion-close="scroll">
+      <div class="flex items-center lg:gap-5" data-accordion-toggle>
+        <button class="btn btn-primary lg:hidden" data-waved="light">
+          <svg class="icon text-dark text-24 sm:text-30">
+            <use xlink:href="img/icons.svg#sorting">
+          </svg>
+        </button>
+        <div class="hidden lg:flex items-center justify-between relative border border-solid border-dark border-opacity-30 w-[250px] h-[54px] py-4 px-5" data-waved="dark">
+          <span class="font-medium text-16 leading-1">По популярности</span>
+          <svg class="icon text-22">
+            <use xlink:href="img/icons.svg#arrow-bottom">
+          </svg>
+        </div>
+      </div>
+      <div class="absolute z-1 top-10 lg:top-14 left-0 shadow-md w-[200px] lg:w-[250px]" data-accordion-content>
+        <div class="flex flex-col items-start gap-2 lg:gap-3 bg-white py-4 px-4 lg:px-6">
+          <a class="btn btn-primary font-normal text-dark lg:text-18" data-waved="light" href="">Сначала дороже</a>
+          <a class="btn btn-primary font-normal text-dark lg:text-18" data-waved="light" href="">Сначала дешевле</a>
+          <a class="btn btn-primary font-normal text-dark lg:text-18" data-waved="light" href="">По алфавиту</a>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="card card--active p-4">
+        <div class="card-content flex-row items-center justify-between">
+          <div class="pack pack-box bg-grey w-full max-w-[200px]">
+            <div class="loader">
+              <span class="loader-progress">
+                <svg class="loader-icon icon">
+                  <use xlink:href="img/icons.svg#loader">
+                </svg>
+              </span>
+            </div>
+            <picture>
+              <img class="image" loading="lazy" src="img/pictures/product.jpg" alt="">
+            </picture>
+          </div>
+          <div class="flex flex-col items-start w-full max-w-[250px]">
+            <p class="font-normal text-16 leading-2 mb-2">Уголок для верхней одиночной направляющей s34мм</p>
+            <span class="font-normal text-14 leading-2 opacity-60 mb-8">Артикул: 82575553</span>
+            <span class="font-medium text-24 leading-2">23 987 ₽</span>
+          </div>
+          <div class="flex flex-col items-end">
+            <%= _.template(require('./includes/status.html').default)({status: 'check'}) %>
+            <%= _.template(require('./includes/status.html').default)({status: 'clock'}) %>
+            <%= _.template(require('./includes/status.html').default)({status: 'error'}) %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= _.template(require('./includes/pagination.html').default)({}) %>
+  </div>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>

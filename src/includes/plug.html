@@ -1,7 +1,12 @@
-<div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 bg-grey w-full py-6 px-4 md:px-4">
-  <picture>
-    <source srcset="img/pictures/logo-dark.webp" type="image/webp">
-    <img class="w-[120px]" src="img/pictures/logo-dark.png" alt="">
-  </picture>
-  <p class="font-normal text-16 md:text-18 leading-3"><%= text %></p>
+<div class="flex flex-col lg:flex-row items-start lg:items-center gap-8 bg-grey w-full py-6 px-4 md:px-4">
+  <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+    <picture>
+      <source srcset="img/pictures/logo-dark.webp" type="image/webp">
+      <img class="w-[120px] min-w-[120px]" src="img/pictures/logo-dark.png" alt="">
+    </picture>
+    <p class="font-normal text-16 md:text-18 leading-3"><%= text %></p>
+  </div>
+  <% if (btn) { %>
+  <button class="btn btn-dark btn-md md:btn-lg btn-contur btn-light btn-active btn-swipe uppercase text-14 md:text-16 w-full xs:w-auto lg:min-w-max lg:ml-auto" data-waved="light"><%= btn %></button>
+  <% } %>
 </div>

@@ -1,0 +1,32 @@
+<%
+
+var statusOrder = {
+
+  color: '',
+  icon: '',
+  text: ''
+
+}
+
+if (status == 'check') {
+  statusOrder.color = 'text-green'
+  statusOrder.icon = 'check'
+  statusOrder.text = 'Выполнен'
+} else if (status == 'clock') {
+  statusOrder.color = 'text-primary'
+  statusOrder.icon = 'clock'
+  statusOrder.text = 'В работе'
+} else if (status == 'error') {
+  statusOrder.color = 'text-red'
+  statusOrder.icon = 'error'
+  statusOrder.text = 'Отменен'
+}
+
+%>
+
+<div class="flex items-center justify-center bg-grey rounded-full py-1 px-2">
+  <svg class="icon <%= statusOrder.color %> text-18 mr-2">
+    <use xlink:href="img/icons.svg#<%= statusOrder.icon %>">
+  </svg>
+  <span class="font-normal text-dark text-opacity-60 text-center text-14 leading-1"><%= statusOrder.text %></span>
+</div>

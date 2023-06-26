@@ -1,0 +1,73 @@
+<% var lkSidebar = [
+  {
+    icon: 'img/icons.svg#basket',
+    text: 'Мои заказы'
+  },
+  {
+    icon: 'img/icons.svg#setting',
+    text: 'Настройки профиля'
+  },
+  {
+    icon: 'img/icons.svg#price',
+    text: 'Прайс-лист'
+  },
+  {
+    icon: 'img/icons.svg#hands',
+    text: 'Партнерский раздел'
+  },
+  {
+    icon: 'img/icons.svg#stack',
+    text: 'Схемы сборки'
+  }
+] %>
+
+<div class="w-full max-w-[350px]">
+  <div class="flex flex-col gap-7">
+    <div class="card p-8">
+      <div class="card-content">
+        <div class="flex items-center mb-5">
+          <button class="btn btn-grey btn-fill text-dark rounded-max w-full max-w-[72px] mr-4" data-waved="light">
+            <div class="pack pack-box rounded-max w-full">
+              <svg class="image">
+                <use xlink:href="img/icons.svg#user-fade">
+              </svg>
+              <picture>
+                <img class="image" data-avatar src="img/pictures/avatar.png" alt="">
+              </picture>
+            </div>
+            <div class="flex items-center justify-center absolute top-0 right-0 bg-grey rounded-max w-5 h-5">
+              <svg class="icon text-12">
+                <use xlink:href="img/icons.svg#pencil">
+              </svg>
+            </div>
+          </button>
+          <div class="flex flex-col items-start">
+            <span class="font-semibold text-18 leading-2 mb-2">Фроловский Константин</span>
+            <button class="btn btn-grey text-dark" data-waved="dark">
+              <svg class="icon text-20 mr-2">
+                <use xlink:href="img/icons.svg#exit">
+              </svg>
+              Выйти
+            </button>
+          </div>
+        </div>
+        <div class="flex items-center justify-center bg-primary font-normal text-white text-center text-14 rounded-full p-2 mb-4">Партнерская скидка 33%</div>
+        <button class="btn btn-dark btn-md md:btn-lg btn-contur btn-light btn-active btn-swipe uppercase text-14 md:text-16" data-waved="light">Калькулятор</button>
+      </div>
+    </div>
+    <div class="card p-8">
+      <div class="card-content items-start gap-3">
+        <% for (var i = 0; i < lkSidebar.length; i++) { %>
+        <a class="btn font-medium <%= text == lkSidebar[i].text ? 'underline' : 'hover:underline' %> underline-offset-4" data-waved="dark" href="">
+          <div class="flex items-center justify-center bg-grey w-10 h-10 mr-3">
+            <svg class="icon text-30">
+              <use xlink:href="<%= lkSidebar[i].icon %>">
+            </svg>
+          </div>
+          <%= lkSidebar[i].text %>
+        </a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
