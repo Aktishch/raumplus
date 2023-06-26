@@ -11,25 +11,20 @@
 
 <%= _.template(require('./includes/heading.html').default)({data}) %>
 
-<!-- Корзина -->
+<!-- Личный кабинет -->
 
-<section class="container flex justify-between gap-8">
+<% var lkOrders = ['check', 'clock', 'error'] %>
+
+<section class="container flex flex-col lg:flex-row justify-between gap-5 lg:gap-8">
   <%= _.template(require('./includes/lk-sidebar.html').default)({text: 'Мои заказы'}) %>
-  <div class="w-full max-w-[980px]">
+  <div class="w-full lg:max-w-[980px]">
     <h3 class="font-light text-24 mb-6">Мои заказы</h3>
     <div class="relative mb-4" data-accordion="hidden" data-accordion-close="scroll">
-      <div class="flex items-center lg:gap-5" data-accordion-toggle>
-        <button class="btn btn-primary lg:hidden" data-waved="light">
-          <svg class="icon text-dark text-24 sm:text-30">
-            <use xlink:href="img/icons.svg#sorting">
-          </svg>
-        </button>
-        <div class="hidden lg:flex items-center justify-between relative border border-solid border-dark border-opacity-30 w-[250px] h-[54px] py-4 px-5" data-waved="dark">
-          <span class="font-medium text-16 leading-1">По популярности</span>
-          <svg class="icon text-22">
-            <use xlink:href="img/icons.svg#arrow-bottom">
-          </svg>
-        </div>
+      <div class="flex items-center justify-between relative border border-solid border-dark border-opacity-30 w-[250px] h-[54px] py-4 px-5" data-accordion-toggle data-waved="dark">
+        <span class="font-medium text-16 leading-1">По популярности</span>
+        <svg class="icon text-22">
+          <use xlink:href="img/icons.svg#arrow-bottom">
+        </svg>
       </div>
       <div class="absolute z-1 top-10 lg:top-14 left-0 shadow-md w-[200px] lg:w-[250px]" data-accordion-content>
         <div class="flex flex-col items-start gap-2 lg:gap-3 bg-white py-4 px-4 lg:px-6">
@@ -39,10 +34,11 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-col">
+    <div class="flex flex-col gap-6">
+      <% for (var i = 0; i < lkOrders.length; i++) { %>
       <div class="card card--active p-4">
-        <div class="card-content flex-row items-center justify-between">
-          <div class="pack pack-box bg-grey w-full max-w-[200px]">
+        <div class="card-content flex-wrap xl:flex-nowrap flex-row items-center justify-between gap-4 lg:gap-6">
+          <div class="pack pack-box bg-grey w-full max-w-[100px] sm:max-w-[200px]">
             <div class="loader">
               <span class="loader-progress">
                 <svg class="loader-icon icon">
@@ -56,16 +52,24 @@
           </div>
           <div class="flex flex-col items-start w-full max-w-[250px]">
             <p class="font-normal text-16 leading-2 mb-2">Уголок для верхней одиночной направляющей s34мм</p>
-            <span class="font-normal text-14 leading-2 opacity-60 mb-8">Артикул: 82575553</span>
-            <span class="font-medium text-24 leading-2">23 987 ₽</span>
+            <span class="font-normal text-14 leading-2 opacity-60 mb-4 sm:mb-8">Артикул: 82575553</span>
+            <span class="font-medium text-20 sm:text-24 leading-2">23 987 ₽</span>
           </div>
-          <div class="flex flex-col items-end">
-            <%= _.template(require('./includes/status.html').default)({status: 'check'}) %>
-            <%= _.template(require('./includes/status.html').default)({status: 'clock'}) %>
-            <%= _.template(require('./includes/status.html').default)({status: 'error'}) %>
+          <div class="flex xl:flex-col items-end justify-between xl:justify-start gap-2 sm:gap-5 w-full xl:max-w-[450px]">
+            <div class="flex flex-col">
+              <%= _.template(require('./includes/status.html').default)({status: lkOrders[i]}) %>
+              <span class="font-medium text-16 leading-2 mb-3">Заказ №12</span>
+              <span class="font-normal text-16 leading-2 opacity-60 mb-3">21.05.2023</span>
+              <span class="font-normal text-16 leading-2 opacity-60">6 товаров</span>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-center md:justify-end gap-4">
+              <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-14 sm:text-16 px-2 sm:px-5" data-waved="light">Детали заказа</button>
+              <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-14 sm:text-16 px-2 sm:px-5" data-waved="light">Повторить заказ</button>
+            </div>
           </div>
         </div>
       </div>
+      <% } %>
     </div>
     <%= _.template(require('./includes/pagination.html').default)({}) %>
   </div>

@@ -21,12 +21,12 @@
   }
 ] %>
 
-<div class="w-full max-w-[350px]">
-  <div class="flex flex-col gap-7">
-    <div class="card p-8">
+<div class="w-full lg:max-w-[350px]">
+  <div class="flex flex-col sm:flex-row lg:flex-col justify-between lg:justify-start gap-5 lg:gap-7">
+    <div class="card w-full p-4 md:p-8">
       <div class="card-content">
         <div class="flex items-center mb-5">
-          <button class="btn btn-grey btn-fill text-dark rounded-max w-full max-w-[72px] mr-4" data-waved="light">
+          <button class="btn btn-grey btn-fill text-dark rounded-max w-full max-w-[72px] mr-4" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-avatar.html">
             <div class="pack pack-box rounded-max w-full">
               <svg class="image">
                 <use xlink:href="img/icons.svg#user-fade">
@@ -55,12 +55,12 @@
         <button class="btn btn-dark btn-md md:btn-lg btn-contur btn-light btn-active btn-swipe uppercase text-14 md:text-16" data-waved="light">Калькулятор</button>
       </div>
     </div>
-    <div class="card p-8">
+    <div class="card w-full p-4 md:p-8">
       <div class="card-content items-start gap-3">
         <% for (var i = 0; i < lkSidebar.length; i++) { %>
         <a class="btn font-medium <%= text == lkSidebar[i].text ? 'underline' : 'hover:underline' %> underline-offset-4" data-waved="dark" href="">
-          <div class="flex items-center justify-center bg-grey w-10 h-10 mr-3">
-            <svg class="icon text-30">
+          <div class="flex items-center justify-center bg-grey w-7 h-7 sm:w-10 sm:h-10 mr-3">
+            <svg class="icon text-18 sm:text-30">
               <use xlink:href="<%= lkSidebar[i].icon %>">
             </svg>
           </div>
