@@ -43,9 +43,11 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
 
       '&-error': {
         fontSize: theme('fontSize.12'),
+        textAlign: 'right',
         color: theme('colors.red.DEFAULT'),
         display: 'flex',
         alignItems: 'flex-start',
+        justifyContent: 'flex-end',
         position: 'absolute',
         left: 0,
         right: 0,

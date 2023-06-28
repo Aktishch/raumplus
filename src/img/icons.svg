@@ -237,5 +237,18 @@
       <path d="M32.0312 25L22.9102 33.5938L17.9688 28.9062" fill="transparent" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
 
+    <symbol id="eye-visible" width="100%" height="100%" viewBox="0 0 24 24">
+      <path d="M12 5.25C4.5 5.25 1.5 12 1.5 12C1.5 12 4.5 18.75 12 18.75C19.5 18.75 22.5 12 22.5 12C22.5 12 19.5 5.25 12 5.25Z" fill="transparent" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75Z" fill="transparent" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
+    <symbol id="eye-hidden" width="100%" height="100%" viewBox="0 0 24 24">
+      <path d="M18.8535 11.9336L21.0004 15.6367" fill="transparent" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M14.4561 13.9961L15.1217 17.7742" fill="transparent" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M9.53477 13.9883L8.86914 17.7758" fill="transparent" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M5.13711 11.9336L2.99023 15.6555" fill="transparent" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M3 9.83398C4.575 11.784 7.4625 14.2496 12 14.2496C16.5375 14.2496 19.425 11.784 21 9.83398" fill="transparent" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
   </defs>
 </svg>

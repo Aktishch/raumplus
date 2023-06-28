@@ -1,0 +1,130 @@
+<% var data = {
+
+  title: 'Личный кабинет',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Заголовок -->
+
+<%= _.template(require('./includes/heading.html').default)({data}) %>
+
+<!-- Личный кабинет -->
+
+<section class="container flex flex-col lg:flex-row justify-between gap-5 lg:gap-8">
+  <%= _.template(require('./includes/lk-sidebar.html').default)({text: 'Настройки профиля'}) %>
+  <div class="w-full lg:max-w-[980px]">
+    <h3 class="font-light text-24 mb-6">Настройки профиля</h3>
+    <form class="form" data-form="submit">
+      <div class="card p-5 sm:p-8 mb-6">
+        <input type="hidden" value="Настройки" name="theme">
+        <div class="card-content sm:grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+          <label class="form-label" data-label="input">
+            <div class="font-normal text-14 leading-1 mb-2">Имя<span class="text-red">*</span></div>
+            <div class="form-wrapper">
+              <div class="input-cover">
+                <input class="input input-md text-14" data-input="name" type="text">
+              </div>
+              <span class="form-error" data-error>Введите имя</span>
+            </div>
+          </label>
+          <label class="form-label" data-label="input">
+            <div class="font-normal text-14 leading-1 mb-2">Фамилия<span class="text-red">*</span></div>
+            <div class="form-wrapper">
+              <div class="input-cover">
+                <input class="input input-md text-14" data-input="name" type="text">
+              </div>
+              <span class="form-error" data-error>Введите фамилию</span>
+            </div>
+          </label>
+          <label class="form-label" data-label="input">
+            <div class="font-normal text-14 leading-1 mb-2">Отчество<span class="text-red">*</span></div>
+            <div class="form-wrapper">
+              <div class="input-cover">
+                <input class="input input-md text-14" data-input="name" type="text">
+              </div>
+              <span class="form-error" data-error>Введите отчество</span>
+            </div>
+          </label>
+          <label class="form-label" data-label="input">
+            <div class="font-normal text-14 leading-1 mb-2">Телефон<span class="text-red">*</span></div>
+            <div class="form-wrapper">
+              <div class="input-cover">
+                <input class="input input-md text-14" data-input="tel" type="tel">
+              </div>
+              <span class="form-error" data-error>Введите телефон</span>
+            </div>
+          </label>
+          <label class="form-label" data-label="input">
+            <div class="font-normal text-14 leading-1 mb-2">E-mail<span class="text-red">*</span></div>
+            <div class="form-wrapper">
+              <div class="input-cover">
+                <input class="input input-md text-14" data-input="email" type="text" placeholder="E-mail">
+              </div>
+              <span class="form-error" data-error>Введите корректный адрес</span>
+            </div>
+          </label>
+          <label class="form-label">
+            <div class="font-normal text-14 leading-1 mb-2">Сменить пароль</div>
+            <div class="form-wrapper" data-wrapper>
+              <div class="input-cover">
+                <input class="input input-md text-14" data-input="password" type="password" placeholder="Введите новый пароль" autocomplete="off">
+              </div>
+              <div class="form-icon form-icon-md form-icon--pointer form-icon--right text-black text-opacity-60 text-24 cursor-pointer" data-password>
+                <svg class="icon">
+                  <use xlink:href="img/icons.svg#eye-visible">
+                </svg>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="card p-5 sm:p-8 mb-8">
+        <div class="card-content sm:grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+          <label class="form-label">
+            <div class="font-normal text-14 leading-1 mb-2">Город</div>
+            <div class="form-wrapper">
+              <div class="input-cover">
+                <input class="input input-md text-14" type="text">
+              </div>
+            </div>
+          </label>
+          <label class="form-label">
+            <div class="font-normal text-14 leading-1 mb-2">Улица</div>
+            <div class="form-wrapper">
+              <div class="input-cover">
+                <input class="input input-md text-14" type="text">
+              </div>
+            </div>
+          </label>
+          <label class="form-label">
+            <div class="font-normal text-14 leading-1 mb-2">Дом</div>
+            <div class="form-wrapper">
+              <div class="input-cover">
+                <input class="input input-md text-14" type="text">
+              </div>
+            </div>
+          </label>
+          <label class="form-label">
+            <div class="font-normal text-14 leading-1 mb-2">Индекс</div>
+            <div class="form-wrapper">
+              <div class="input-cover">
+                <input class="input input-md text-14" type="text">
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe flex-grow xs:flex-grow-0 uppercase text-14 sm:text-16" data-waved="light" type="submit">
+          Сохранить <span class="hidden xs:inline ml-1">изменения</span>
+        </button>
+        <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe flex-grow xs:flex-grow-0 uppercase text-14 sm:text-16" data-waved="light" type="reset">Отменить</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>

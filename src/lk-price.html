@@ -1,0 +1,93 @@
+<% var data = {
+
+  title: 'Личный кабинет',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Заголовок -->
+
+<%= _.template(require('./includes/heading.html').default)({data}) %>
+
+<!-- Личный кабинет -->
+
+<% var lkFiles = [
+  {
+    hidden: '',
+    data: '',
+  },
+  {
+    hidden: '',
+    data: '',
+  },
+  {
+    hidden: '',
+    data: '',
+  },
+  {
+    hidden: '',
+    data: '',
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+  },
+  {
+    hidden: 'hidden',
+    data: 'data-listing-item',
+  },
+] %>
+
+<section class="container flex flex-col lg:flex-row justify-between gap-5 lg:gap-8">
+  <%= _.template(require('./includes/lk-sidebar.html').default)({text: 'Прайс-лист'}) %>
+  <div class="w-full lg:max-w-[980px]">
+    <h3 class="font-light text-24 mb-6">Прайс-лист</h3>
+    <div data-listing="4">
+      <div class="flex flex-col gap-4">
+        <% for (var i = 0; i < lkFiles.length; i++) { %>
+        <div class="card <%= lkFiles[i].hidden %> py-4 px-4 sm:px-8" <%= lkFiles[i].data %>>
+          <div class="card-content sm:flex-row items-start sm:items-center sm:justify-between gap-3 sm:gap-5">
+            <p class="font-normal text-16">Прайс-лист для систем s1800</p>
+            <div class="flex items-center sm:min-w-max sm:mx-auto">
+              <svg class="icon text-24 mr-2">
+                <use xlink:href="img/icons.svg#pdf">
+              </svg>
+              <span class="font-normal text-16">Размер: 8 Мб</span>
+            </div>
+            <a class="btn btn-dark btn-md xl:btn-lg btn-contur btn-active btn-swipe uppercase text-14 xl:text-16" data-waved="light" href="" download>Скачать</a>
+          </div>
+        </div>
+        <% } %>
+      </div>
+      <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-14 sm:text-16 mt-10 mx-auto lg:mx-0" data-listing-show data-waved="dark">Показать ещё</button>
+    </div>
+  </div>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>

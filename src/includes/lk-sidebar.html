@@ -58,7 +58,7 @@
     <div class="card w-full p-4 md:p-8">
       <div class="card-content items-start gap-3">
         <% for (var i = 0; i < lkSidebar.length; i++) { %>
-        <a class="btn font-medium <%= text == lkSidebar[i].text ? 'underline' : 'hover:underline' %> underline-offset-4" data-waved="dark" href="">
+        <a class="btn <%= text == lkSidebar[i].text ? 'underline pointer-events-none' : 'hover:underline' %> underline-offset-4 font-medium" data-waved="dark" href="">
           <div class="flex items-center justify-center bg-grey w-7 h-7 sm:w-10 sm:h-10 mr-3">
             <svg class="icon text-18 sm:text-30">
               <use xlink:href="<%= lkSidebar[i].icon %>">

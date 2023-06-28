@@ -29,22 +29,10 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       },
 
       '&:not(&--error):focus': {
-        borderColor: formatColor({
-          mode: 'rgba',
-          color: grey,
-          alpha: 0.5,
-        }),
+        borderColor: theme('colors.primary.DEFAULT'),
       },
 
-      '&::placeholder': {
-        color: formatColor({
-          mode: 'rgba',
-          color: grey,
-          alpha: 0.3,
-        }),
-      },
-
-      '&[disabled]': {
+      '&:disabled': {
         pointerEvents: 'none',
         opacity: 0.5,
       },
