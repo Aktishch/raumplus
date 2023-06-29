@@ -91,7 +91,7 @@
           <div class="border-b border-solid border-primary w-full max-w-[145px] -mb-px"></div>
         </div>
         <p class="font-light text-16 leading-5 mb-5">Подпишитесь на нашу рассылку, чтобы быть в курсе акций и новинок</p>
-        <form class="form" data-form="submit">
+        <form class="form" data-form="submit" data-request="/ajax/submit-handler.php" data-form-dialog="/dialogs/dialog-success-email.html">
           <input type="hidden" value="Рассылка" name="theme">
           <div class="flex flex-row items-center mb-6">
             <label class="form-label" data-label="input">
@@ -99,14 +99,19 @@
                 <div class="input-cover">
                   <input class="input input-lg" data-input="email" type="text" placeholder="E-mail">
                 </div>
-                <span class="form-error" data-error>Введите корректный адрес</span>
+                <span class="form-error justify-start text-left text-primary" data-error>Введите корректный адрес</span>
               </div>
             </label>
             <button class="btn btn-primary btn-lg btn-fill btn-active uppercase px-5" data-waved="dark" type="submit">ОТПРАВИТЬ</button>
           </div>
-          <label class="form-label flex-row items-center cursor-pointer">
-            <input class="switch switch--checkbox border-gray mr-2" type="checkbox" required>
-            <span class="font-normal text-12 leading-1">Я согласен с Политикой конфиденциальнсти</span>
+          <label class="form-label cursor-pointer" data-label="input">
+            <div class="form-wrapper">
+              <div class="flex flex-row items-center">
+                <input class="switch switch--checkbox border-gray mr-2" data-input="switch" type="checkbox" checked>
+                <span class="font-normal text-12 leading-1">Я согласен с Политикой конфиденциальнсти</span>
+              </div>
+              <span class="form-error justify-start text-left text-primary" data-error>Примите соглашение</span>
+            </div>
           </label>
         </form>
       </div>

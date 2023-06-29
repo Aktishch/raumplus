@@ -23,12 +23,13 @@
 
 <section class="container overflow-hidden">
   <%= _.template(require('./includes/back.html').default)({}) %>
-  <form class="form xs:flex-row xs:items-center xs:justify-between gap-4 mb-8">
-    <label class="form-label w-full">
+  <form class="form xs:flex-row xs:items-center xs:justify-between gap-4 mb-8" data-form="action" action="">
+    <label class="form-label w-full" data-label="input">
       <div class="form-wrapper">
         <div class="input-cover">
-          <input class="input input-md sm:input-lg pr-10" type="text" placeholder="Поиск" required>
+          <input class="input input-md sm:input-lg pr-10" data-input type="text" placeholder="Поиск">
         </div>
+        <span class="form-error" data-error>Заполните это поле</span>
         <button class="form-icon form-icon-md sm:form-icon-lg form-icon--pointer form-icon--right text-dark text-opacity-30 text-24 cursor-pointer" type="reset">
           <svg class="icon">
             <use xlink:href="img/icons.svg#close">

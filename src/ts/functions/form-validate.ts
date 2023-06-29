@@ -65,7 +65,7 @@ const init = (form: HTMLFormElement): boolean => {
       }
 
       if (input.dataset.input == 'select') {
-        if (input.value == '0') inputError()
+        if (input.value == 'empty') inputError()
       }
 
       if (input.dataset.input == 'text') {
@@ -76,6 +76,10 @@ const init = (form: HTMLFormElement): boolean => {
         } else {
           error.innerText = 'Пожалуйста, оставьте отзыв!'
         }
+      }
+
+      if (input.dataset.input == 'switch') {
+        if (input.checked == false) inputError()
       }
 
       input.addEventListener(

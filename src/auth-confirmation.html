@@ -1,0 +1,40 @@
+<% var data = {
+
+  title: 'Подтвердите регистрацию',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Заголовок -->
+
+<%= _.template(require('./includes/heading.html').default)({data}) %>
+
+<!-- Подтверждение регистрации -->
+
+<section class="container">
+  <div class="card w-full max-w-[560px] p-5 sm:p-9 lg:p-14 mx-auto">
+    <div class="card-content">
+      <form class="form mb-4" data-form="action" action="">
+        <label class="form-label mb-6" data-label="input">
+          <div class="font-normal text-14 leading-1 mb-2">Код</div>
+          <div class="form-wrapper">
+            <div class="input-cover">
+              <input class="input input-md text-14" data-input="number" type="text">
+            </div>
+            <span class="form-error" data-error>Введите код</span>
+          </div>
+        </label>
+        <div class="bg-grey py-4 px-4 sm:py-5 sm:px-6 mb-7 sm:mb-10">
+          <p class="font-normal text-14 sm:text-16 leading-5 opacity-60">Мы выслали код на вашу почту. Введите его, чтобы подтвердить регистрацию</p>
+        </div>
+        <div class="flex">
+          <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-14 sm:text-16" data-waved="light" type="submit">Войти</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>

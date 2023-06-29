@@ -6,12 +6,12 @@ const init = (): void => {
 
   if (!parallax || window.screen.width < media.lg) return
 
-  const parallaxItems = parallax.querySelectorAll('*[data-parallax-item]') as NodeListOf<Element>
+  const items = parallax.querySelectorAll('*[data-parallax-item]') as NodeListOf<Element>
 
-  parallaxItems.forEach((element: Element): void => {
-    const parallaxItem = element as HTMLElement
+  items.forEach((element: Element): void => {
+    const item = element as HTMLElement
 
-    if (!parallaxItem) return
+    if (!item) return
 
     parallax.addEventListener('mousemove', ((event: MouseEvent): void => {
       const coordinates: coordinates = {
@@ -19,8 +19,8 @@ const init = (): void => {
         left: event.clientX / window.innerWidth,
       }
 
-      parallaxItem.style.setProperty('--y', `${coordinates.top}px`)
-      parallaxItem.style.setProperty('--x', `${coordinates.left}px`)
+      item.style.setProperty('--y', `${coordinates.top}px`)
+      item.style.setProperty('--x', `${coordinates.left}px`)
     }) as EventListener)
   })
 }

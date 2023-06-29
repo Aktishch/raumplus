@@ -250,5 +250,17 @@
       <path d="M3 9.83398C4.575 11.784 7.4625 14.2496 12 14.2496C16.5375 14.2496 19.425 11.784 21 9.83398" fill="transparent" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
 
+    <symbol id="success-check" width="100%" height="100%" viewBox="0 0 300 300">
+      <path d="M201.562 121.875L132.773 187.5L98.4375 154.688" fill="transparent" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M150 262.5C212.132 262.5 262.5 212.132 262.5 150C262.5 87.868 212.132 37.5 150 37.5C87.868 37.5 37.5 87.868 37.5 150C37.5 212.132 87.868 262.5 150 262.5Z" fill="transparent" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
+    <symbol id="success-email" width="100%" height="100%" viewBox="0 0 300 300">
+      <path d="M262.5 65.625L150 168.75L37.5 65.625" fill="transparent" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M37.5 65.625H262.5V225C262.5 227.486 261.512 229.871 259.754 231.629C257.996 233.387 255.611 234.375 253.125 234.375H46.875C44.3886 234.375 42.004 233.387 40.2459 231.629C38.4877 229.871 37.5 227.486 37.5 225V65.625Z" fill="transparent" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M129.492 150L40.4297 231.68" fill="transparent" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M259.57 231.68L170.508 150" fill="transparent" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
   </defs>
 </svg>

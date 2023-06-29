@@ -92,12 +92,13 @@
             </svg>
           </button>
         </div>
-        <form class="form mb-6">
-          <label class="form-label">
+        <form class="form mb-6" data-form="action" action="">
+          <label class="form-label" data-label="input">
             <div class="form-wrapper">
               <div class="input-cover">
-                <input class="input input-lg pr-10" type="text" placeholder="Поиск товара" required>
+                <input class="input input-lg pr-10" data-input type="text" placeholder="Поиск товара">
               </div>
+              <span class="form-error" data-error>Заполните это поле</span>
               <button class="form-icon form-icon-lg form-icon--pointer form-icon--right text-black text-24 text-opacity-30 cursor-pointer" type="submit">
                 <svg class="icon">
                   <use xlink:href="img/icons.svg#search">
@@ -106,7 +107,7 @@
             </div>
           </label>
         </form>
-        <form class="form gap-6">
+        <form class="form gap-6" data-form="action" action="">
           <% for (var i = 0; i < catalog.length; i++) { %>
           <div class="catalog__accordion bg-white bg-opacity-60 border border-solid border-dark border-opacity-20" <%= catalog[i].accordion %>>
             <div class="bg-grey py-3 px-6">
@@ -120,16 +121,14 @@
                 </div>
                 <% } %>
                 <% if (catalog[i].checkbox) { %>
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-4">
                   <% for (var j = 0; j < catalog[i].number; j++) { %>
                   <div class="flex items-center justify-between gap-1">
                     <label class="flex items-center cursor-pointer">
                       <input class="catalog__switch switch switch--checkbox mr-2" type="checkbox">
                       <span class="catalog__text font-normal text-16 leading-4 opacity-70 duration-1"><%= catalog[i].text %></span>
                     </label>
-                    <div class="catalog__quantity flex items-center justify-center relative bg-primary rounded-1 min-w-[40px] w-[40px] h-[28px]">
-                      <span class="relative font-medium text-white text-center text-16 leading-4">123</span>
-                    </div>
+                    <span class="font-normal text-16 leading-1 opacity-50">123</span>
                   </div>
                   <% } %>
                 </div>
@@ -138,7 +137,7 @@
                 <div class="flex flex-col gap-4">
                   <label class="flex items-center cursor-pointer">
                     <input class="catalog__switch switch switch--toggle mr-2" checked type="checkbox">
-                    <span class="catalog__text font-normal text-16 leading-4 opacity-70 duration-1">Наличие</span>
+                    <span class="catalog__text font-normal text-16 leading-4 opacity-70 duration-1">Складская программа</span>
                   </label>
                   <label class="flex items-center cursor-pointer">
                     <input class="catalog__switch switch switch--toggle mr-2" type="checkbox">

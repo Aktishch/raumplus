@@ -1,7 +1,6 @@
 import { Fancybox } from '@fancyapps/ui'
 import ru from '@fancyapps/ui/src/Fancybox/l10n/ru'
 import '@fancyapps/ui/dist/fancybox.css'
-
 import waved from '../ts/waved'
 
 const init = () => {
@@ -16,7 +15,7 @@ const init = () => {
     mainClass: 'fancybox-dialog',
 
     on: {
-      done: (fancybox, slide) => {
+      done: () => {
         waved.init()
       },
     },

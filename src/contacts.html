@@ -91,11 +91,11 @@
   <div class="card p-6 sm:p-8 xl:p-2">
     <div class="card-content flex-row items-center justify-between">
       <div class="w-full xl:max-w-[640px] xl:px-8">
-        <form class="form text-dark" data-form="submit">
+        <form class="form text-dark" data-form="submit" data-request="/ajax/submit-handler.php" data-form-dialog="/dialogs/dialog-success-check.html">
           <input type="hidden" value="Контакты" name="theme">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6 sm:mb-8">
             <label class="form-label" data-label="input">
-              <div class="font-normal text-14 leading-1 mb-2">Имя<span class="text-red">*</span></div>
+              <div class="relative z-1 bg-white font-normal text-12 leading-1 w-max ml-2 -mb-[6px]">Имя<span class="text-red">*</span></div>
               <div class="form-wrapper">
                 <div class="input-cover">
                   <input class="input input-md text-14" data-input="name" type="text">
@@ -104,7 +104,7 @@
               </div>
             </label>
             <label class="form-label" data-label="input">
-              <div class="font-normal text-14 leading-1 mb-2">Фамилия<span class="text-red">*</span></div>
+              <div class="relative z-1 bg-white font-normal text-12 leading-1 w-max ml-2 -mb-[6px]">Фамилия<span class="text-red">*</span></div>
               <div class="form-wrapper">
                 <div class="input-cover">
                   <input class="input input-md text-14" data-input="name" type="text">
@@ -113,7 +113,7 @@
               </div>
             </label>
             <label class="form-label sm:col-2">
-              <div class="font-normal text-14 leading-1 mb-2">Компания</div>
+              <div class="relative z-1 bg-white font-normal text-12 leading-1 w-max ml-2 -mb-[6px]">Компания</div>
               <div class="form-wrapper">
                 <div class="input-cover">
                   <input class="input input-md text-14" type="text">
@@ -121,7 +121,7 @@
               </div>
             </label>
             <label class="form-label" data-label="input">
-              <div class="font-normal text-14 leading-1 mb-2">E-mail<span class="text-red">*</span></div>
+              <div class="relative z-1 bg-white font-normal text-12 leading-1 w-max ml-2 -mb-[6px]">E-mail<span class="text-red">*</span></div>
               <div class="form-wrapper">
                 <div class="input-cover">
                   <input class="input input-md text-14" data-input="email" type="text" placeholder="E-mail">
@@ -130,7 +130,7 @@
               </div>
             </label>
             <label class="form-label" data-label="input">
-              <div class="font-normal text-14 leading-1 mb-2">Телефон<span class="text-red">*</span></div>
+              <div class="relative z-1 bg-white font-normal text-12 leading-1 w-max ml-2 -mb-[6px]">Телефон<span class="text-red">*</span></div>
               <div class="form-wrapper">
                 <div class="input-cover">
                   <input class="input input-md text-14" data-input="tel" type="tel" placeholder="+7(999)999-99-99">
@@ -139,7 +139,7 @@
               </div>
             </label>
             <label class="form-label sm:col-2">
-              <div class="font-normal text-14 leading-1 mb-2">Сообщения</div>
+              <div class="relative z-1 bg-white font-normal text-12 leading-1 w-max ml-2 -mb-[6px]">Сообщения</div>
               <div class="form-wrapper">
                 <div class="input-cover">
                   <textarea class="input text-14 h-[140px]" type="text"></textarea>
@@ -154,7 +154,7 @@
         </form>
       </div>
       <div class="hidden xl:block w-full max-w-[650px]">
-        <div class="pack pack-box bg-grey">
+        <div class="pack pack-rect-lg bg-grey">
           <div class="loader">
             <span class="loader-progress">
               <svg class="loader-icon icon">

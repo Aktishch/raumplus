@@ -186,22 +186,6 @@
     @apply font-medium opacity-100;
   }
 
-  &__quantity {
-    &::before {
-      content      : "";
-      position     : absolute;
-      top          : 0;
-      bottom       : 0;
-      left         : -8px;
-      width        : 0;
-      height       : 0;
-      border-top   : 12px solid transparent;
-      border-right : 20px solid theme('colors.primary.DEFAULT');
-      border-bottom: 12px solid transparent;
-      margin-block : auto;
-    }
-  }
-
   &__sidebar[data-sidebar="open"] {
     visibility: visible;
   }

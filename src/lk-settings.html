@@ -17,7 +17,7 @@
   <%= _.template(require('./includes/lk-sidebar.html').default)({text: 'Настройки профиля'}) %>
   <div class="w-full lg:max-w-[980px]">
     <h3 class="font-light text-24 mb-6">Настройки профиля</h3>
-    <form class="form" data-form="submit">
+    <form class="form" data-form="action" action="">
       <div class="card p-5 sm:p-8 mb-6">
         <input type="hidden" value="Настройки" name="theme">
         <div class="card-content sm:grid sm:grid-cols-2 xl:grid-cols-3 gap-4">

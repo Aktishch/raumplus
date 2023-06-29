@@ -11,12 +11,12 @@
 
 <%= _.template(require('./includes/heading.html').default)({data}) %>
 
-<!-- Аутентификация -->
+<!-- Авторизация -->
 
 <section class="container">
   <div class="card w-full max-w-[560px] p-5 sm:p-9 lg:p-14 mx-auto">
     <div class="card-content">
-      <form class="form mb-6 sm:mb-10" data-form="submit">
+      <form class="form mb-6 sm:mb-10" data-form="action" action="">
         <label class="form-label mb-6" data-label="input">
           <div class="font-normal text-14 leading-1 mb-2">E-mail</div>
           <div class="form-wrapper">
