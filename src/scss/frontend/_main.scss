@@ -320,6 +320,29 @@
   }
 }
 
+// Партнеры
+.partners {
+  &__category {
+    @screen lg {
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: transparent;
+        box-shadow  : none;
+      }
+    }
+
+    &.filter-active {
+      @apply underline text-primary pointer-events-none;
+    }
+  }
+
+  &__card.filter-show {
+    animation: filtering-show 0.3s ease both 1;
+  }
+}
+
 // Корзина
 .basket {
   &__item {

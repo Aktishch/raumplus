@@ -1,0 +1,72 @@
+<% var partners = ['salons', 'distributors', 'design'] %>
+
+<section class="partners container bg-grey overflow-hidden">
+  <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-3 sm:mb-8 ease-in-out duration-4 anim anim--up" data-anim="hidden">Партнерская сеть raumplus</h2>
+  <p class="font-light text-16 leading-5 mb-5 sm:mb-10 ease-in-out duration-4 anim anim--up" data-anim="hidden">Контакты наших партнеров, которым мы доверям</p>
+  <div class="flex flex-col lg:flex-row lg:justify-between gap-5 lg:gap-8" data-filter>
+    <div class="w-full lg:max-w-[260px]">
+      <div class="card bg-[transparent] lg:bg-white border-none lg:border lg:border-solid border-dark border-opacity-30  overflow-y-hidden overflow-x-auto lg:overflow-x-visible shadow-none -mx-[15px] lg:mx-0 px-[15px] lg:py-6 lg:px-6">
+        <div class="card-content flex-row lg:flex-col items-center lg:items-start gap-4">
+          <button class="partners__category filter-active btn btn-grey btn-light underline-offset-4 font-medium text-dark min-w-max py-2 px-4 lg:py-0 lg:px-0" data-filter-category="all" data-waved="dark">Все партнеры</button>
+          <button class="partners__category btn btn-grey btn-light font-medium underline-offset-4 text-dark min-w-max py-2 px-4 lg:py-0 lg:px-0" data-filter-category="salons" data-waved="dark">Салоны</button>
+          <button class="partners__category btn btn-grey btn-light font-medium underline-offset-4 text-dark min-w-max py-2 px-4 lg:py-0 lg:px-0" data-filter-category="distributors" data-waved="dark">Дистрибьюторы</button>
+          <button class="partners__category btn btn-grey btn-light font-medium underline-offset-4 text-dark min-w-max py-2 px-4 lg:py-0 lg:px-0" data-filter-category="design" data-waved="dark">Дизайн студии</button>
+        </div>
+      </div>
+    </div>
+    <div class="w-full lg:max-w-[1050px]">
+      <div class="relative mb-4" data-accordion="hidden" data-accordion-close="scroll">
+        <div class="flex items-center justify-between relative bg-white border border-solid border-dark border-opacity-30 w-[250px] h-[54px] py-4 px-5" data-accordion-toggle data-waved="dark">
+          <span class="font-medium text-16 leading-1">Выберите город</span>
+          <svg class="icon text-22">
+            <use xlink:href="img/icons.svg#arrow-bottom">
+          </svg>
+        </div>
+        <div class="absolute z-1 top-14 left-0 shadow-md w-[200px] lg:w-[250px]" data-accordion-content>
+          <div class="flex flex-col items-start gap-2 lg:gap-3 bg-white py-4 px-4 lg:px-6">
+            <a class="btn btn-primary font-normal text-dark lg:text-18" data-waved="light" href="">Ташкент</a>
+            <a class="btn btn-primary font-normal text-dark lg:text-18" data-waved="light" href="">Самарканд</a>
+            <a class="btn btn-primary font-normal text-dark lg:text-18" data-waved="light" href="">Бухара</a>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4">
+        <% for (var i = 0; i < partners.length; i++) { %>
+        <div class="partners__card card p-4" data-filter-card="<%= partners[i] %>">
+          <div class="card-content flex-wrap xl:flex-nowrap flex-row items-center justify-between gap-2 lg:gap-5">
+            <div class="order-1 pack pack-box bg-grey w-full max-w-[100px] sm:max-w-[150px]">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
+              </div>
+              <picture>
+                <img class="image" loading="lazy" src="img/pictures/product.jpg" alt="">
+              </picture>
+            </div>
+            <p class="order-2 lg:order-4 xl:order-2 font-light text-14 sm:text-16 leading-5 opacity-60 w-full xl:max-w-[140px]">
+              Салон мебели «Компьютерные технологии»
+            </p>
+            <div class="order-3 lg:order-2 xl:order-3 flex flex-col w-full sm:max-w-[220px]">
+              <h4 class="font-medium text-16 leading-1 mb-2 sm:mb-4">Адрес:</h4>
+              <p class="font-light text-14 sm:text-16 leading-5 opacity-60">
+                г. Санкт-Петербург, ул. Полевая Сабировская, д. 54, ТВЦ "Интерио", 3 эт., секции 311А и 328
+              </p>
+            </div>
+            <div class="order-4 lg:order-3 xl:order-4 flex flex-col w-full sm:max-w-[200px] xl:max-w-[250px] xl:pr-10">
+              <h4 class="font-medium text-16 leading-1 mb-2 sm:mb-4">Контакты:</h4>
+              <div class="flex flex-col items-start sm:gap-1">
+                <a class="btn hover:underline underline-offset-4 font-light text-14 sm:text-16 opacity-60" data-waved="dark" href="tel: +7(812)404-58-84">+7(812)404-58-84, доб. 1</a>
+                <a class="btn hover:underline underline-offset-4 font-light text-14 sm:text-16 opacity-60" data-waved="dark" href="mailto: zakaz@raum-expert.ru">zakaz@raum-expert.ru</a>
+                <a class="btn underline underline-offset-4 font-light text-14 sm:text-16 opacity-60" data-waved="dark" href="https://raum-expert.ru/" target="_blank">https://raum-expert.ru/</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</section>
