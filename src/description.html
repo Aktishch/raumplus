@@ -115,13 +115,16 @@
               <button class="btn btn-primary font-normal text-dark border-b border-r-0 border-l-0 border-t-0 border-dashed border-dark border-opacity-40 py-1 mt-2" data-listing-show data-waved="light">Показать еще...</button>
             </div>
             <p class="font-light text-20 lg:text-24 leading-1 mb-5">Цвет: черный</p>
-            <div class="flex items-center gap-3">
-              <% for (var j = 0; j < palette.length; j++) { %>
-              <label class="palette block relative cursor-pointer" data-waved="light">
-                <input class="palette__radio hidden" type="radio" value="<%= palette[j].value %>" name="color">
-                <span class="palette__color block rounded-max border border-solid border-dark border-opacity-10 hover:border-opacity-40 w-12 h-12 duration-3" style="--production-color: <%= palette[j].color %>"></span>
-              </label>
-              <% } %>
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-10">
+              <div class="flex items-center gap-3">
+                <% for (var j = 0; j < palette.length; j++) { %>
+                <label class="palette block relative cursor-pointer" data-waved="light">
+                  <input class="palette__radio hidden" type="radio" value="<%= palette[j].value %>" name="color">
+                  <span class="palette__color block rounded-max border border-solid border-dark border-opacity-10 hover:border-opacity-40 w-12 h-12 duration-3" style="--production-color: <%= palette[j].color %>"></span>
+                </label>
+                <% } %>
+              </div>
+              <a class="btn btn-grey text-black sm:text-18 border-b-2 border-t-0 border-l-0 border-r-0 border-solid border-black" data-waved="dark" data-fancybox href="https://www.youtube.com/watch?v=OOih21EjgW0">Смотреть видео о серии</a>
             </div>
           </div>
           <div class="w-full lg:max-w-[425px]">
