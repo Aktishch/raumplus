@@ -167,6 +167,7 @@ const init = () => {
     slidesPerGroup: 1,
     spaceBetween: 16,
     speed: 1000,
+    loop: true,
     grabCursor: true,
     watchSlidesProgress: true,
   })
