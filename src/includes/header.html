@@ -37,7 +37,7 @@
 
   <% var nav = ['Каталог', 'Презентации', 'Загрузки', 'О компании', 'Статьи', 'Контакты'] %>
 
-  <header class="header container flex items-center justify-between gap-5 sm:gap-10 sticky z-3 top-0 left-0 right-0 bg-gray pt-4 pb-4 xl:pt-5 xl:pb-3 ease-linear duration-1" data-header>
+  <header class="header container flex items-center justify-between gap-5 sm:gap-10 sticky z-3 top-0 left-0 right-0 bg-gray py-4 xl:py-3 ease-linear duration-1" data-header>
     <button class="btn btn-white xl:hidden text-34 sm:text-38" data-burger data-waved="light">
       <svg class="icon">
         <use xlink:href="img/icons.svg#burger">
@@ -50,7 +50,7 @@
       </picture>
     </a>
     <div class="flex flex-col xl:w-full xl:max-w-[915px]">
-      <div class="flex items-center justify-end gap-6 xl:border-b xl:border-solid xl:border-smoke xl:border-opacity-10 xl:pb-5 xl:mb-3">
+      <div class="flex items-center justify-end gap-6 xl:border-b xl:border-solid xl:border-smoke xl:border-opacity-10 xl:pb-3 xl:mb-3">
         <a class="btn btn-smoke hidden md:flex" href="tel: +7 495 191-08-95" data-waved="light">
           <svg class="icon text-24 mr-1">
             <use xlink:href="img/icons.svg#phone">
@@ -82,7 +82,7 @@
         <div class="inverted-before flex items-center justify-between gap-10 duration-3">
           <nav class="flex items-center justify-between gap-5 w-full">
             <% for (var i = 0; i < nav.length; i++) { %>
-            <a class="btn btn-smoke font-normal py-2 px-3" data-waved="light" href=""><%= nav[i] %></a>
+            <a class="btn btn-smoke font-normal py-1 px-3" data-waved="light" href=""><%= nav[i] %></a>
             <% } %>
           </nav>
           <button class="btn btn-smoke rounded-max p-1" data-waved="light" data-inverted-open>

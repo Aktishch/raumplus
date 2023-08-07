@@ -1,14 +1,17 @@
 <section class="creative container overflow-hidden <%= creative.bg ? 'bg-grey' : '' %>">
-  <div class="flex flex-col xl:flex-row items-stretch justify-between">
+  <div class="flex flex-col xl:flex-row items-start justify-between">
     <div class="w-full xl:max-w-[685px] mb-10 md:mb-16 xl:mb-0">
       <h2 class="font-light text-primary text-32 sm:text-42 lg:text-48 leading-2 mb-5 md:mb-10 ease-in-out duration-4 anim anim--right" data-anim="hidden">Креативные решения</h2>
       <p class="font-light text-16 leading-5 ease-in-out duration-4 anim anim--right" data-anim="hidden">
         Компания raumplus производит системы интерьерных перегородок, придающих помещению неповторимый архитектурный облик. Распашные и раздвижныедвери, библиотеки и модульные системы для гостиной, гардеробные. Фабрика постоянно расширяет свою коллекцию и совершенствует стилистику своей продукции.
       </p>
       <% if (creative.text) { %>
-      <p class="font-light text-16 leading-5 mt-5 ease-in-out duration-4 anim anim--right" data-anim="hidden">
-        Компания raumplus производит системы интерьерных перегородок, придающих помещению неповторимый архитектурный облик. Распашные и раздвижныедвери, библиотеки и модульные системы для гостиной, гардеробные. Фабрика постоянно расширяет свою коллекцию и совершенствует стилистику своей продукции.
-      </p>
+      <div class="mt-5" data-listing>
+        <p class="hidden font-light text-16 leading-5" data-listing-item>
+          Компания raumplus производит системы интерьерных перегородок, придающих помещению неповторимый архитектурный облик. Распашные и раздвижныедвери, библиотеки и модульные системы для гостиной, гардеробные. Фабрика постоянно расширяет свою коллекцию и совершенствует стилистику своей продукции.
+        </p>
+        <button class="btn btn-primary font-normal text-dark border-b border-r-0 border-l-0 border-t-0 border-dashed border-dark border-opacity-40 py-1 mt-4" data-listing-show data-waved="light">Показать еще...</button>
+      </div>
       <% } %>
       <div class="creative-slider mt-7 md:mt-16 ease-in-out duration-4 anim anim--up" data-anim="hidden">
         <div class="swiper -mx-[15px] px-[15px] sm:mx-0 sm:px-0">
@@ -55,13 +58,13 @@
     </div>
     <div class="w-full xl:max-w-[625px]">
       <div class="relative h-full xl:-right-8">
-        <div class="pack pack-rect-lg sm:pack-half h-full">
+        <div class="pack pack-rect-lg sm:pack-half xl:pack-[110] h-full">
           <picture>
             <source srcset="img/pictures/points.webp" type="image/webp">
             <img class="image" src="img/pictures/points.png" alt="">
           </picture>
         </div>
-        <div class="creative__pack pack pack-rect-lg sm:pack-half absolute inset-0 bg-grey w-full lg:max-w-[700px] xl:max-w-[490px] h-full mx-auto ease-in-out duration-6 anim anim--left" data-anim="hidden">
+        <div class="creative__pack pack pack-rect-lg sm:pack-half xl:pack-[110] absolute inset-0 bg-grey w-full lg:max-w-[700px] xl:max-w-[490px] h-full mx-auto ease-in-out duration-6 anim anim--left" data-anim="hidden">
           <div class="loader">
             <span class="loader-progress">
               <svg class="loader-icon icon">
