@@ -81,11 +81,16 @@
 // Креатив
 .creative {
   &__pack {
+
     &::after {
       content   : "";
       position  : absolute;
       inset     : 0;
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, theme("colors.black.DEFAULT") 100%);
+    }
+
+    @screen xl {
+      height: 640px;
     }
   }
 }
