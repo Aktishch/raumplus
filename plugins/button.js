@@ -123,7 +123,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
 
         return {
           '--btn-color': color.DEFAULT,
-          '--btn-fade': formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.5 }),
+          '--btn-fade': formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.13 }),
           '--btn-fade-min': formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.7 }),
           '--btn-focus': formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.4 }),
           '--btn-dark': color.dark ? color.dark : formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.9 }),
