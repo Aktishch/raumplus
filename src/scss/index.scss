@@ -4,7 +4,8 @@
 @tailwind utilities;
 
 @layer base {
-  @import "./ui-kit/fonts";
+  // @import "./ui-kit/fonts";
+  @import '@qpokychuk/fonts/inter/index.css';
   @import "./ui-kit/variables";
   @import "./ui-kit/reset";
   @import "./ui-kit/scrollbar";

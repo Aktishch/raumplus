@@ -98,6 +98,8 @@
 // Ассортимент
 .assortment {
   &__card {
+    cursor: pointer;
+
     @media(hover) {
       &:hover .assortment__pack {
         bottom: 0;
@@ -110,7 +112,7 @@
       content         : "";
       position        : absolute;
       inset           : 0;
-      background-color: theme("colors.black.DEFAULT / 90%");
+      background-color: theme("colors.black.DEFAULT / 60%");
     }
   }
 }
