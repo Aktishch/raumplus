@@ -118,7 +118,7 @@
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
     <% for (var i = 0; i < benefit.length; i++) { %>
     <div class="<%= benefit[i].hidden %> ease-in-out duration-4 <%= benefit[i].delay %> anim anim--right" <%= benefit[i].data %> data-anim="hidden">
-      <div class="card h-full p-4 sm:p-7 lg:p-12" data-waved="dark">
+      <div class="card h-full p-12" data-waved="dark">
         <div class="card-content">
           <div class="font-light text-primary text-7xl md:text-number leading-1 mb-3"><%= benefit[i].number %></div>
           <h3 class="font-light text-20 sm:text-24 leading-3 mb-4"><%= benefit[i].title %></h3>
