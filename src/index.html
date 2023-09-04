@@ -3,7 +3,7 @@
   title: 'Главная',
   status: true
 
-} %>
+}; %>
 
 <%= _.template(require('./includes/header.html').default)({data}) %>
 
@@ -17,7 +17,7 @@
   text: 'современные решения для встроенной и корпусной мебели, раздвижных, распашных и подвесных дверей, гардеробных и интерьерных систем',
   btn: 'ОСТАВИТЬ ЗАЯВКУ'
 
-} %>
+}; %>
 
 <%= _.template(require('./includes/main.html').default)({data, main}) %>
 
@@ -29,7 +29,7 @@
   text: false,
   btn: true
 
-} %>
+}; %>
 
 <%= _.template(require('./includes/creative.html').default)({creative}) %>
 
@@ -99,7 +99,7 @@
     title: 'Интерьерные <br class="hidden md:block"> системы',
     text: 'Гардеробные, гостиные, <br class="hidden md:block"> кабинеты, детские комнаты, <br class="hidden md:block"> а также для офисов'
   }
-] %>
+]; %>
 
 <section class="assortment container container--xs bg-grey overflow-hidden" data-listing="3">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
@@ -155,7 +155,7 @@
     title: 'Качество',
     text: 'Приглашаем к сотрудничеству дистрибьютеров, производителей <br class="hidden xl:block"> мебели, дизайнеров, архитекторов'
   },
-] %>
+]; %>
 
 <%= _.template(require('./includes/about.html').default)({about}) %>
 
@@ -186,7 +186,7 @@
     title: 'Отгрузка',
     text: 'В согласованное время доставим <br class="hidden md:block"> ваш заказ до ТК или отгрузим <br class="hidden md:block"> с нашего склада'
   }
-] %>
+]; %>
 
 <section class="container container--xs relative overflow-hidden">
   <div class="absolute inset-0 xxl:hidden">
