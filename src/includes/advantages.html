@@ -2,25 +2,29 @@
   {
     delay: '',
     icon: 'protect',
-    title: '3 года гарантии',
+    title: 'Сертификаты DGM',
+    text: 'Вся продукция соответствует <br class="hidden xl:block"> требованиям немецкого <br class="hidden xl:block"> института мебельной <br class="hidden xl:block"> промышленности (DIM)',
     plus: true
   },
   {
     delay: 'xl:delay-2',
-    icon: 'delivery',
-    title: 'Доставка по РФ',
+    icon: 'percent',
+    title: 'Система скидок',
+    text: 'Дифференцированные <br class="hidden xl:block"> накопительные и под проекты',
     plus: true
   },
   {
     delay: 'xl:delay-4',
     icon: 'certificate',
-    title: 'Сертификаты',
+    title: 'Программы <br class="hidden xl:block"> лояльности',
+    text: 'Для дизайнеров и для <br class="hidden xl:block"> менеджеров',
     plus: true
   },
   {
     delay: 'xl:delay-6',
-    icon: 'percent',
-    title: 'Система скидок',
+    icon: 'delivery',
+    title: 'Доставка по РФ',
+    text: 'Возможна бесплатая доставка <br class="hidden xl:block"> до ТК',
     plus: false
   }
 ] %>
@@ -43,17 +47,15 @@
     </div>
   </div>
   <% } %>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:justify-between relative gap-7 sm:gap-4 <%= status ? 'text-white' : '' %>">
+  <div class="grid grid-cols-1 sm:grid-cols-2 xl:flex xl:justify-between relative gap-4 md:gap-7 <%= status ? 'text-white' : '' %>">
     <% for (var i = 0; i < advantages.length; i++) { %>
-    <div class="flex items-center gap-4 <%= advantages[i].delay %> ease-in-out duration-4 anim anim--up" data-anim="hidden">
-      <div class="flex flex-col items-center justify-center text-center">
+    <div class="flex items-center gap-7 <%= advantages[i].delay %> ease-in-out duration-4 anim anim--up" data-anim="hidden">
+      <div class="flex flex-col items-center justify-center text-center w-full xl:w-auto mb-auto">
         <svg class="icon text-primary text-44 mb-4">
           <use xlink:href="img/icons.svg#<%= advantages[i].icon %>">
         </svg>
         <h3 class="font-light text-24 leading-3 mb-4"><%= advantages[i].title %></h3>
-        <p class="font-light text-16 leading-5">
-          Идеальное решение, когда напольная направляющая невозможна
-        </p>
+        <p class="font-light text-16 leading-5 opacity-80"><%= advantages[i].text %></p>
       </div>
       <% if (advantages[i].plus) { %>
       <div class="hidden xl:block text-6xl <%= status ? 'opacity-80' : 'opacity-20' %>">
