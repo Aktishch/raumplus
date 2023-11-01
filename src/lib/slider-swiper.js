@@ -3,6 +3,32 @@ import 'swiper/css/bundle'
 import media from '../ts/functions/media'
 
 const init = () => {
+  new Swiper('.main-slider .swiper', {
+    pagination: {
+      el: '.main-slider .swiper-pagination',
+      clickable: true,
+    },
+
+    navigation: {
+      prevEl: '.main-slider .swiper-button-prev',
+      nextEl: '.main-slider .swiper-button-next',
+    },
+
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 16,
+    speed: 1000,
+    loop: true,
+    grabCursor: true,
+    watchSlidesProgress: true,
+
+    autoplay: {
+      delay: 3000,
+      stopOnLastSlide: false,
+      disableOnInteraction: false,
+    },
+  })
+
   new Swiper('.creative-slider .swiper', {
     navigation: {
       prevEl: '.creative-slider .swiper-button-prev',
@@ -192,11 +218,11 @@ const init = () => {
 
     breakpoints: {
       [media.md]: {
-        slidesPerView: 3,
+        slidesPerView: 4,
       },
 
-      [media.lg]: {
-        slidesPerView: 4,
+      [media.xl]: {
+        slidesPerView: 3,
       },
     },
 

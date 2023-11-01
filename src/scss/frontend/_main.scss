@@ -76,6 +76,14 @@
       }
     }
   }
+
+  &-pagination.swiper-pagination {
+    width: max-content;
+
+    & .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background-color: theme("colors.primary.DEFAULT");
+    }
+  }
 }
 
 // Креатив
