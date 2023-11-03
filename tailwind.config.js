@@ -61,10 +61,6 @@ module.exports = {
       green: {
         DEFAULT: '#3F8D2A',
       },
-
-      yellow: {
-        DEFAULT: '#BD9C28',
-      },
     },
 
     fontFamily: {
