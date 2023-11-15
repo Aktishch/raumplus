@@ -63,6 +63,16 @@
 
 // Главный блок
 .main {
+  &__item {
+    @screen xl {
+      min-height: calc(100vh - 110px);
+    }
+
+    @screen xxl {
+      min-height: 900px;
+    }
+  }
+
   &__bg {
     &::after {
       content       : "";
