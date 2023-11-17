@@ -19,7 +19,7 @@ const init = (): void => {
     'items-center',
     'justify-center',
     'fixed',
-    'z-3',
+    'z-[1100]',
     'bg-primary',
     'rounded-2',
     'pointer-events-none',

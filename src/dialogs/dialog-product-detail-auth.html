@@ -1,0 +1,74 @@
+<div class="dialog dialog-xl grid grid-cols-1 xl:grid-cols-2 gap-8 p-2 sm:p-6" data-product>
+  <div class="pack pack-rect-md xs:pack-rect-sm bg-grey w-full sm:max-w-[500px] xl:max-w-full">
+    <div class="loader">
+      <span class="loader-progress">
+        <svg class="loader-icon icon">
+          <use xlink:href="img/icons.svg#loader">
+        </svg>
+      </span>
+    </div>
+    <picture>
+      <img class="image" data-product-image="img/pictures/product-big.jpg" loading="lazy" src="img/pictures/product-big.jpg" alt="">
+    </picture>
+  </div>
+  <div class="card shadow-none">
+    <div class="card-content">
+      <h2 class="font-normal text-22 xs:text-26 md:text-32 leading-3 mb-4 md:mb-6" data-product-name>Уголок для верхней одиночной направляющей s34мм</h2>
+      <div class="flex items-center gap-3 md:gap-6 mb-4 md:mb-6">
+        <span class="font-normal text-14 leading-1 opacity-60">Артикул: 82575553</span>
+        <div class="flex items-center justify-center bg-grey rounded-full py-1 px-2">
+          <svg class="icon text-green text-18 mr-2">
+            <use xlink:href="img/icons.svg#check">
+          </svg>
+          <span class="font-normal text-dark text-opacity-60 text-center text-14 leading-1">Складская программа</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-2 mb-5 md:mb-9">
+        <span class="flex items-center justify-center bg-grey font-normal text-center text-12 leading-1 rounded-full p-3">Система S42</span>
+        <span class="flex items-center justify-center bg-grey font-normal text-center text-12 leading-1 rounded-full p-3">Раздвижная нижнеопорная система</span>
+      </div>
+      <div class="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-5 mb-5 md:mb-10">
+        <div class="flex flex-col">
+          <span class="font-normal text-dark text-opacity-70 leading-1 mb-2">Связь с менеджером:</span>
+          <a class="btn btn-primary text-dark border-b border-dashed" href="tel: +7 495 191-08-95" data-waved="dark">
+            <svg class="icon text-24 mr-1">
+              <use xlink:href="img/icons.svg#phone">
+            </svg>
+            <span class="font-semibold text-20">+7 495 191-08-95</span>
+          </a>
+        </div>
+        <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe font-normal w-full max-w-[270px]" data-waved="light">
+          <svg class="icon text-24 mr-2">
+            <use xlink:href="img/icons.svg#calc">
+          </svg>
+          Калькулятор
+        </button>
+      </div>
+      <div class="bg-grey xl:mt-auto py-6 px-3 md:px-6">
+        <div class="flex flex-col">
+          <div class="flex flex-col sm:flex-row sm:items-end gap-2 sm:gap-4 mb-4 sm:mb-8">
+            <span class="font-normal text-16 md:text-18 leading-1 line-through" data-product-price>7 140 ₽</span>
+            <span class="font-medium text-22 sm:text-28 leading-1" data-product-price>5 140 ₽</span>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+            <div class="inverted" data-product-inverted data-inverted="before">
+              <div class="inverted-before duration-3">
+                <button class="btn btn-primary btn-lg btn-fill btn-active font-medium uppercase w-full px-10" data-product-button data-inverted-open data-waved="light">в корзину</button>
+              </div>
+              <div class="inverted-after duration-3">
+                <div class="quantity" data-quantity>
+                  <button class="quantity-btn btn btn-white" data-product-decrease data-quantity-decrease data-waved="dark">-</button>
+                  <div class="quantity-cover input-cover">
+                    <input class="quantity-input input" data-product-quantity data-input="number" type="text" value="1" maxlength="3" name="quantity">
+                  </div>
+                  <button class="quantity-btn btn btn-white" data-product-increase data-quantity-increase data-waved="dark">+</button>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe uppercase px-10" data-waved="light">Полное описание</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

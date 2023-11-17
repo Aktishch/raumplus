@@ -79,8 +79,46 @@
   }
 ] %>
 
-<section class="catalog container">
+<section class="catalog container overflow-hidden">
   <%= _.template(require('./includes/back.html').default)({}) %>
+  <div class="series mb-6 lg:mb-12">
+    <div class="series-slider relative">
+      <div class="swiper -mx-[15px] px-[15px] sm:mx-0 sm:px-0 pb-3">
+        <div class="swiper-wrapper">
+          <% for (var i = 0; i < 9; i++) { %>
+          <div class="swiper-slide h-auto">
+            <a class="series__category <%= i == 0 ? 'filter-active' : '' %> flex flex-col relative h-full pb-5 md:pb-9" href="">
+              <div class="series__pack pack pack-box bg-grey opacity-30 mb-4 md:mb-8 duration-3">
+                <div class="loader">
+                  <span class="loader-progress">
+                    <svg class="loader-icon icon">
+                      <use xlink:href="img/icons.svg#loader">
+                    </svg>
+                  </span>
+                </div>
+                <picture>
+                  <source srcset="img/pictures/production-img.webp" type="image/webp">
+                  <img class="image image-rise" loading="lazy" src="img/pictures/production-img.jpg" alt="">
+                </picture>
+              </div>
+              <h4 class="series__subtitle font-light text-center text-16 sm:text-20 lg:text-24 leading-2 duration-3">Серия S800</h4>
+            </a>
+          </div>
+          <% } %>
+        </div>
+      </div>
+      <button class="swiper-button-prev btn btn-dark btn-fade hidden md:flex absolute xl:-left-14 text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+        <svg class="icon">
+          <use xlink:href="img/icons.svg#arrow-left">
+        </svg>
+      </button>
+      <button class="swiper-button-next btn btn-dark btn-fade hidden md:flex absolute xl:-right-14 text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+        <svg class="icon">
+          <use xlink:href="img/icons.svg#arrow-right">
+        </svg>
+      </button>
+    </div>
+  </div>
   <div class="lg:flex lg:justify-between lg:gap-10">
     <div class="catalog__sidebar fixed inset-0 z-3 lg:z-0 lg:static invisible lg:visible overflow-auto lg:overflow-visible w-full lg:max-w-[290px]" data-sidebar="close">
       <div class="catalog__content bg-white bg-opacity lg:bg-opacity-0 opacity-0 lg:opacity-100 w-full max-w-[375px] lg:max-w-full min-h-full p-4 lg:p-0 duration-3">
@@ -96,14 +134,20 @@
           <label class="form-label" data-label="input">
             <div class="form-wrapper">
               <div class="input-cover">
-                <input class="input input-lg pr-10" data-input type="text" placeholder="Поиск товара">
+                <input class="input input-lg pr-10" type="text" placeholder="Поиск товара">
               </div>
-              <span class="form-error" data-error>Заполните это поле</span>
               <button class="form-icon form-icon-lg form-icon--pointer form-icon--right text-black text-24 text-opacity-30 cursor-pointer" type="submit">
                 <svg class="icon">
                   <use xlink:href="img/icons.svg#search">
                 </svg>
               </button>
+              <div class="flex flex-col gap-4 absolute z-1 top-full left-0 right-0 bg-white shadow-md w-full p-4">
+                <% for (var i = 0; i < 3; i++) { %>
+                <a class="font-normal hover:text-primary text-14 leading-3 duration-1" href="">
+                  <span class="font-semibold">Уголок</span> для верхней одиночной направляющей s34мм
+                </a>
+                <% } %>
+              </div>
             </div>
           </label>
         </form>
@@ -162,38 +206,12 @@
       </div>
     </div>
     <div class="w-full max-w-[950px]">
-      <div class="flex items-center justify-between gap-3 sm:gap-5 mb-6">
-        <span class="font-normal text-16 leading-2 opacity-60">Отображено 50 товаров</span>
-        <div class="flex items-center gap-5">
-          <button class="btn btn-primary lg:hidden" data-waved="light" data-sidebar-open>
-            <svg class="icon text-dark text-24 sm:text-30">
-              <use xlink:href="img/icons.svg#filter">
-            </svg>
-          </button>
-          <div class="relative" data-accordion="hidden" data-accordion-close="scroll">
-            <div class="flex items-center lg:gap-5" data-accordion-toggle>
-              <button class="btn btn-primary lg:hidden" data-waved="light">
-                <svg class="icon text-dark text-24 sm:text-30">
-                  <use xlink:href="img/icons.svg#sorting">
-                </svg>
-              </button>
-              <div class="hidden lg:flex items-center justify-between relative bg-white border border-solid border-dark border-opacity-30 w-[250px] h-[54px] py-4 px-5" data-waved="dark">
-                <span class="font-medium text-16 leading-1">По популярности</span>
-                <svg class="icon text-22">
-                  <use xlink:href="img/icons.svg#arrow-bottom">
-                </svg>
-              </div>
-            </div>
-            <div class="absolute z-1 top-10 lg:top-14 right-0 shadow-md w-[200px] lg:w-[250px]" data-accordion-content>
-              <div class="flex flex-col items-start gap-2 lg:gap-3 bg-white py-4 px-4 lg:px-6">
-                <a class="btn btn-primary font-normal text-dark lg:text-18" data-waved="light" href="">Сначала дороже</a>
-                <a class="btn btn-primary font-normal text-dark lg:text-18" data-waved="light" href="">Сначала дешевле</a>
-                <a class="btn btn-primary font-normal text-dark lg:text-18" data-waved="light" href="">По алфавиту</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <button class="btn btn-primary lg:hidden text-dark text-24 sm:text-30 mb-6" data-waved="light" data-sidebar-open>
+        Фильтр
+        <svg class="icon ml-2">
+          <use xlink:href="img/icons.svg#filter">
+        </svg>
+      </button>
       <div class="grid grid-cols-2 xl:grid-cols-3 gap-2 sm:gap-5 md:gap-10">
         <% for (var i = 0; i < 6; i++) { %>
         <div class="card card--active sm:p-2">
@@ -211,16 +229,8 @@
             </picture>
           </div>
           <div class="card-content items-start pt-4 sm:pt-6 pb-2 px-2">
-            <div class="mb-3">
-              <%= _.template(require('./includes/availability.html').default)({status: false}) %>
-            </div>
-            <span class="font-normal text-12 sm:text-14 leading-2 opacity-60 mb-2 sm:mb-4">Артикул: 82575553</span>
             <a class="font-normal text-14 sm:text-16 leading-4 hover:underline underline-offset-4 mb-3 sm:mb-7" href="">Система для деревянных дверей 28-32мм, серебро</a>
-            <div class="flex flex-col md:flex-row md:items-center md:gap-4 mt-auto mb-2 sm:mb-4">
-              <span class="order-2 md:order-1 font-semibold text-22 sm:text-28 leading-4">от 5 140 ₽</span>
-              <span class="order-1 md:order-2 font-light text-16 sm:text-18 leading-4 line-through">7 140 ₽</span>
-            </div>
-            <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-14 sm:text-16 w-full px-2 sm:px-10" data-waved="light">Подробнее</button>
+            <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-14 sm:text-16 w-full px-2 sm:px-10 mt-auto" data-waved="light">Подробнее</button>
           </div>
         </div>
         <% } %>

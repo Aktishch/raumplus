@@ -1,6 +1,7 @@
 import { Fancybox } from '@fancyapps/ui'
 import ru from '@fancyapps/ui/src/Fancybox/l10n/ru'
 import '@fancyapps/ui/dist/fancybox.css'
+import basket from '../ts/basket'
 import waved from '../ts/waved'
 
 const init = () => {
@@ -16,6 +17,18 @@ const init = () => {
 
     on: {
       done: () => {
+        waved.init()
+      },
+    },
+  })
+
+  Fancybox.bind('[data-fancybox-product]', {
+    dragToClose: false,
+    mainClass: 'fancybox-dialog',
+
+    on: {
+      done: () => {
+        basket.init()
         waved.init()
       },
     },
