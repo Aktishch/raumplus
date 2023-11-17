@@ -121,6 +121,39 @@ const init = () => {
     },
   })
 
+  new Swiper('.production-items-slider .swiper', {
+    navigation: {
+      prevEl: '.production-items-slider .swiper-button-prev',
+      nextEl: '.production-items-slider .swiper-button-next',
+    },
+
+    slidesPerView: 1.3,
+    slidesPerGroup: 1,
+    spaceBetween: 16,
+    speed: 500,
+    grabCursor: true,
+    watchSlidesProgress: true,
+
+    breakpoints: {
+      [media.sm]: {
+        slidesPerView: 2,
+      },
+
+      [media.md]: {
+        slidesPerView: 2.5,
+        spaceBetween: 32,
+      },
+
+      [media.lg]: {
+        slidesPerView: 3,
+      },
+
+      [media.xl]: {
+        slidesPerView: 4,
+      },
+    },
+  })
+
   new Swiper('.series-slider .swiper', {
     navigation: {
       prevEl: '.series-slider .swiper-button-prev',
