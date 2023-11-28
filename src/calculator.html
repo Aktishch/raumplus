@@ -1,0 +1,159 @@
+<% var data = {
+
+  title: 'Калькулятор комплектующих',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Главный блок -->
+
+<% var main = {
+
+  height: false,
+  img: 'production-bg',
+  title: 'Калькулятор комплектующих'
+
+} %>
+
+<%= _.template(require('./includes/main.html').default)({data, main}) %>
+
+<!-- Калькулятор -->
+
+<section class="calculator container overflow-hidden">
+  <h2 class="font-normal text-24 sm:text-32 leading-2 mb-3 sm:mb-6">Выбрать систему для расчета</h2>
+  <div class="flex flex-col xl:flex-row xl:justify-between gap-6 sm:gap-10 xl:gap-16 mb-6 sm:mb-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-3 sm:gap-5 w-full xl:max-w-[580px]">
+      <% for (var i = 0; i < 9; i++) { %>
+      <a class="btn btn-md <%= i === 0 ? 'btn-primary btn-fill pointer-events-none' : 'btn-dark btn-contur btn-swipe' %> btn-active sm:justify-start text-14 sm:text-16" data-waved="light" href="">Система S34 раздвижных дверей нижний трек</a>
+      <% } %>
+    </div>
+    <div class="w-full xl:max-w-[660px]">
+      <div class="calculator-slider bg-grey w-full lg:max-w-[600px] xl:max-w-full mb-6 sm:mb-8">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <% for (var i = 0; i < 6; i++) { %>
+            <a class="swiper-slide pack pack-rect-md xs:pack-rect-sm bg-grey" data-fancybox="production" href="img/pictures/production-img.jpg">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
+              </div>
+              <picture>
+                <source srcset="img/pictures/production-img.webp" type="image/webp">
+                <img class="image" loading="lazy" src="img/pictures/production-img.jpg" alt="">
+              </picture>
+              <div class="flex items-center justify-center absolute inset-0 bg-black font-extralight text-white text-center text-48 bg-opacity-30 opacity-0 hover:opacity-100 duration-2">+</div>
+            </a>
+            <% } %>
+          </div>
+          <div class="swiper-pagination absolute left-0 right-0 bottom-2 text-white mx-auto"></div>
+          <button class="swiper-button-prev btn btn-dark btn-fade hidden md:flex absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+            <svg class="icon">
+              <use xlink:href="img/icons.svg#arrow-left">
+            </svg>
+          </button>
+          <button class="swiper-button-next btn btn-dark btn-fade hidden md:flex absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+            <svg class="icon">
+              <use xlink:href="img/icons.svg#arrow-right">
+            </svg>
+        </div>
+      </div>
+      <h3 class="font-normal text-20 sm:text-24 leading-2 mb-5 sm:mb-8">Раздвижная система S26</h3>
+      <p class="font-normal text-14 leading-4 opacity-70">
+        Система распашных дверей raumplus для корпусной мебели - одна или две распашные двери, имеющие рамочную конструкцию из алюминиевых профилей. Основными отличиями таких дверей raumplus от классических являются наличие специальных распашных механизмов, петель и способ их крепления.
+      </p>
+    </div>
+  </div>
+  <h2 class="font-normal text-24 sm:text-32 leading-2 mb-3 sm:mb-6">Калькулятор</h2>
+  <form class="form bg-grey p-4 sm:p-6 xl:p-8" data-form="action" action="">
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 items-end gap-5 xl:gap-9 mb-5 xl:mb-9">
+      <label class="form-label" data-label="input">
+        <div class="font-normal text-14 leading-1 mb-2">Ширина проёма, мм</div>
+        <div class="form-wrapper">
+          <div class="input-cover">
+            <input class="input input-md text-14" data-input="number" type="text">
+          </div>
+          <span class="form-error" data-error>Укажите ширину</span>
+        </div>
+      </label>
+      <label class="form-label" data-label="input">
+        <div class="font-normal text-14 leading-1 mb-2">Количество разделителей (0 = без разделителей)</div>
+        <div class="form-wrapper">
+          <div class="input-cover">
+            <input class="input input-md text-14" data-input="number" type="text">
+          </div>
+          <span class="form-error" data-error>Укажите количество разделителей</span>
+        </div>
+      </label>
+      <label class="form-label" data-label="input">
+        <div class="font-normal text-14 leading-1 mb-2">Профиль</div>
+        <div class="form-wrapper">
+          <div class="input-cover">
+            <select class="input input-md text-14" data-input="select">
+              <option value="empty" disabled hidden selected>Выберите профиль</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="form-icon form-icon-md form-icon--right text-24">
+            <svg class="icon">
+              <use xlink:href="img/icons.svg#arrow-bottom">
+            </svg>
+          </div>
+          <span class="form-error" data-error>Выберите профиль</span>
+        </div>
+      </label>
+      <label class="form-label" data-label="input">
+        <div class="font-normal text-14 leading-1 mb-2">Высота дверей, мм</div>
+        <div class="form-wrapper">
+          <div class="input-cover">
+            <input class="input input-md text-14" data-input="number" type="text">
+          </div>
+          <span class="form-error" data-error>Укажите высоту</span>
+        </div>
+      </label>
+      <label class="form-label" data-label="input">
+        <div class="font-normal text-14 leading-1 mb-2">Цвет</div>
+        <div class="form-wrapper">
+          <div class="input-cover">
+            <select class="input input-md text-14" data-input="select">
+              <option value="empty" disabled hidden selected>Выберите цвет</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="form-icon form-icon-md form-icon--right text-24">
+            <svg class="icon">
+              <use xlink:href="img/icons.svg#arrow-bottom">
+            </svg>
+          </div>
+          <span class="form-error" data-error>Выберите цвет</span>
+        </div>
+      </label>
+    </div>
+    <div class="flex items-center gap-5 xl:gap-9 mb-5 xl:mb-9">
+      <label class="flex items-center cursor-pointer">
+        <input class="switch switch--checkbox mr-2" type="checkbox">
+        <span class="font-normal text-14 leading-2">Левое исполнение</span>
+      </label>
+      <label class="flex items-center cursor-pointer">
+        <input class="switch switch--checkbox mr-2" type="checkbox">
+        <span class="font-normal text-14 leading-2">Правое исполнение</span>
+      </label>
+    </div>
+    <div class="flex flex-col sm:flex-row sm:items-center gap-5">
+      <button class="btn btn-primary btn-md sm:btn-lg btn-fill btn-active uppercase w-full sm:max-w-[260px]" data-waved="light" type="submit">рассчитать</button>
+      <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase w-full sm:max-w-[260px]" data-waved="light" type="reset">отмена</button>
+    </div>
+  </form>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>

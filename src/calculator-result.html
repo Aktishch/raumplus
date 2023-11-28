@@ -1,0 +1,76 @@
+<% var data = {
+
+  title: 'Калькулятор комплектующих',
+  status: true
+
+} %>
+
+<%= _.template(require('./includes/header.html').default)({data}) %>
+
+<!-- Главный блок -->
+
+<% var main = {
+
+  height: false,
+  img: 'production-bg',
+  title: 'Калькулятор комплектующих'
+
+} %>
+
+<%= _.template(require('./includes/main.html').default)({data, main}) %>
+
+<!-- Калькулятор -->
+
+<section class="calculator container overflow-hidden">
+  <%= _.template(require('./includes/back.html').default)({}) %>
+  <h2 class="font-normal text-24 sm:text-32 leading-2 mb-3 sm:mb-6">Ваш заказ</h2>
+  <div class="overflow-auto -mx-[15px] px-[15px]">
+    <table class="font-normal text-center text-14 border-collapse border border-solid border-grey-dark w-full min-w-[720px]">
+      <thead>
+        <tr>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6">Код</td>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6">Наименование</td>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6">Цвет</td>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6">Размер хлыста/ед.</td>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6">Погонные метры</td>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6">Количество</td>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6">Цена за единицу</td>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6">Цена, руб</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i = 0; i < 6; i++) { %>
+        <tr>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6">80.01.0хх</td>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6">Торцевой элемент несущего профиля (опора) (под заказ)</td>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6">Серебро</td>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6">3000</td>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6"></td>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6">8</td>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6">7542</td>
+          <td class="border border-solid border-grey-dark py-2 xl:py-4 px-2 xl:px-6">60336</td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+  <div class="flex justify-end py-5">
+    <span class="font-medium text-20 leading-2">Итого: 133228</span>
+  </div>
+  <form class="form" data-form="submit" data-request="/ajax/submit-handler.php" data-form-dialog="/dialogs/dialog-success-check.html">
+    <label class="form-label mb-8">
+      <div class="font-normal text-14 leading-1 mb-2">Ваше сообщение</div>
+      <div class="form-wrapper">
+        <div class="input-cover">
+          <textarea class="input text-14 h-44" type="text"></textarea>
+        </div>
+      </div>
+    </label>
+    <div class="flex flex-col sm:flex-row sm:items-center gap-5">
+      <button class="btn btn-primary btn-md sm:btn-lg btn-fill btn-active uppercase w-full sm:max-w-[260px]" data-waved="light" type="submit">оформить заказ</button>
+      <a class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase w-full sm:max-w-[260px]" data-waved="light" href="" download="">скачать pdf</a>
+    </div>
+  </form>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({}) %>

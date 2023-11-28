@@ -264,6 +264,25 @@ const init = () => {
     },
   })
 
+  new Swiper('.calculator-slider .swiper', {
+    pagination: {
+      el: '.calculator-slider .swiper-pagination',
+      clickable: true,
+    },
+
+    navigation: {
+      prevEl: '.calculator-slider .swiper-button-prev',
+      nextEl: '.calculator-slider .swiper-button-next',
+    },
+
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 16,
+    speed: 500,
+    grabCursor: true,
+    watchSlidesProgress: true,
+  })
+
   window.Swiper = Swiper
 }
 
