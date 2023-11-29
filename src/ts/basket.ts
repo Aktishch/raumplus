@@ -52,7 +52,7 @@ const init = (): void => {
     inBasket.style.left = `${coordinates.left}px`
     inBasket.innerHTML = `
       <svg class="icon text-white text-16">
-        <use xlink:href="img/icons.svg#basket">
+        <use xlink:href="/local/templates/raumplus_07_2023/img/icons.svg#basket">
       </svg>`
 
     body.appendChild(inBasket)
@@ -70,6 +70,7 @@ const init = (): void => {
     const productPrice = product.querySelector('*[data-product-price]') as HTMLElement
     const productInverted = product.querySelector('*[data-product-inverted]') as HTMLElement
     const productQuantity = product.querySelector('*[data-product-quantity]') as HTMLInputElement
+    const productForm = product.querySelector('*[data-product-form]') as HTMLFormElement
     const productBtn = product.querySelector('*[data-product-button]') as HTMLButtonElement
     const productDecrease = product.querySelector('*[data-product-decrease]') as HTMLButtonElement
     const productIncrease = product.querySelector('*[data-product-increase]') as HTMLButtonElement
@@ -145,14 +146,34 @@ const init = (): void => {
       }
     }
 
+    const formSubmit = (): void => {
+      const formData: FormData = new FormData(productForm)
+      const requestUrl = String(productForm.dataset.request)
+
+      fetch(requestUrl, {
+        method: 'POST',
+        body: formData,
+      })
+        .then((response: Response): void => {
+          response.text()
+        })
+        .then((): void => {
+          console.log('fetch')
+        })
+    }
+
     productBtn.addEventListener('click', firstValue as EventListener)
     productBtn.addEventListener('click', productInBasket as EventListener)
     productBtn.addEventListener('click', basketCompletion as EventListener)
+    productBtn.addEventListener('click', formSubmit as EventListener)
     productDecrease.addEventListener('click', quantityDecrease as EventListener)
+    productDecrease.addEventListener('click', formSubmit as EventListener)
     productIncrease.addEventListener('click', productInBasket as EventListener)
     productIncrease.addEventListener('click', basketCompletion as EventListener)
+    productIncrease.addEventListener('click', formSubmit as EventListener)
     basketClose.addEventListener('click', basketHidden as EventListener)
     productQuantity.addEventListener('input', quantityEmpty as EventListener)
+    productQuantity.addEventListener('input', formSubmit as EventListener)
     productQuantity.addEventListener('blur', quantityEmpty as EventListener)
   })
 }
