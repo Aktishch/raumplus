@@ -102,6 +102,7 @@ const init = (): void => {
 
           const formData: FormData = new FormData(productForm)
           const requestUrl = String(productForm.dataset.request)
+          const itemId: string = product.dataset.itemid || ''
           let action = ''
 
           for (const [name, value] of formData) {
@@ -121,16 +122,17 @@ const init = (): void => {
           }
 
           formData.append('action', action)
+          formData.append('id', itemId)
 
           fetch(requestUrl, {
             method: 'POST',
             body: formData,
           })
-            .then((response: Response): any => {
+            .then((response: Response): void => {
               response.text()
             })
-            .then((response: any): void => {
-              console.log('action')
+            .then((): void => {
+              console.log(action)
             })
         } else {
           basketQuantity.innerText = '1'
