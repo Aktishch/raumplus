@@ -55,8 +55,8 @@
 <section class="series container overflow-hidden">
   <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-8 xl:mb-14 ease-in-out duration-4 anim anim--up" data-anim="hidden">Серии профилей</h2>
   <div data-filter>
-    <div class="series-slider relative mb-10 ease-in-out duration-4 anim anim--up" data-anim="hidden">
-      <div class="swiper -mx-[15px] px-[15px] sm:mx-0 sm:px-0 pb-3">
+    <div class="series-slider relative mb-10 ease-in-out duration-4 anim anim--up" data-slider-xl="5" data-slider-lg="4" data-slider-sm="3" data-anim="hidden">
+      <div class="series-swiper swiper -mx-[15px] px-[15px] sm:mx-0 sm:px-0 pb-3">
         <div class="swiper-wrapper">
           <% for (var i = 0; i < 9; i++) { %>
           <div class="swiper-slide h-auto">
@@ -80,12 +80,12 @@
           <% } %>
         </div>
       </div>
-      <button class="swiper-button-prev btn btn-dark btn-fade hidden md:flex absolute xl:-left-14 text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+      <button class="series-button-prev swiper-button-prev btn btn-dark btn-fade hidden md:flex absolute xl:-left-14 text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
         <svg class="icon">
           <use xlink:href="img/icons.svg#arrow-left">
         </svg>
       </button>
-      <button class="swiper-button-next btn btn-dark btn-fade hidden md:flex absolute xl:-right-14 text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+      <button class="series-button-next swiper-button-next btn btn-dark btn-fade hidden md:flex absolute xl:-right-14 text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
         <svg class="icon">
           <use xlink:href="img/icons.svg#arrow-right">
         </svg>

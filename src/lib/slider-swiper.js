@@ -154,33 +154,46 @@ const init = () => {
     },
   })
 
-  new Swiper('.series-slider .swiper', {
-    navigation: {
-      prevEl: '.series-slider .swiper-button-prev',
-      nextEl: '.series-slider .swiper-button-next',
-    },
+  const seriesSliders = document.querySelectorAll('.series-slider')
 
-    slidesPerView: 2.3,
-    slidesPerGroup: 1,
-    spaceBetween: 16,
-    speed: 500,
-    grabCursor: true,
-    watchSlidesProgress: true,
+  seriesSliders.forEach((seriesSlider) => {
+    if (!seriesSlider) return
 
-    breakpoints: {
-      [media.sm]: {
-        slidesPerView: 3,
-        spaceBetween: 20,
+    const seriesSwiper = seriesSlider.querySelector('.series-swiper')
+    const seriesButtonPrev = seriesSlider.querySelector('.series-button-prev')
+    const seriesButtonNext = seriesSlider.querySelector('.series-button-next')
+    const xl = Number(seriesSlider.dataset.sliderXl)
+    const lg = Number(seriesSlider.dataset.sliderLg)
+    const sm = Number(seriesSlider.dataset.sliderSm)
+
+    new Swiper(seriesSwiper, {
+      navigation: {
+        prevEl: seriesButtonPrev,
+        nextEl: seriesButtonNext,
       },
 
-      [media.lg]: {
-        slidesPerView: 4,
-      },
+      slidesPerView: 2.3,
+      slidesPerGroup: 1,
+      spaceBetween: 16,
+      speed: 500,
+      grabCursor: true,
+      watchSlidesProgress: true,
 
-      [media.xl]: {
-        slidesPerView: 5,
+      breakpoints: {
+        [media.sm]: {
+          slidesPerView: sm,
+          spaceBetween: 20,
+        },
+
+        [media.lg]: {
+          slidesPerView: lg,
+        },
+
+        [media.xl]: {
+          slidesPerView: xl,
+        },
       },
-    },
+    })
   })
 
   new Swiper('.series-products .swiper', {

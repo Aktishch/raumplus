@@ -82,13 +82,13 @@
 <section class="catalog container overflow-hidden">
   <%= _.template(require('./includes/back.html').default)({}) %>
   <div class="series mb-6 lg:mb-12">
-    <div class="series-slider relative">
-      <div class="swiper -mx-[15px] px-[15px] sm:mx-0 sm:px-0 pb-3">
+    <div class="series-slider relative" data-slider-xl="7" data-slider-lg="5" data-slider-sm="4">
+      <div class="series-swiper swiper -mx-[15px] px-[15px] sm:mx-0 sm:px-0 pb-3">
         <div class="swiper-wrapper">
           <% for (var i = 0; i < 9; i++) { %>
           <div class="swiper-slide h-auto">
-            <a class="series__category <%= i == 0 ? 'filter-active' : '' %> flex flex-col relative h-full pb-5 md:pb-9" href="">
-              <div class="series__pack pack pack-box bg-grey opacity-30 mb-4 md:mb-8 duration-3">
+            <a class="series__category <%= i == 0 ? 'filter-active' : '' %> flex flex-col relative h-full pb-5" href="">
+              <div class="series__pack pack pack-box bg-grey opacity-30 mb-4 duration-3">
                 <div class="loader">
                   <span class="loader-progress">
                     <svg class="loader-icon icon">
@@ -101,18 +101,18 @@
                   <img class="image image-rise" loading="lazy" src="img/pictures/production-img.jpg" alt="">
                 </picture>
               </div>
-              <h4 class="series__subtitle font-light text-center text-16 sm:text-20 lg:text-24 leading-2 duration-3">Серия S800</h4>
+              <h4 class="series__subtitle font-light text-center text-16 leading-2 duration-3">Серия S800</h4>
             </a>
           </div>
           <% } %>
         </div>
       </div>
-      <button class="swiper-button-prev btn btn-dark btn-fade hidden md:flex absolute xl:-left-14 text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+      <button class="series-button-prev swiper-button-prev btn btn-dark btn-fade hidden md:flex absolute xl:-left-14 text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
         <svg class="icon">
           <use xlink:href="img/icons.svg#arrow-left">
         </svg>
       </button>
-      <button class="swiper-button-next btn btn-dark btn-fade hidden md:flex absolute xl:-right-14 text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+      <button class="series-button-next swiper-button-next btn btn-dark btn-fade hidden md:flex absolute xl:-right-14 text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
         <svg class="icon">
           <use xlink:href="img/icons.svg#arrow-right">
         </svg>
