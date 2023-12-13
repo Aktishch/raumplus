@@ -23,160 +23,109 @@
 
 <% var palette = [
   {
-    value: 'Белый',
+    value: 'white',
+    text: 'Белый',
     color: '#ffffff'
   },
   {
-    value: 'Черный',
+    value: 'black',
+    text: 'Черный',
     color: '#000000'
   },
   {
-    value: 'Серый',
+    value: 'grey',
+    text: 'Серый',
     color: '#B3B3B3'
   },
   {
-    value: 'Золотой',
+    value: 'gold',
+    text: 'Золотой',
     color: '#B78C3A'
-  }
-] %>
-
-<% var production = [
-  {
-    hidden: '',
-    data: '',
-    status: true
-  },
-  {
-    hidden: '',
-    data: '',
-    status: false
-  },
-  {
-    hidden: '',
-    data: '',
-    status: true
-  },
-  {
-    hidden: '',
-    data: '',
-    status: false
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: true
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: false
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: true
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: false
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: true
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: false
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: true
-  },
-  {
-    hidden: 'hidden',
-    data: 'data-listing-item',
-    status: false
   }
 ] %>
 
 <section class="production container overflow-hidden">
   <%= _.template(require('./includes/back.html').default)({}) %>
   <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-12">
-    <div class="flex flex-col md:flex-row xl:flex-col gap-2 md:gap-4 ease-in-out duration-4 anim anim--right" data-anim="hidden">
-      <div class="production-slider bg-grey w-full md:max-w-[600px] lg:max-w-[800px] xl:max-w-full">
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <% for (var i = 0; i < 6; i++) { %>
-            <a class="swiper-slide pack pack-rect-md xs:pack-rect-sm bg-grey" data-fancybox="production" href="img/pictures/production-img.jpg">
-              <div class="loader">
-                <span class="loader-progress">
-                  <svg class="loader-icon icon">
-                    <use xlink:href="img/icons.svg#loader">
-                  </svg>
-                </span>
+    <div class="ease-in-out duration-4 anim anim--right" data-anim="hidden">
+      <% for (var j = 0; j < palette.length; j++) { %>
+      <div class="production__card" data-filter-card="palette" data-filter-value="<%= palette[j].value %>">
+        <div class="production-sliders-container flex flex-col md:flex-row xl:flex-col gap-2 md:gap-4" data-filter-card="palette" data-filter-value="<%= palette[j].value %>">
+          <div class="production-slider bg-grey w-full md:max-w-[600px] lg:max-w-[800px] xl:max-w-full">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <% for (var i = 0; i < 6; i++) { %>
+                <a class="swiper-slide pack pack-rect-md xs:pack-rect-sm bg-grey" data-fancybox="production" href="img/pictures/production-img.jpg">
+                  <div class="loader">
+                    <span class="loader-progress">
+                      <svg class="loader-icon icon">
+                        <use xlink:href="img/icons.svg#loader">
+                      </svg>
+                    </span>
+                  </div>
+                  <picture>
+                    <source srcset="img/pictures/production-img.webp" type="image/webp">
+                    <img class="image" loading="lazy" src="img/pictures/production-img.jpg" alt="">
+                  </picture>
+                  <div class="flex items-center justify-center absolute inset-0 bg-black font-extralight text-white text-center text-48 bg-opacity-30 opacity-0 hover:opacity-100 duration-2">+</div>
+                </a>
+                <% } %>
               </div>
-              <picture>
-                <source srcset="img/pictures/production-img.webp" type="image/webp">
-                <img class="image" loading="lazy" src="img/pictures/production-img.jpg" alt="">
-              </picture>
-              <div class="flex items-center justify-center absolute inset-0 bg-black font-extralight text-white text-center text-48 bg-opacity-30 opacity-0 hover:opacity-100 duration-2">+</div>
-            </a>
-            <% } %>
-          </div>
-        </div>
-      </div>
-      <div class="production-bullets w-full md:max-w-[100px] xl:max-w-full md:h-[360px] lg:h-[480px] xl:h-auto">
-        <div class="swiper md:h-full xl:h-auto">
-          <div class="swiper-wrapper">
-            <% for (var i = 0; i < 6; i++) { %>
-            <div class="swiper-slide pack pack-box bg-grey cursor-pointer md:h-max xl:h-auto">
-              <div class="loader">
-                <span class="loader-progress">
-                  <svg class="loader-icon icon">
-                    <use xlink:href="img/icons.svg#loader">
-                  </svg>
-                </span>
-              </div>
-              <picture>
-                <source srcset="img/pictures/production-img.webp" type="image/webp">
-                <img class="image" loading="lazy" src="img/pictures/production-img.jpg" alt="">
-              </picture>
-              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 hover:opacity-100 duration-2" data-waved="light"></div>
             </div>
-            <% } %>
           </div>
-          <button class="swiper-button-prev btn btn-dark btn-fade hidden xl:flex absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
-            <svg class="icon">
-              <use xlink:href="img/icons.svg#arrow-left">
-            </svg>
-          </button>
-          <button class="swiper-button-next btn btn-dark btn-fade hidden xl:flex absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
-            <svg class="icon">
-              <use xlink:href="img/icons.svg#arrow-right">
-            </svg>
-          </button>
+          <div class="production-bullets w-full md:max-w-[100px] xl:max-w-full md:h-[360px] lg:h-[480px] xl:h-auto">
+            <div class="swiper md:h-full xl:h-auto">
+              <div class="swiper-wrapper">
+                <% for (var i = 0; i < 6; i++) { %>
+                <div class="swiper-slide pack pack-box bg-grey cursor-pointer md:h-max xl:h-auto">
+                  <div class="loader">
+                    <span class="loader-progress">
+                      <svg class="loader-icon icon">
+                        <use xlink:href="img/icons.svg#loader">
+                      </svg>
+                    </span>
+                  </div>
+                  <picture>
+                    <source srcset="img/pictures/production-img.webp" type="image/webp">
+                    <img class="image" loading="lazy" src="img/pictures/production-img.jpg" alt="">
+                  </picture>
+                  <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 hover:opacity-100 duration-2" data-waved="light"></div>
+                </div>
+                <% } %>
+              </div>
+              <button class="swiper-button-prev btn btn-dark btn-fade hidden xl:flex absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+                <svg class="icon">
+                  <use xlink:href="img/icons.svg#arrow-left">
+                </svg>
+              </button>
+              <button class="swiper-button-next btn btn-dark btn-fade hidden xl:flex absolute text-white text-22 rounded-max w-[42px] h-[42px]" data-waved="light">
+                <svg class="icon">
+                  <use xlink:href="img/icons.svg#arrow-right">
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+      <% } %>
     </div>
     <div class="ease-in-out duration-4 anim anim--left" data-anim="hidden">
-      <div class="card h-full py-6 px-4 md:py-8 md:px-8">
+      <div class="card h-full py-6 px-4 md:py-8 md:px-8" data-filter="palette">
         <div class="card-content">
           <h2 class="font-normal text-22 xs:text-26 md:text-32 leading-3 mb-4 md:mb-6">Раздвижная система S-1200</h2>
           <div class="flex flex-wrap items-center gap-2 mb-5 md:mb-9">
             <span class="flex items-center justify-center bg-grey font-normal text-center text-12 leading-1 rounded-full p-3">Система S42</span>
             <span class="flex items-center justify-center bg-grey font-normal text-center text-12 leading-1 rounded-full p-3">Серия S1200</span>
           </div>
-          <p class="font-normal text-16 leading-1 mb-5">Цвет: черный</p>
+          <p class="flex items-center gap-1 font-normal text-16 leading-1 mb-5">
+            Цвет:
+            <% for (var j = 0; j < palette.length; j++) { %>
+            <span data-filter-card="palette" data-filter-value="<%= palette[j].value %>"><%= palette[j].text %></span>
+            <% } %>
+          </p>
           <div class="flex items-center gap-3 mb-8 md:mb-12">
-            <% for (var i = 0; i < palette.length; i++) { %>
-            <label class="palette block relative cursor-pointer" data-waved="light">
-              <input class="palette__radio hidden" type="radio" value="<%= palette[i].value %>" name="color">
-              <span class="palette__color block rounded-max border border-solid border-dark border-opacity-10 hover:border-opacity-40 w-10 h-10 duration-3" style="--production-color: <%= palette[i].color %>"></span>
-            </label>
+            <% for (var j = 0; j < palette.length; j++) { %>
+            <div class="palette <%= j == 0 ? 'filter-active' : '' %> block relative rounded-max border border-solid border-dark border-opacity-10 hover:border-opacity-40 cursor-pointer w-12 h-12 duration-3" data-filter-category="palette" data-filter-value="<%= palette[j].value %>" data-waved="light" style="background-color: <%= palette[j].color %>;"></div>
             <% } %>
           </div>
           <div class="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-5 mb-5 md:mb-10">
@@ -211,18 +160,18 @@
       </div>
     </div>
   </div>
-  <div data-filter>
+  <div data-filter="production">
     <div class="flex items-center gap-4 overflow-auto md:overflow-visible -m-[15px] p-[15px] md:m-0 md:p-0">
-      <button class="production__category filter-active btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="equipment" data-waved="dark">Комплектация</button>
-      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="description" data-waved="dark">Описание</button>
-      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="specifications" data-waved="dark">Характеристики</button>
-      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="scheme" data-waved="dark">Схема сборки</button>
+      <button class="production__category filter-active btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="production" data-filter-value="equipment" data-waved="dark">Комплектация</button>
+      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="production" data-filter-value="description" data-waved="dark">Описание</button>
+      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="production" data-filter-value="specifications" data-waved="dark">Характеристики</button>
+      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="production" data-filter-value="scheme" data-waved="dark">Схема сборки</button>
     </div>
     <div class="block mt-8">
-      <div class="production__card" data-filter-card="equipment">
-        <div class="grid grid-cols-2 sm:grid-cols-1 gap-2 sm:gap-4" data-listing="6">
-          <% for (var i = 0; i < production.length; i++) { %>
-          <div class="card card--active <%= production[i].hidden %> pb-2 pl-2 pr-2 sm:pt-6 sm:pb-6 sm:pl-4 sm:pr-4 lg:pt-2 lg:pb-2 lg:pl-2 lg:pr-7" <%= production[i].data %>>
+      <div class="production__card" data-filter-card="production" data-filter-value="equipment">
+        <div class="grid grid-cols-2 sm:grid-cols-1 gap-2 sm:gap-4">
+          <% for (var j = 0; j < palette.length; j++) { %>
+          <div class="production__card card card--active pb-2 pl-2 pr-2 sm:pt-6 sm:pb-6 sm:pl-4 sm:pr-4 lg:pt-2 lg:pb-2 lg:pl-2 lg:pr-7" data-filter-card="palette" data-filter-value="<%= palette[j].value %>">
             <div class="card-content sm:flex-wrap xl:flex-nowrap sm:flex-row items-start sm:items-center lg:justify-between sm:gap-5 xl:gap-16">
               <div class="pack pack-box bg-grey w-full sm:max-w-[150px] mb-3 sm:mb-0">
                 <div class="loader">
@@ -242,16 +191,15 @@
               </div>
               <div class="font-normal text-14 sm:text-16 leading-4 opacity-60 mb-2 sm:mb-0">Цвет: бронза</div>
               <div class="mb-5 sm:mb-0 xl:mx-auto">
-                <%= _.template(require('./includes/availability.html').default)({status: production[i].status}) %>
+                <%= _.template(require('./includes/availability.html').default)({status: true}) %>
               </div>
               <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe uppercase text-12 sm:text-16 w-full sm:w-auto mt-auto sm:mt-0 px-2 sm:px-10" data-waved="light">стать партнером</button>
             </div>
           </div>
           <% } %>
-          <button class="btn btn-dark btn-lg btn-contur btn-active btn-swipe col-2 sm:col-1 uppercase mt-5 sm:mt-8 mx-auto" data-listing-show data-waved="light">показать еще</button>
         </div>
       </div>
-      <div class="production__card hidden" data-filter-card="description">
+      <div class="production__card hidden" data-filter-card="production" data-filter-value="description">
         <p class="font-normal text-16 leading-5 mb-5">
           Эта инновационная система позволяет легко и плавно раздвигать двери в стороны, обеспечивая максимальную эффективность использования помещения.
         </p>
@@ -267,7 +215,7 @@
           Дизайн раздвижной системы дверей также заслуживает внимания. Она предлагает широкий выбор материалов и отделки, позволяя адаптировать ее к любому интерьеру. Вы можете выбрать стеклянные панели для создания ощущения пространства и пропускания естественного света или использовать различные виды дерева или металла для придания современного или классического стиля.
         </p>
       </div>
-      <div class="production__card hidden" data-filter-card="specifications">
+      <div class="production__card hidden" data-filter-card="production" data-filter-value="specifications">
         <div class="flex flex-col md:gap-2">
           <% for (var i = 0; i < 6; i++) { %>
           <div class="production__item grid grid-cols-1 sm:grid-cols-2 sm:gap-1 py-4 px-3 md:py-5 md:px-6">
@@ -277,7 +225,7 @@
           <% } %>
         </div>
       </div>
-      <div class="production__card hidden" data-filter-card="scheme">
+      <div class="production__card hidden" data-filter-card="production" data-filter-value="scheme">
         <div class="flex flex-col gap-6">
           <% for (var i = 0; i < 6; i++) { %>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">

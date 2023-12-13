@@ -35,32 +35,36 @@
 
 <% var palette = [
   {
-    value: 'Белый',
+    value: 'white',
+    text: 'Белый',
     color: '#ffffff'
   },
   {
-    value: 'Черный',
+    value: 'black',
+    text: 'Черный',
     color: '#000000'
   },
   {
-    value: 'Серый',
+    value: 'grey',
+    text: 'Серый',
     color: '#B3B3B3'
   },
   {
-    value: 'Золотой',
+    value: 'gold',
+    text: 'Золотой',
     color: '#B78C3A'
   }
 ] %>
 
 <section class="series container overflow-hidden">
   <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-5 sm:mb-8 xl:mb-14 ease-in-out duration-4 anim anim--up" data-anim="hidden">Серии профилей</h2>
-  <div data-filter>
+  <div data-filter="series">
     <div class="series-slider relative mb-10 ease-in-out duration-4 anim anim--up" data-slider-xl="5" data-slider-lg="4" data-slider-sm="3" data-anim="hidden">
       <div class="series-swiper swiper -mx-[15px] px-[15px] sm:mx-0 sm:px-0 pb-3">
         <div class="swiper-wrapper">
           <% for (var i = 0; i < 9; i++) { %>
           <div class="swiper-slide h-auto">
-            <div class="series__category <%= i == 0 ? 'filter-active' : '' %> flex flex-col relative cursor-pointer h-full pb-5 md:pb-9" data-filter-category="series-<%= i %>">
+            <div class="series__category <%= i == 0 ? 'filter-active' : '' %> flex flex-col relative cursor-pointer h-full pb-5 md:pb-9" data-filter-category="series" data-filter-value="series-<%= i %>">
               <div class="series__pack pack pack-box bg-grey opacity-30 mb-4 md:mb-8 duration-3">
                 <div class="loader">
                   <span class="loader-progress">
@@ -93,8 +97,8 @@
     </div>
     <div class="block">
       <% for (var i = 0; i < 9; i++) { %>
-      <div class="series__card <%= i == 0 ? '' : 'hidden' %>" data-filter-card="series-<%= i %>">
-        <div class="flex flex-col lg:flex-row lg:justify-between gap-10 lg:gap-5">
+      <div class="series__card" data-filter-card="series" data-filter-value="series-<%= i %>">
+        <div class="flex flex-col lg:flex-row lg:justify-between gap-10 lg:gap-5" data-filter="palette-<%= i %>">
           <div class="w-full lg:max-w-[740px]">
             <h2 class="font-light text-primary text-32 sm:text-42 lg:text-48 leading-2 mb-4 lg:mb-8">Описание S800</h2>
             <div class="mb-8 lg:mb-14" data-listing>
@@ -114,24 +118,27 @@
               </p>
               <button class="btn btn-primary font-normal text-dark border-b border-r-0 border-l-0 border-t-0 border-dashed border-dark border-opacity-40 py-1 mt-2" data-listing-show data-waved="light">Показать еще...</button>
             </div>
-            <p class="font-light text-20 lg:text-24 leading-1 mb-5">Цвет: черный</p>
+            <p class="flex items-center gap-1 font-normal text-16 leading-1 mb-5">
+              Цвет:
+              <% for (var j = 0; j < palette.length; j++) { %>
+              <span data-filter-card="palette-<%= i %>" data-filter-value="<%= palette[j].value %>"><%= palette[j].text %></span>
+              <% } %>
+            </p>
             <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-10">
               <div class="flex items-center gap-3">
                 <% for (var j = 0; j < palette.length; j++) { %>
-                <label class="palette block relative cursor-pointer" data-waved="light">
-                  <input class="palette__radio hidden" type="radio" value="<%= palette[j].value %>" name="color">
-                  <span class="palette__color block rounded-max border border-solid border-dark border-opacity-10 hover:border-opacity-40 w-12 h-12 duration-3" style="--production-color: <%= palette[j].color %>"></span>
-                </label>
+                <div class="palette <%= j == 0 ? 'filter-active' : '' %> block relative rounded-max border border-solid border-dark border-opacity-10 hover:border-opacity-40 cursor-pointer w-12 h-12 duration-3" data-filter-category="palette-<%= i %>" data-filter-value="<%= palette[j].value %>" data-waved="light" style="background-color: <%= palette[j].color %>;"></div>
                 <% } %>
               </div>
               <a class="btn btn-grey text-black sm:text-18 border-b-2 border-t-0 border-l-0 border-r-0 border-solid border-black" data-waved="dark" data-fancybox href="https://www.youtube.com/watch?v=OOih21EjgW0">Смотреть видео о серии</a>
             </div>
           </div>
           <div class="w-full lg:max-w-[425px]">
-            <div class="series-products">
+            <% for (var j = 0; j < palette.length; j++) { %>
+            <div class="series-products" data-filter-card="palette-<%= i %>" data-filter-value="<%= palette[j].value %>">
               <div class="swiper -mx-[15px] px-[15px] sm:mx-0 sm:px-0">
                 <div class="swiper-wrapper">
-                  <% for (var j = 0; j < 4; j++) { %>
+                  <% for (var s = 0; s < 4; s++) { %>
                   <div class="swiper-slide pack pack-box bg-grey">
                     <div class="loader">
                       <span class="loader-progress">
@@ -150,6 +157,7 @@
                 <div class="swiper-pagination relative lg:absolute left-0 right-0 lg:bottom-2 text-primary mx-auto mt-10 lg:mt-0"></div>
               </div>
             </div>
+            <% } %>
           </div>
         </div>
       </div>

@@ -80,45 +80,56 @@ const init = () => {
     watchSlidesProgress: true,
   })
 
-  const productionBullets = new Swiper('.production-bullets .swiper', {
-    navigation: {
-      prevEl: '.production-bullets .swiper-button-prev',
-      nextEl: '.production-bullets .swiper-button-next',
-    },
+  const productionSlidersContainers = document.querySelectorAll('.production-sliders-container')
 
-    direction: 'horizontal',
-    slidesPerView: 3,
-    slidesPerGroup: 1,
-    spaceBetween: 8,
-    speed: 500,
-    grabCursor: true,
-    watchSlidesProgress: true,
+  productionSlidersContainers.forEach((container) => {
+    const productionBullets = container.querySelector('.production-bullets')
+    const productionBulletsSwiper = productionBullets.querySelector('.swiper')
+    const productionBulletsPrev = productionBullets.querySelector('.swiper-button-prev')
+    const productionBulletsNext = productionBullets.querySelector('.swiper-button-next')
+    const productionSlider = container.querySelector('.production-slider')
+    const productionSliderSwiper = productionSlider.querySelector('.swiper')
 
-    breakpoints: {
-      [media.md]: {
-        direction: 'vertical',
-        slidesPerView: 'auto',
-        spaceBetween: 16,
+    const productionBulletsSlider = new Swiper(productionBulletsSwiper, {
+      navigation: {
+        prevEl: productionBulletsPrev,
+        nextEl: productionBulletsNext,
       },
 
-      [media.xl]: {
-        direction: 'horizontal',
-        slidesPerView: 4,
+      direction: 'horizontal',
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+      spaceBetween: 8,
+      speed: 500,
+      grabCursor: true,
+      watchSlidesProgress: true,
+
+      breakpoints: {
+        [media.md]: {
+          direction: 'vertical',
+          slidesPerView: 'auto',
+          spaceBetween: 16,
+        },
+
+        [media.xl]: {
+          direction: 'horizontal',
+          slidesPerView: 4,
+        },
       },
-    },
-  })
+    })
 
-  new Swiper('.production-slider .swiper', {
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    spaceBetween: 16,
-    speed: 500,
-    grabCursor: true,
-    watchSlidesProgress: true,
+    new Swiper(productionSliderSwiper, {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 16,
+      speed: 500,
+      grabCursor: true,
+      watchSlidesProgress: true,
 
-    thumbs: {
-      swiper: productionBullets,
-    },
+      thumbs: {
+        swiper: productionBulletsSlider,
+      },
+    })
   })
 
   new Swiper('.production-items-slider .swiper', {

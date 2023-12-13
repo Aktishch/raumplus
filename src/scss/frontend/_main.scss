@@ -185,13 +185,10 @@
 
 // Палитра
 .palette {
-  &__color {
-    background-color: var(--production-color);
-  }
-
-  &__radio:checked+&__color {
-    border-color: transparent;
-    box-shadow  : 0 0 0 3px theme('colors.primary.DEFAULT');
+  &.filter-active {
+    border-color  : transparent;
+    box-shadow    : 0 0 0 3px theme('colors.primary.DEFAULT');
+    pointer-events: none;
   }
 }
 
@@ -316,6 +313,10 @@
     }
 
     @apply pointer-events-none;
+  }
+
+  &-products.filter-show {
+    animation: filtering-show 0.3s ease both 1;
   }
 
   &__category.filter-active &__pack {

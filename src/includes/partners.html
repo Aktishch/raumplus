@@ -1,16 +1,32 @@
-<% var partners = ['salons', 'distributors', 'design']; %>
+<% var partners = [
+  {
+    value: 'all',
+    text: 'Все партнеры'
+  },
+  {
+    value: 'salons',
+    text: 'Салоны'
+  },
+  {
+    value: 'distributors',
+    text: 'Дистрибьюторы'
+  },
+  {
+    value: 'design',
+    text: 'Дизайн студии'
+  }
+]; %>
 
 <section class="partners container bg-grey ">
   <h2 class="font-light text-32 sm:text-42 lg:text-48 leading-2 mb-3 sm:mb-8 ease-in-out duration-4 anim anim--up" data-anim="hidden">Партнерская сеть raumplus</h2>
   <p class="font-light text-16 leading-5 mb-5 sm:mb-10 ease-in-out duration-4 anim anim--up" data-anim="hidden">Контакты наших партнеров, которым мы доверям</p>
-  <div class="flex flex-col lg:flex-row lg:justify-between gap-5 lg:gap-8" data-filter>
+  <div class="flex flex-col lg:flex-row lg:justify-between gap-5 lg:gap-8" data-filter="partners">
     <div class="w-full lg:max-w-[260px]">
       <div class="card bg-[transparent] lg:bg-white border-none lg:border lg:border-solid border-dark border-opacity-30  overflow-y-hidden overflow-x-auto lg:overflow-x-visible shadow-none -mx-[15px] lg:mx-0 px-[15px] lg:py-6 lg:px-6">
         <div class="card-content flex-row lg:flex-col items-center lg:items-start gap-4">
-          <button class="partners__category filter-active btn btn-grey btn-light underline-offset-4 font-medium text-dark min-w-max py-2 px-4 lg:py-0 lg:px-0" data-filter-category="all" data-waved="dark">Все партнеры</button>
-          <button class="partners__category btn btn-grey btn-light font-medium underline-offset-4 text-dark min-w-max py-2 px-4 lg:py-0 lg:px-0" data-filter-category="salons" data-waved="dark">Салоны</button>
-          <button class="partners__category btn btn-grey btn-light font-medium underline-offset-4 text-dark min-w-max py-2 px-4 lg:py-0 lg:px-0" data-filter-category="distributors" data-waved="dark">Дистрибьюторы</button>
-          <button class="partners__category btn btn-grey btn-light font-medium underline-offset-4 text-dark min-w-max py-2 px-4 lg:py-0 lg:px-0" data-filter-category="design" data-waved="dark">Дизайн студии</button>
+          <% for (var i = 0; i < partners.length; i++) { %>
+          <button class="partners__category <%= i == 0 ? 'filter-active' : '' %> btn btn-grey btn-light underline-offset-4 font-medium text-dark min-w-max py-2 px-4 lg:py-0 lg:px-0" data-filter-category="partners" data-filter-value="<%= partners[i].value %>" data-waved="dark"><%= partners[i].text %></button>
+          <% } %>
         </div>
       </div>
     </div>
@@ -33,8 +49,8 @@
         </div>
       </div>
       <div class="flex flex-col gap-4">
-        <% for (var i = 0; i < partners.length; i++) { %>
-        <div class="partners__card card p-4" data-filter-card="<%= partners[i] %>">
+        <% for (var i = 1; i < partners.length; i++) { %>
+        <div class="partners__card card p-4" data-filter-card="partners" data-filter-value="<%= partners[i].value %>">
           <div class="card-content flex-wrap xl:flex-nowrap flex-row items-center justify-between gap-2 lg:gap-5">
             <div class="order-1 pack pack-box bg-grey w-full max-w-[100px] sm:max-w-[150px]">
               <div class="loader">
