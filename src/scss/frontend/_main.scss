@@ -73,13 +73,19 @@
     }
   }
 
+  &__gradient {
+    &::after {
+      background-image: linear-gradient(180deg, transparent 14.04%, theme("colors.black.DEFAULT / 90%") 76.05%);
+
+      @screen xl {
+        background-image: linear-gradient(180deg, transparent 44.04%, theme("colors.black.DEFAULT / 90%") 76.05%);
+      }
+    }
+  }
+
   &__bg {
     &::after {
-      content       : "";
-      position      : absolute;
-      inset         : 0;
-      background    : theme("colors.black.DEFAULT / 70%");
-      pointer-events: none;
+      background: theme("colors.black.DEFAULT / 70%");
 
       @screen xl {
         background: linear-gradient(81.37deg, theme("colors.black.DEFAULT / 90%") 17.04%, rgba(0, 0, 0, 0) 71.92%), theme("colors.black.DEFAULT / 30%");
@@ -92,6 +98,16 @@
 
     & .swiper-pagination-bullet.swiper-pagination-bullet-active {
       background-color: theme("colors.primary.DEFAULT");
+    }
+  }
+
+  &__gradient,
+  &__bg {
+    &::after {
+      content       : "";
+      position      : absolute;
+      inset         : 0;
+      pointer-events: none;
     }
   }
 }

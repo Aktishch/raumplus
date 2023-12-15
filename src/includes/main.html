@@ -6,7 +6,7 @@
         <div class="swiper-slide h-auto">
           <div class="main__item container flex flex-col relative min-h-[600px] h-full py-0">
             <% } %>
-            <div class="main__bg absolute inset-0">
+            <div class="<%= main.slider ? 'main__gradient' : 'main__bg' %> absolute inset-0">
               <div class="pack bg-grey w-full h-full">
                 <div class="loader">
                   <span class="loader-progress">
@@ -21,7 +21,7 @@
                 </picture>
               </div>
             </div>
-            <div class="flex flex-col flex-grow items-start justify-center relative text-white w-full <%= main.list ? 'lg:max-w-[870px]' : 'lg:max-w-[750px]' %> h-full py-16">
+            <div class="flex flex-col flex-grow items-start <%= main.slider ? 'justify-end' : 'justify-center' %> relative text-white w-full <%= main.list ? 'lg:max-w-[870px]' : 'lg:max-w-[750px]' %> h-full py-16">
               <% if (data.title != 'Главная') { %>
               <div class="absolute top-8 left-0">
                 <div class="flex items-center gap-1 font-normal text-white text-12 xs:text-14 md:text-16">
@@ -29,7 +29,7 @@
                 </div>
               </div>
               <% } %>
-              <h1 class="font-light sm:uppercase text-34 md:text-44 lg:text-title leading-4 ease-in-out duration-4 anim anim--up" data-anim="hidden"><%= main.title %></h1>
+              <h1 class="font-light uppercase text-32 md:text-44 lg:text-title leading-4 ease-in-out duration-4 anim anim--up" data-anim="hidden"><%= main.title %></h1>
               <% if (main.subtitle) { %>
               <h3 class="font-light text-16 sm:text-20 xl:text-24 leading-5 mt-4 ease-in-out duration-4 delay-2 anim anim--up" data-anim="hidden"><%= main.subtitle %></h3>
               <% } %>
@@ -61,7 +61,7 @@
           </div>
         </div>
       </div>
-      <div class="main-pagination swiper-pagination container left-0 right-0 bottom-0 text-white py-0 mb-5 lg:mb-12"></div>
+      <div class="main-pagination swiper-pagination container left-0 right-0 bottom-0 text-white py-0 mb-5 lg:mb-12 sm:ml-auto"></div>
       <button class="swiper-button-prev hidden xl:flex btn btn-dark btn-fade absolute left-8 text-white rounded-max w-14 h-14" data-waved="light">
         <svg class="icon text-30">
           <use xlink:href="img/icons.svg#arrow-left">
