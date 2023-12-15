@@ -168,6 +168,7 @@
       <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="production" data-filter-value="description" data-waved="dark">Описание</button>
       <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="production" data-filter-value="specifications" data-waved="dark">Характеристики</button>
       <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="production" data-filter-value="scheme" data-waved="dark">Схема сборки</button>
+      <button class="production__category btn btn-grey btn-md btn-fill btn-active btn-swipe font-normal text-dark min-w-max" data-filter-category="production" data-filter-value="video" data-waved="dark">Видео</button>
     </div>
     <div class="block mt-8">
       <div class="production__card" data-filter-card="production" data-filter-value="equipment">
@@ -201,7 +202,7 @@
           <% } %>
         </div>
       </div>
-      <div class="production__card hidden" data-filter-card="production" data-filter-value="description">
+      <div class="production__card" data-filter-card="production" data-filter-value="description">
         <p class="font-normal text-16 leading-5 mb-5">
           Эта инновационная система позволяет легко и плавно раздвигать двери в стороны, обеспечивая максимальную эффективность использования помещения.
         </p>
@@ -217,7 +218,7 @@
           Дизайн раздвижной системы дверей также заслуживает внимания. Она предлагает широкий выбор материалов и отделки, позволяя адаптировать ее к любому интерьеру. Вы можете выбрать стеклянные панели для создания ощущения пространства и пропускания естественного света или использовать различные виды дерева или металла для придания современного или классического стиля.
         </p>
       </div>
-      <div class="production__card hidden" data-filter-card="production" data-filter-value="specifications">
+      <div class="production__card" data-filter-card="production" data-filter-value="specifications">
         <div class="flex flex-col md:gap-2">
           <% for (var i = 0; i < 6; i++) { %>
           <div class="production__item grid grid-cols-1 sm:grid-cols-2 sm:gap-1 py-4 px-3 md:py-5 md:px-6">
@@ -227,7 +228,7 @@
           <% } %>
         </div>
       </div>
-      <div class="production__card hidden" data-filter-card="production" data-filter-value="scheme">
+      <div class="production__card" data-filter-card="production" data-filter-value="scheme">
         <div class="flex flex-col gap-6">
           <% for (var i = 0; i < 6; i++) { %>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -238,6 +239,26 @@
               </svg>
               <span class="font-normal sm:font-medium text-14 sm:text-16 leading-4 mr-4">Размер: 8 Мб</span>
               <a class="font-normal text-16 underline underline-offset-4 hover:text-primary duration-1" href="" download>Скачать</a>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+      <div class="production__card" data-filter-card="production" data-filter-value="video">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-4 xl:gap-7">
+          <% for (var i = 0; i < 4; i++) { %>
+          <div class="card card--active p-2 sm:p-4">
+            <div class="card-content">
+              <div class="pack pack-rect-md sm:pack-rect-lg bg-primary cursor-pointer mb-2" data-fancybox href="https://www.youtube.com/watch?v=OOih21EjgW0">
+                <div class="flex items-center justify-center absolute inset-0">
+                  <button class="btn btn-white btn-fill text-primary text-20 sm:text-30 rounded-max w-12 sm:w-20 h-12 sm:h-20" data-waved="dark">
+                    <svg class="icon ml-1">
+                      <use xlink:href="img/icons.svg#play">
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <button class="btn btn-dark btn-md sm:btn-lg btn-contur btn-active btn-swipe font-normal text-14 sm:text-16 px-2" data-waved="light" data-fancybox href="https://www.youtube.com/watch?v=OOih21EjgW0">Смотреть видео</button>
             </div>
           </div>
           <% } %>
