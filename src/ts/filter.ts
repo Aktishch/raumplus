@@ -21,6 +21,10 @@ const filtering = (name: string, cards: NodeListOf<Element>): void => {
 }
 
 const init = (): void => {
+  const html = document.documentElement as HTMLElement
+
+  if (html.hasAttribute('data-filter-destroy')) return
+
   const filters = document.querySelectorAll('*[data-filter]') as NodeListOf<Element>
 
   filters.forEach((element: Element): void => {
